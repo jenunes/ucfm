@@ -1,0 +1,5 @@
+# Build output
+/bin/
+/dist/
+# Logo drafts (local only)
+/docs/assets/drafts/

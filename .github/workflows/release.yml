@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # make dist takes the version from git describe, which needs the tag.
+          fetch-depth: 0
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Test
+        run: go test ./...
+
+      - name: Build archives
+        run: make dist
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            # The release already exists (the job was re-run): replace
+            # the assets and the notes.
+            gh release upload "$TAG" dist/* --clobber
+            gh release edit "$TAG" --notes-file docs/release-notes.md
+          else
+            gh release create "$TAG" dist/* --title "$TAG" --notes-file docs/release-notes.md
+          fi

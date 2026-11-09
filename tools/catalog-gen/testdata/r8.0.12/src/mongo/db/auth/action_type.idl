@@ -1,0 +1,80 @@
+# Copyright (C) 2021-present MongoDB, Inc.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the Server Side Public License, version 1,
+# as published by MongoDB, Inc.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# Server Side Public License for more details.
+#
+# You should have received a copy of the Server Side Public License
+# along with this program. If not, see
+# <http://www.mongodb.com/licensing/server-side-public-license>.
+#
+# As a special exception, the copyright holders give permission to link the
+# code of portions of this program with the OpenSSL library under certain
+# conditions as described in each individual source file and distribute
+# linked combinations including the program with the OpenSSL library. You
+# must comply with the Server Side Public License in all respects for
+# all of the code used other than as permitted herein. If you modify file(s)
+# with this exception, you may extend this exception to your version of the
+# file(s), but you are not obligated to do so. If you do not wish to do so,
+# delete this exception statement from your version. If you delete this
+# exception statement from all source files in the program, then also delete
+# it in the license file.
+#
+
+# List describing the ActionTypes that should be created.
+# Please note that the order of the elements is not guaranteed to be the same across versions.
+# This means that the integer value assigned to each ActionType and used internally in ActionSet
+# also may change between versions.
+#
+# Actions marked "ID only" are not used for permission checks, but to identify events in logs.
+global:
+    cpp_namespace: "mongo"
+
+imports:
+    - "mongo/db/basic_types.idl"
+
+enums:
+    ActionType:
+        description: "test"
+        type: string
+        values:
+           addShard :  "addShard"
+           advanceClusterTime :  "advanceClusterTime"
+           listClusterCatalog : "listClusterCatalog"
+           allCollectionStats: "allCollectionStats"
+           analyze :  "analyze"
+           analyzeShardKey : "analyzeShardKey"
+           anyAction :  "anyAction"         # Special ActionType that represents *all* actions
+           appendOplogNote :  "appendOplogNote"
+           applicationMessage :  "applicationMessage"
+           auditConfigure :  "auditConfigure"
+           auditLogRotate :  "auditLogRotate"  # ID only
+           authCheck :  "authCheck"       # ID only
+           authenticate :  "authenticate"    # ID only
+           authSchemaUpgrade :  "authSchemaUpgrade"
+           bypassDefaultMaxTimeMS: "bypassDefaultMaxTimeMS"
+           bypassDocumentValidation :  "bypassDocumentValidation"
+           bypassWriteBlockingMode :  "bypassWriteBlockingMode"
+           changeCustomData :  "changeCustomData"
+           changePassword :  "changePassword"
+           changeOwnPassword :  "changeOwnPassword"
+           changeOwnCustomData :  "changeOwnCustomData"
+           changeStream :  "changeStream"
+           checkFreeMonitoringStatus :  "checkFreeMonitoringStatus"  # Removed (backwards compatibility)
+           checkMetadataConsistency :  "checkMetadataConsistency"
+           cleanupOrphaned :  "cleanupOrphaned"
+           clearJumboFlag :  "clearJumboFlag"
+           cleanupStructuredEncryptionData: "cleanupStructuredEncryptionData"
+           closeAllDatabases :  "closeAllDatabases"  # Deprecated (backwards compatibility)
+           collMod :  "collMod"
+           collStats :  "collStats"
+           compact :  "compact"
+           compactStructuredEncryptionData: "compactStructuredEncryptionData"
+           configureQueryAnalyzer : "configureQueryAnalyzer"
+           connPoolStats :  "connPoolStats"
+           connPoolSync :  "connPoolSync"

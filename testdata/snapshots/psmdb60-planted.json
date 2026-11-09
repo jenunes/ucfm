@@ -1,0 +1,3615 @@
+{
+  "schemaVersion": 1,
+  "collectedAt": "2026-11-06T23:47:59.894721333Z",
+  "toolVersion": "dev",
+  "entryHost": "172.21.0.2:27017",
+  "topology": {
+    "kind": "replicaset",
+    "replSets": [
+      {
+        "name": "rs0",
+        "role": "replset",
+        "members": [
+          {
+            "host": "172.21.0.2:27017",
+            "state": "PRIMARY",
+            "health": 1,
+            "priority": 1,
+            "votes": 1,
+            "optimeDate": "2026-11-06T23:47:59Z",
+            "lagSeconds": 0
+          },
+          {
+            "host": "172.21.0.4:27017",
+            "state": "SECONDARY",
+            "health": 1,
+            "priority": 1,
+            "votes": 1,
+            "optimeDate": "2026-11-06T23:47:59Z",
+            "lagSeconds": 0
+          },
+          {
+            "host": "172.21.0.3:27017",
+            "state": "SECONDARY",
+            "health": 1,
+            "priority": 1,
+            "votes": 1,
+            "optimeDate": "2026-11-06T23:47:59Z",
+            "lagSeconds": 0
+          }
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "host": "172.21.0.2:27017",
+      "role": "PRIMARY",
+      "replSet": "rs0",
+      "version": "6.0.29-23",
+      "gitVersion": "cb2a6234a5f801eeae2bc735844c8c3bd9b1ba14",
+      "flavor": "psmdb",
+      "psmdbVersion": "6.0.29-23",
+      "storageEngine": "wiredTiger",
+      "fcv": "5.0",
+      "argv": [
+        "/usr/bin/mongod",
+        "-f",
+        "/etc/mongod.conf"
+      ],
+      "options": {
+        "net.bindIp": "0.0.0.0",
+        "net.port": 27017,
+        "processManagement.fork": true,
+        "processManagement.pidFilePath": "/var/run/mongod.pid",
+        "replication.replSetName": "rs0",
+        "security.authorization": "enabled",
+        "security.keyFile": "/etc/rs0-keyfile",
+        "storage.dbPath": "/var/lib/mongo",
+        "storage.engine": "wiredTiger",
+        "storage.journal.enabled": true,
+        "storage.wiredTiger.engineConfig.cacheSizeGB": 1.0,
+        "systemLog.destination": "file",
+        "systemLog.logAppend": true,
+        "systemLog.path": "/var/log/mongo/mongod.log"
+      },
+      "configFile": "/etc/mongod.conf",
+      "parameters": {
+        "KeysRotationIntervalSec": 7776000,
+        "ShardingTaskExecutorPoolHostTimeoutMS": 300000,
+        "ShardingTaskExecutorPoolMaxConnecting": 2,
+        "ShardingTaskExecutorPoolMaxSize": 32767,
+        "ShardingTaskExecutorPoolMaxSizeForConfigServers": -1,
+        "ShardingTaskExecutorPoolMinSize": 1,
+        "ShardingTaskExecutorPoolMinSizeForConfigServers": -1,
+        "ShardingTaskExecutorPoolRefreshRequirementMS": 60000,
+        "ShardingTaskExecutorPoolRefreshTimeoutMS": 20000,
+        "ShardingTaskExecutorPoolReplicaSetMatching": "automatic",
+        "TransactionRecordMinimumLifetimeMinutes": 30,
+        "aggregateOperationResourceConsumptionMetrics": false,
+        "allowDiskUseByDefault": true,
+        "allowDocumentsGreaterThanMaxUserSize": false,
+        "allowMultipleArbiters": false,
+        "allowRolesFromX509Certificates": true,
+        "auditAuthorizationSuccess": false,
+        "authSchemaVersion": 5,
+        "authenticationMechanisms": [
+          "MONGODB-X509",
+          "SCRAM-SHA-1",
+          "SCRAM-SHA-256"
+        ],
+        "authorizationManagerCacheSize": 100,
+        "authorizationManagerPinnedUsers": [],
+        "authorizationManagerPinnedUsersRefreshIntervalMillis": 1000,
+        "awsEC2InstanceMetadataUrl": "http://169.254.169.254",
+        "awsECSInstanceMetadataUrl": "http://169.254.170.2",
+        "awsStsHost": "",
+        "backtraceLogFile": "",
+        "balancerChunksSelectionTimeoutMs": 5000,
+        "balancerMigrationsThrottlingMs": 1000,
+        "batchedDeletesTargetBatchDocs": 10,
+        "batchedDeletesTargetBatchTimeMS": 5,
+        "batchedDeletesTargetStagedDocBytes": 31457280,
+        "batchedExpiredChangeStreamPreImageRemoval": true,
+        "bgSyncOplogFetcherBatchSize": 13981010,
+        "bsonTestValidationVersion": 2,
+        "changeSyncSourceThresholdMillis": 5,
+        "chunkDefragmentationThrottlingMS": 1000,
+        "chunkMigrationConcurrency": 1,
+        "chunkMigrationFetcherMaxBufferedSizeBytesPerThread": 67174400,
+        "clientCursorMonitorFrequencySecs": 4,
+        "clusterAuthMode": "keyFile",
+        "clusterIpSourceAllowlist": null,
+        "collectionBulkLoaderBatchSizeInBytes": 262144,
+        "collectionClonerBatchSize": 0,
+        "collectionClonerUsesExhaust": true,
+        "connPoolMaxConnsPerHost": 200,
+        "connPoolMaxInUseConnsPerHost": 2147483647,
+        "connectTimeoutMs": 10000,
+        "coordinateCommitReturnImmediatelyAfterPersistingDecision": false,
+        "createRollbackDataFiles": true,
+        "cursorTimeoutMillis": 600000,
+        "dbCheckCollectionTryLockMaxAttempts": 5,
+        "dbCheckCollectionTryLockMaxBackoffMillis": 60000,
+        "dbCheckCollectionTryLockMinBackoffMillis": 10,
+        "dbCheckCollectionTryLockTimeoutMillis": 10,
+        "dbCheckHealthLogEveryNBatches": 25,
+        "deprecatedWireOpsWarningPeriodInSeconds": 3600,
+        "diagnosticDataCollectionDirectoryPath": "/var/lib/mongo/diagnostic.data",
+        "diagnosticDataCollectionDirectorySizeMB": 200,
+        "diagnosticDataCollectionEnableLatencyHistograms": false,
+        "diagnosticDataCollectionEnabled": true,
+        "diagnosticDataCollectionFileSizeMB": 10,
+        "diagnosticDataCollectionPeriodMillis": 1000,
+        "diagnosticDataCollectionSamplesPerChunk": 300,
+        "diagnosticDataCollectionSamplesPerInterimUpdate": 10,
+        "diagnosticDataCollectionStatsNamespaces": [],
+        "diagnosticDataCollectionVerboseTCMalloc": false,
+        "disableJavaScriptJIT": true,
+        "disableLogicalSessionCacheRefresh": false,
+        "disableNonSSLConnectionLogging": false,
+        "disableNonTLSConnectionLogging": false,
+        "disableResumableRangeDeleter": false,
+        "disableSplitHorizonIPCheck": false,
+        "disabledSecureAllocatorDomains": [],
+        "documentUnitSizeBytes": 128,
+        "enableDefaultWriteConcernUpdatesForInitiate": false,
+        "enableElectionHandoff": true,
+        "enableFinerGrainedCatalogCacheRefresh": false,
+        "enableFlowControl": true,
+        "enableLocalhostAuthBypass": true,
+        "enableOverrideClusterChainingSetting": false,
+        "enableSearchMeta": true,
+        "enableShardedIndexConsistencyCheck": true,
+        "enableTemporarilyUnavailableExceptions": false,
+        "enableTestCommands": false,
+        "enableTimeoutOfInactiveSessionCursors": false,
+        "enforceUserClusterSeparation": true,
+        "expiredChangeStreamPreImageRemovalJobSleepSecs": 10,
+        "fassertOnLockTimeoutForStepUpDown": 30,
+        "featureCompatibilityVersion": {
+          "version": "5.0"
+        },
+        "featureFlagAlwaysCreateConfigTransactionsPartialIndexOnStepUp": {
+          "value": false
+        },
+        "featureFlagBalanceAccordingToDataSize": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagBatchMultiDeletes": {
+          "value": false
+        },
+        "featureFlagBlender": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagBucketUnpackWithSort": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagChangeStreamPreAndPostImages": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagChangeStreamsFurtherEnrichedEvents": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagChangeStreamsRewrite": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagChangeStreamsVisibility": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagClusterWideConfig": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagClusterWideConfigM2": {
+          "value": false
+        },
+        "featureFlagClusteredIndexes": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagCollModIndexUnique": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagColumnstoreIndexes": {
+          "value": false
+        },
+        "featureFlagCommandsAcceptCollectionUUID": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagCommonQueryFramework": {
+          "value": false
+        },
+        "featureFlagConcurrencyInChunkMigration": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagConnHealthMetrics": {
+          "value": false
+        },
+        "featureFlagDerivedMetadata": {
+          "value": false
+        },
+        "featureFlagDocumentSourceListCatalog": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagEnableExecutionControl": {
+          "value": false
+        },
+        "featureFlagEnableShardingOptional": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagExactTopNAccumulator": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagFLE2": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagFileCopyBasedInitialSync": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagFill": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagFryer": {
+          "value": false
+        },
+        "featureFlagHealthMonitoring": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagInternalTransactions": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagLastPointQuery": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagLoadBalancer": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagLocf": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagMigrationRecipientCriticalSection": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagMongoStore": {
+          "value": false
+        },
+        "featureFlagNewPersistedChunkVersionFormat": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagNewWriteErrorExceptionFormat": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagNoChangeStreamEventsDueToOrphans": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagNoMoreAutoSplitter": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagOptionalCfgSvr": {
+          "value": false
+        },
+        "featureFlagOrphanTracking": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagPerCollBalancingSettings": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagQueryStats": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagRecoverableRefineCollectionShardKeyCoordinator": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagRecoverableShardsvrReshardCollectionCoordinator": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagRequireTenantID": {
+          "value": false
+        },
+        "featureFlagResharding": {
+          "value": true,
+          "version": "5.0"
+        },
+        "featureFlagRetryableFindAndModify": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagSBEGroupPushdown": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagSBELookupPushdown": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagSbeFull": {
+          "value": false
+        },
+        "featureFlagSbePlanCache": {
+          "value": false
+        },
+        "featureFlagSearchBatchSizeLimit": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagSearchMeta": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagSearchShardedFacets": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagSelectiveBackup": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagShardKeyIndexOptionalHashedSharding": {
+          "value": true,
+          "version": "5.0"
+        },
+        "featureFlagShardMerge": {
+          "value": false
+        },
+        "featureFlagShardSplit": {
+          "value": false
+        },
+        "featureFlagShardedLookup": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagShardedSearchCustomSort": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagShardedTimeSeries": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagShardedTimeSeriesUpdateDelete": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagShardingDataTransformMetrics": {
+          "value": false
+        },
+        "featureFlagSortArray": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagSpoon": {
+          "value": true,
+          "version": "5.0"
+        },
+        "featureFlagTimeseriesBucketCompression": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagTimeseriesBucketCompressionWithArrays": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagTimeseriesMetricIndexes": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagTimeseriesUpdatesAndDeletes": {
+          "value": true,
+          "version": "5.0"
+        },
+        "featureFlagToaster": {
+          "value": false
+        },
+        "featureFlagUpdateDocumentShardKeyUsingTransactionApi": {
+          "value": false
+        },
+        "featureFlagUserWriteBlocking": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagVectorSearchPublicPreview": {
+          "value": true,
+          "version": "6.0"
+        },
+        "fileBasedInitialSyncExtendCursorTimeoutMS": 180000,
+        "fileBasedInitialSyncMaxCyclesWithoutProgress": 3,
+        "fileBasedInitialSyncMaxLagSec": 300,
+        "findChunksOnConfigTimeoutMS": 900000,
+        "fixedServiceExecutorRecursionLimit": 8,
+        "fixedServiceExecutorThreadLimit": 1000,
+        "flowControlDecayConstant": 0.5,
+        "flowControlFudgeFactor": 0.95,
+        "flowControlMaxSamples": 1000000,
+        "flowControlMinTicketsPerSecond": 100,
+        "flowControlSamplePeriod": 1000,
+        "flowControlTargetLagSeconds": 10,
+        "flowControlThresholdLagPercentage": 0.5,
+        "flowControlTicketAdderConstant": 1000,
+        "flowControlTicketMultiplierConstant": 1.05,
+        "flowControlWarnThresholdSeconds": 10,
+        "forceRollbackViaRefetch": false,
+        "globalConnPoolIdleTimeoutMinutes": 2147483647,
+        "heapProfilingEnabled": false,
+        "heapProfilingSampleIntervalBytes": 262144,
+        "heartBeatFrequencyMs": 10000,
+        "honorSystemUmask": false,
+        "httpVerboseLogging": false,
+        "indexEntryUnitSizeBytes": 16,
+        "indexMaxNumGeneratedKeysPerDocument": 100000,
+        "initialServiceExecutorThreadingModel": "dedicated",
+        "initialSyncMethod": "logical",
+        "initialSyncOplogBuffer": "collection",
+        "initialSyncOplogBufferPeekCacheSize": 10000,
+        "initialSyncOplogFetcherBatchSize": 13981010,
+        "initialSyncSourceReadPreference": "",
+        "initialSyncTransientErrorRetryPeriodSeconds": 86400,
+        "internalBatchUserMultiDeletesForTest": false,
+        "internalCascadesOptimizerDisableBranchAndBound": false,
+        "internalCascadesOptimizerDisableGroupByAndUnionRIDIntersect": false,
+        "internalCascadesOptimizerDisableHashJoinRIDIntersect": false,
+        "internalCascadesOptimizerDisableIndexes": false,
+        "internalCascadesOptimizerDisableMergeJoinRIDIntersect": false,
+        "internalCascadesOptimizerDisableScan": false,
+        "internalCascadesOptimizerKeepRejectedPlans": false,
+        "internalDocumentSourceCursorBatchSizeBytes": 4194304,
+        "internalDocumentSourceDensifyMaxMemoryBytes": 104857600,
+        "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+        "internalDocumentSourceLookupCacheSizeBytes": 104857600,
+        "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+        "internalGeoNearQuery2DMaxCoveringCells": 16,
+        "internalGeoPredicateQuery2DMaxCoveringCells": 16,
+        "internalIndexBuildBulkLoadYieldIterations": 1000,
+        "internalInsertMaxBatchSize": 64,
+        "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+        "internalPartialFilterExpressionMaxDepth": 4,
+        "internalPipelineLengthLimit": 1000,
+        "internalProhibitShardOperationRetry": false,
+        "internalQueryAggMulticastMaxConcurrency": 100,
+        "internalQueryAggMulticastTimeoutMS": 60000,
+        "internalQueryAlwaysMergeOnPrimaryShard": false,
+        "internalQueryAppendIdToSetWindowFieldsSort": false,
+        "internalQueryCacheDisableInactiveEntries": false,
+        "internalQueryCacheEvictionRatio": 10.0,
+        "internalQueryCacheMaxEntriesPerCollection": 5000,
+        "internalQueryCacheMaxSizeBytesBeforeStripDebugInfo": 536870912,
+        "internalQueryCacheSize": 5000,
+        "internalQueryCacheWorksGrowthCoefficient": 2.0,
+        "internalQueryCollectionMaxDataSizeBytesToChooseHashJoin": 104857600,
+        "internalQueryCollectionMaxNoOfDocumentsToChooseHashJoin": 10000,
+        "internalQueryCollectionMaxStorageSizeBytesToChooseHashJoin": 104857600,
+        "internalQueryDesugarWhereToFunction": false,
+        "internalQueryDisableExchange": false,
+        "internalQueryDisableLookupExecutionUsingHashJoin": false,
+        "internalQueryDocumentSourceWriterBatchExtraReservedBytes": 0,
+        "internalQueryEnableCSTParser": false,
+        "internalQueryEnableCascadesOptimizer": false,
+        "internalQueryEnableLoggingV2OplogEntries": true,
+        "internalQueryEnableSamplingCardinalityEstimator": true,
+        "internalQueryEnumerationMaxIntersectPerAnd": 3,
+        "internalQueryEnumerationMaxOrSolutions": 10,
+        "internalQueryEnumerationPreferLockstepOrEnumeration": false,
+        "internalQueryExecYieldIterations": 1000,
+        "internalQueryExecYieldPeriodMS": 10,
+        "internalQueryExplainSizeThresholdBytes": 10485760,
+        "internalQueryFLEAlwaysUseHighCardinalityMode": false,
+        "internalQueryFLERewriteMemoryLimit": 14680064,
+        "internalQueryFacetBufferSizeBytes": 104857600,
+        "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+        "internalQueryForceClassicEngine": true,
+        "internalQueryForceIntersectionPlans": false,
+        "internalQueryGlobalProfilingFilter": false,
+        "internalQueryIgnoreUnknownJSONSchemaKeywords": false,
+        "internalQueryJavaScriptFnTimeoutMillis": 60000,
+        "internalQueryJavaScriptHeapSizeLimitMB": 100,
+        "internalQueryMaxAddToSetBytes": 104857600,
+        "internalQueryMaxAllowedDensifyDocs": 500000,
+        "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+        "internalQueryMaxDocValidationErrorConsideredValues": 10,
+        "internalQueryMaxJsEmitBytes": 104857600,
+        "internalQueryMaxNumberOfFieldsToChooseFilteredColumnScan": 12,
+        "internalQueryMaxNumberOfFieldsToChooseUnfilteredColumnScan": 5,
+        "internalQueryMaxPushBytes": 104857600,
+        "internalQueryMaxRangeBytes": 104857600,
+        "internalQueryMaxScansToExplode": 200,
+        "internalQueryPlanEvaluationCollFraction": 0.3,
+        "internalQueryPlanEvaluationCollFractionSbe": 0.0,
+        "internalQueryPlanEvaluationMaxResults": 101,
+        "internalQueryPlanEvaluationWorks": 10000,
+        "internalQueryPlanEvaluationWorksSbe": 10000,
+        "internalQueryPlanOrChildrenIndependently": true,
+        "internalQueryPlanTieBreakingWithIndexHeuristics": true,
+        "internalQueryPlannerEnableHashIntersection": false,
+        "internalQueryPlannerEnableIndexIntersection": true,
+        "internalQueryPlannerGenerateCoveredWholeIndexScans": false,
+        "internalQueryPlannerMaxIndexedSolutions": 64,
+        "internalQueryProhibitBlockingMergeOnMongoS": false,
+        "internalQueryProhibitMergingOnMongoS": false,
+        "internalQueryS2GeoCoarsestLevel": 0,
+        "internalQueryS2GeoFinestLevel": 23,
+        "internalQueryS2GeoMaxCells": 20,
+        "internalQuerySlotBasedExecutionDisableGroupPushdown": false,
+        "internalQuerySlotBasedExecutionDisableLookupPushdown": false,
+        "internalQuerySlotBasedExecutionHashAggApproxMemoryUseInBytesBeforeSpill": 104857600,
+        "internalQuerySlotBasedExecutionHashAggForceIncreasedSpilling": false,
+        "internalQuerySlotBasedExecutionHashAggMemoryCheckPerAdvanceAtLeast": 1024,
+        "internalQuerySlotBasedExecutionHashAggMemoryCheckPerAdvanceAtMost": 2,
+        "internalQuerySlotBasedExecutionHashAggMemoryUseCheckMargin": 0.7,
+        "internalQuerySlotBasedExecutionHashLookupApproxMemoryUseInBytesBeforeSpill": 104857600,
+        "internalQuerySlotBasedExecutionMaxStaticIndexScanIntervals": 1000,
+        "internalQuerySpillingMaxWaitTimeout": 1000,
+        "internalQueryStatsCacheSize": "1%",
+        "internalQueryStatsErrorsAreCommandFatal": false,
+        "internalQueryStatsRateLimit": 0,
+        "internalQueryTopNAccumulatorBytes": 104857600,
+        "internalSessionsReapThreshold": 1000,
+        "internalValidateFeaturesAsMaster": true,
+        "internalValidateFeaturesAsPrimary": true,
+        "javascriptProtection": false,
+        "joinIngressSessionsOnShutdown": false,
+        "journalCommitInterval": 100,
+        "jsHeapLimitMB": 1100,
+        "ldapAuthzQueryTemplate": "",
+        "ldapConnectionPoolSizePerHost": 2,
+        "ldapDebug": false,
+        "ldapFollowReferrals": false,
+        "ldapQueryPassword": "###",
+        "ldapQueryUser": "",
+        "ldapServers": "",
+        "ldapTimeoutMS": 10000,
+        "ldapUseConnectionPool": false,
+        "ldapUserCacheInvalidationInterval": 30,
+        "ldapUserToDNMapping": "[{match: \"(.+)\", substitution: \"{0}\"}]",
+        "loadBalancerPort": 0,
+        "loadRoutingTableOnStartup": true,
+        "localLogicalSessionTimeoutMinutes": 30,
+        "localThresholdMs": 15,
+        "lockCodeSegmentsInMemory": false,
+        "logComponentVerbosity": {
+          "verbosity": 0,
+          "accessControl": {
+            "verbosity": -1
+          },
+          "assert": {
+            "verbosity": -1
+          },
+          "command": {
+            "verbosity": -1
+          },
+          "control": {
+            "verbosity": -1
+          },
+          "executor": {
+            "verbosity": -1
+          },
+          "geo": {
+            "verbosity": -1
+          },
+          "index": {
+            "verbosity": -1
+          },
+          "network": {
+            "verbosity": -1,
+            "asio": {
+              "verbosity": -1
+            },
+            "bridge": {
+              "verbosity": -1
+            },
+            "connectionPool": {
+              "verbosity": -1
+            }
+          },
+          "processHealth": {
+            "verbosity": -1
+          },
+          "query": {
+            "verbosity": -1
+          },
+          "queryStats": {
+            "verbosity": -1
+          },
+          "replication": {
+            "verbosity": -1,
+            "election": {
+              "verbosity": -1
+            },
+            "heartbeats": {
+              "verbosity": -1
+            },
+            "initialSync": {
+              "verbosity": -1
+            },
+            "rollback": {
+              "verbosity": -1
+            }
+          },
+          "sharding": {
+            "verbosity": -1,
+            "rangeDeleter": {
+              "verbosity": -1
+            },
+            "shardingCatalogRefresh": {
+              "verbosity": -1
+            },
+            "migration": {
+              "verbosity": -1
+            },
+            "reshard": {
+              "verbosity": -1
+            },
+            "migrationPerf": {
+              "verbosity": -1
+            }
+          },
+          "storage": {
+            "verbosity": -1,
+            "recovery": {
+              "verbosity": -1
+            },
+            "journal": {
+              "verbosity": -1
+            },
+            "wt": {
+              "verbosity": -1,
+              "wtBackup": {
+                "verbosity": -1
+              },
+              "wtCheckpoint": {
+                "verbosity": -1
+              },
+              "wtCompact": {
+                "verbosity": -1
+              },
+              "wtEviction": {
+                "verbosity": -1
+              },
+              "wtHS": {
+                "verbosity": -1
+              },
+              "wtRecovery": {
+                "verbosity": -1
+              },
+              "wtRTS": {
+                "verbosity": -1
+              },
+              "wtSalvage": {
+                "verbosity": -1
+              },
+              "wtTiered": {
+                "verbosity": -1
+              },
+              "wtTimestamp": {
+                "verbosity": -1
+              },
+              "wtTransaction": {
+                "verbosity": -1
+              },
+              "wtVerify": {
+                "verbosity": -1
+              },
+              "wtWriteLog": {
+                "verbosity": -1
+              }
+            }
+          },
+          "write": {
+            "verbosity": -1
+          },
+          "ftdc": {
+            "verbosity": -1
+          },
+          "tracking": {
+            "verbosity": -1
+          },
+          "transaction": {
+            "verbosity": -1
+          },
+          "tenantMigration": {
+            "verbosity": -1
+          },
+          "test": {
+            "verbosity": -1
+          }
+        },
+        "logLevel": 0,
+        "logicalSessionRefreshMillis": 300000,
+        "maintainValidCursorsAcrossSBEYieldandReadCommands": false,
+        "maxAcceptableLogicalClockDriftSecs": 31536000,
+        "maxBSONDepth": 200,
+        "maxCatchUpPercentageBeforeBlockingWrites": 10,
+        "maxIndexBuildDrainBatchSize": 1000,
+        "maxIndexBuildDrainMemoryUsageMegabytes": 16,
+        "maxIndexBuildMemoryUsageMegabytes": 200,
+        "maxIteratorsMemoryUsagePercentage": 0.1,
+        "maxLogSizeKB": 10,
+        "maxNumActiveUserIndexBuilds": 3,
+        "maxNumSyncSourceChangesPerHour": 3,
+        "maxNumberOfTransactionOperationsInSingleOplogEntry": 2147483647,
+        "maxOplogTruncationPointsAfterStartup": 100,
+        "maxOplogTruncationPointsDuringStartup": 100,
+        "maxSessions": 1000000,
+        "maxSyncSourceLagSecs": 30,
+        "maxTenantMigrationDonorServiceThreadPoolSize": 8,
+        "maxTenantMigrationRecipientThreadPoolSize": 128,
+        "maxTimeMSForHedgedReads": 150,
+        "maxTransactionLockRequestTimeoutMillis": 5,
+        "maxValidateMBperSec": 0,
+        "maxValidateMemoryUsageMB": 200,
+        "metadataRefreshInTransactionMaxWaitBehindCritSecMS": 500,
+        "migrateCloneInsertionBatchDelayMS": 0,
+        "migrateCloneInsertionBatchSize": 0,
+        "migrationLockAcquisitionMaxWaitMS": 500,
+        "minNumChunksForSessionsCollection": 1024,
+        "minOplogEntriesPerThread": 16,
+        "minOplogTruncationPoints": 10,
+        "minSnapshotHistoryWindowInSeconds": 300,
+        "mirrorReads": {
+          "samplingRate": 0.01,
+          "maxTimeMS": 1000
+        },
+        "mongosShutdownTimeoutMillisForSignaledShutdown": 15000,
+        "mrEnableSingleReduceOptimization": false,
+        "multitenancySupport": false,
+        "newShardExistingClusterTimeKeysExpirationSecs": 604800,
+        "notablescan": false,
+        "numInitialSyncAttempts": 10,
+        "numInitialSyncConnectAttempts": 10,
+        "numInitialSyncOplogFindAttempts": 3,
+        "ocspCacheSize": 300,
+        "ocspEnabled": true,
+        "ocspStaplingRefreshPeriodSecs": -1,
+        "ocspValidationRefreshPeriodSecs": -1,
+        "opensslCipherConfig": "HIGH:!EXPORT:!aNULL@STRENGTH",
+        "opensslCipherSuiteConfig": "",
+        "opensslDiffieHellmanParameters": "",
+        "operationMemoryPoolBlockInitialSizeKB": 1,
+        "operationMemoryPoolBlockMaxSizeKB": 2048,
+        "oplogApplicationEnforcesSteadyStateConstraints": false,
+        "oplogBatchDelayMillis": 0,
+        "oplogFetcherInitialSyncMaxFetcherRestarts": 10,
+        "oplogFetcherSteadyStateMaxFetcherRestarts": 1,
+        "oplogFetcherUsesExhaust": true,
+        "oplogInitialFindMaxSeconds": 60,
+        "oplogNetworkTimeoutBufferSeconds": 5,
+        "oplogRetriedFindMaxSeconds": 2,
+        "oplogSamplingLogIntervalSeconds": 10,
+        "oplogTruncationCheckPeriodSeconds": 300,
+        "oplogTruncationPointSizeMB": 0,
+        "opportunisticSecondaryTargeting": false,
+        "orphanCleanupDelaySecs": 900,
+        "perconaTelemetry": true,
+        "perconaTelemetryGracePeriod": 86400,
+        "perconaTelemetryHistoryKeepInterval": 604800,
+        "perconaTelemetryPath": "/usr/local/percona/telemetry/psmdb",
+        "perconaTelemetryScrapeInterval": 86400,
+        "periodicNoopIntervalSecs": 10,
+        "persistedChunkCacheUpdateMaxBatchSize": 1000,
+        "planCacheSize": "5%",
+        "priorityTakeoverFreshnessWindowSeconds": 2,
+        "processUmask": 63,
+        "profileOperationResourceConsumptionMetrics": false,
+        "profilingRateLimit": 1,
+        "quiet": false,
+        "rangeDeleterBatchDelayMS": 20,
+        "rangeDeleterBatchSize": 2147483647,
+        "readHedgingMode": "on",
+        "receiveChunkWaitForRangeDeleterTimeoutMS": 10000,
+        "recoverFromOplogAsStandalone": false,
+        "recoverToOplogTimestamp": "",
+        "redactClientLogData": false,
+        "remainingReshardingOperationTimeThresholdMillis": 2000,
+        "replBatchLimitBytes": 104857600,
+        "replBatchLimitOperations": 5000,
+        "replElectionTimeoutOffsetLimitFraction": 0.15,
+        "replWriterMinThreadCount": 0,
+        "replWriterThreadCount": 16,
+        "replicaSetMonitorProtocol": "streamable",
+        "reportOpWriteConcernCountersInServerStatus": false,
+        "reservedServiceExecutorRecursionLimit": 8,
+        "reshardingCollectionClonerBatchSizeInBytes": 102400,
+        "reshardingCoordinatorServiceMaxThreadCount": 3,
+        "reshardingCriticalSectionTimeoutMillis": 5000,
+        "reshardingDelayBeforeRemainingOperationTimeQueryMillis": 0,
+        "reshardingDonorServiceMaxThreadCount": 2,
+        "reshardingMinimumOperationDurationMillis": 300000,
+        "reshardingOplogApplierMaxLockRequestTimeoutMillis": 5,
+        "reshardingOplogBatchLimitBytes": 104857600,
+        "reshardingOplogBatchLimitOperations": 5000,
+        "reshardingOplogBatchTaskCount": 4,
+        "reshardingRecipientServiceMaxThreadCount": 8,
+        "reshardingTxnClonerProgressBatchSize": 1000,
+        "resumableIndexBuildMajorityOpTimeTimeoutMillis": 10000,
+        "rewriteStateChangeErrors": true,
+        "rollbackRemoteOplogQueryBatchSize": 2000,
+        "rollbackTimeLimitSecs": 86400,
+        "roundtripBsonColumnOnValidate": false,
+        "routingTableCacheChunkBucketSize": 500,
+        "saslHostName": "node0",
+        "saslServiceName": "mongodb",
+        "saslauthdPath": "",
+        "scramIterationCount": 10000,
+        "scramSHA256IterationCount": 15000,
+        "scriptingEngineInterruptIntervalMS": 1000,
+        "sessionMaxBatchSize": 1000,
+        "sessionWriteConcernTimeoutSystemMillis": 60000,
+        "shardSplitGarbageCollectionDelayMS": 900000,
+        "shardSplitTimeoutMS": 3600000,
+        "shardedIndexConsistencyCheckIntervalMS": 600000,
+        "shutdownTimeoutMillisForSignaledShutdown": 15000,
+        "skipApplyingDbCheckBatchOnSecondary": false,
+        "skipCorruptDocumentsWhenCloning": false,
+        "skipDroppingHashedShardKeyIndex": false,
+        "skipShardingConfigurationChecks": false,
+        "skipShellCursorFinalize": false,
+        "sslMode": "disabled",
+        "sslWithholdClientCertificate": false,
+        "startupAuthSchemaValidation": true,
+        "startupRecoveryForRestore": false,
+        "storageEngineConcurrentReadTransactions": 0,
+        "storageEngineConcurrentWriteTransactions": 0,
+        "storageEngineQueueingPolicy": "fifoQueue",
+        "storageGlobalParams.directoryperdb": false,
+        "storeFindAndModifyImagesInSideCollection": true,
+        "suppressNetworkInterfaceTransportLayerExceptions": {
+          "value": false
+        },
+        "suppressNoTLSPeerCertificateWarning": false,
+        "syncdelay": 60.0,
+        "synchronousServiceExecutorRecursionLimit": 8,
+        "takeUnstableCheckpointOnShutdown": false,
+        "taskExecutorPoolSize": 1,
+        "tcmallocAggressiveMemoryDecommit": 0,
+        "tcmallocMaxTotalThreadCacheBytes": 1073741824,
+        "tcmallocReleaseRate": 1.0,
+        "tcpFastOpenClient": true,
+        "tcpFastOpenQueueSize": 1024,
+        "tcpFastOpenServer": true,
+        "temporarilyUnavailableBackoffBaseMs": 1000,
+        "temporarilyUnavailableMaxRetries": 10,
+        "tenantApplierBatchSizeBytes": 16777216,
+        "tenantApplierBatchSizeOps": 500,
+        "tenantApplierThreadCount": 5,
+        "tenantMigrationBlockingStateTimeoutMS": 3600000,
+        "tenantMigrationDisableX509Auth": false,
+        "tenantMigrationExcludeDonorHostTimeoutMS": 60000,
+        "tenantMigrationExternalKeysRemovalBufferSecs": 86400,
+        "tenantMigrationGarbageCollectionDelayMS": 900000,
+        "tenantMigrationOplogBufferPeekCacheSize": 10000,
+        "tenantMigrationOplogFetcherBatchSize": 13981010,
+        "testingDiagnosticsEnabled": false,
+        "testingSnapshotBehaviorInIsolation": false,
+        "timeseriesBucketMaxCount": 1000,
+        "timeseriesBucketMaxSize": 128000,
+        "timeseriesIdleBucketExpiryMaxCountPerAttempt": 3,
+        "timeseriesIdleBucketExpiryMemoryUsageThreshold": 0,
+        "timeseriesInsertMaxRetriesOnDuplicates": 32,
+        "timeseriesValidateCompressedBuckets": true,
+        "tlsCATrusts": null,
+        "tlsMode": "disabled",
+        "tlsOCSPSlowResponderWarningSecs": 5,
+        "tlsOCSPStaplingTimeoutSecs": -1,
+        "tlsOCSPVerifyTimeoutSecs": 4,
+        "tlsUseSystemCA": false,
+        "tlsWithholdClientCertificate": false,
+        "tlsX509ExpirationWarningThresholdDays": 30,
+        "totalUnitWriteSizeBytes": 128,
+        "traceExceptions": false,
+        "traceWriteConflictExceptions": false,
+        "trafficRecordingDirectory": "",
+        "transactionLifetimeLimitSeconds": 60,
+        "transactionSizeLimitBytes": 9223372036854775807,
+        "transactionTooLargeForCacheThreshold": 0.75,
+        "ttlMonitorEnabled": true,
+        "ttlMonitorSleepSecs": 60,
+        "unsupportedSyncSource": "",
+        "upsertMaxRetryAttemptsOnDuplicateKeyError": 250,
+        "useReadOnceCursorsForIndexBuilds": true,
+        "waitForSecondaryBeforeNoopWriteMS": 10,
+        "warmMinConnectionsInShardingTaskExecutorPoolOnStartup": true,
+        "warmMinConnectionsInShardingTaskExecutorPoolOnStartupWaitMS": 2000,
+        "watchdogPeriodSeconds": -1,
+        "wiredTigerConcurrentReadTransactions": 0,
+        "wiredTigerConcurrentWriteTransactions": 0,
+        "wiredTigerCursorCacheSize": -100,
+        "wiredTigerDirectoryForIndexes": false,
+        "wiredTigerEngineRuntimeConfig": "",
+        "wiredTigerEvictionDirtyMaxGB": 0.0,
+        "wiredTigerEvictionDirtyTargetGB": 0.0,
+        "wiredTigerFileHandleCloseIdleTime": 600,
+        "wiredTigerFileHandleCloseMinimum": 2000,
+        "wiredTigerFileHandleCloseScanInterval": 10,
+        "wiredTigerMaxCacheOverflowSizeGB": 0.0,
+        "wiredTigerSessionCloseIdleTimeSecs": 300,
+        "wiredTigerSkipTableLoggingChecksOnStartup": false,
+        "wiredTigerStressConfig": false,
+        "writePeriodicNoops": true
+      },
+      "commandCounters": {
+        "_addShard": 0,
+        "_configsvrAbortReshardCollection": 0,
+        "_configsvrAddShard": 0,
+        "_configsvrAddShardToZone": 0,
+        "_configsvrBalancerCollectionStatus": 0,
+        "_configsvrBalancerStart": 0,
+        "_configsvrBalancerStatus": 0,
+        "_configsvrBalancerStop": 0,
+        "_configsvrCleanupReshardCollection": 0,
+        "_configsvrClearJumboFlag": 0,
+        "_configsvrCollMod": 0,
+        "_configsvrCommitChunkMigration": 0,
+        "_configsvrCommitChunkSplit": 0,
+        "_configsvrCommitChunksMerge": 0,
+        "_configsvrCommitMovePrimary": 0,
+        "_configsvrCommitReshardCollection": 0,
+        "_configsvrConfigureCollectionBalancing": 0,
+        "_configsvrCreateDatabase": 0,
+        "_configsvrEnsureChunkVersionIsGreaterThan": 0,
+        "_configsvrMoveChunk": 0,
+        "_configsvrMoveRange": 0,
+        "_configsvrRefineCollectionShardKey": 0,
+        "_configsvrRemoveChunks": 0,
+        "_configsvrRemoveShard": 0,
+        "_configsvrRemoveShardFromZone": 0,
+        "_configsvrRemoveTags": 0,
+        "_configsvrRenameCollectionMetadata": 0,
+        "_configsvrRepairShardedCollectionChunksHistory": 0,
+        "_configsvrReshardCollection": 0,
+        "_configsvrRunRestore": 0,
+        "_configsvrSetAllowMigrations": 0,
+        "_configsvrSetClusterParameter": 0,
+        "_configsvrSetUserWriteBlockMode": 0,
+        "_configsvrUpdateZoneKeyRange": 0,
+        "_flushDatabaseCacheUpdates": 0,
+        "_flushDatabaseCacheUpdatesWithWriteConcern": 0,
+        "_flushReshardingStateChange": 0,
+        "_flushRoutingTableCacheUpdates": 0,
+        "_flushRoutingTableCacheUpdatesWithWriteConcern": 0,
+        "_getNextSessionMods": 0,
+        "_getUserCacheGeneration": 0,
+        "_isSelf": 0,
+        "_killOperations": 0,
+        "_mergeAuthzCollections": 0,
+        "_migrateClone": 0,
+        "_recvChunkAbort": 0,
+        "_recvChunkCommit": 0,
+        "_recvChunkReleaseCritSec": 0,
+        "_recvChunkStart": 0,
+        "_recvChunkStatus": 0,
+        "_shardsvrAbortReshardCollection": 0,
+        "_shardsvrCleanupReshardCollection": 0,
+        "_shardsvrCloneCatalogData": 0,
+        "_shardsvrCollMod": 0,
+        "_shardsvrCollModParticipant": 0,
+        "_shardsvrCommitReshardCollection": 0,
+        "_shardsvrCompactStructuredEncryptionData": 0,
+        "_shardsvrCreateCollection": 0,
+        "_shardsvrCreateCollectionParticipant": 0,
+        "_shardsvrDropCollection": 0,
+        "_shardsvrDropCollectionIfUUIDNotMatching": 0,
+        "_shardsvrDropCollectionParticipant": 0,
+        "_shardsvrDropDatabase": 0,
+        "_shardsvrDropDatabaseParticipant": 0,
+        "_shardsvrDropIndexes": 0,
+        "_shardsvrGetStatsForBalancing": 0,
+        "_shardsvrJoinMigrations": 0,
+        "_shardsvrMovePrimary": 0,
+        "_shardsvrMoveRange": 0,
+        "_shardsvrParticipantBlock": 0,
+        "_shardsvrRefineCollectionShardKey": 0,
+        "_shardsvrRenameCollection": 0,
+        "_shardsvrRenameCollectionParticipant": 0,
+        "_shardsvrRenameCollectionParticipantUnblock": 0,
+        "_shardsvrReshardCollection": 0,
+        "_shardsvrReshardingOperationTime": 0,
+        "_shardsvrSetAllowMigrations": 0,
+        "_shardsvrSetClusterParameter": 0,
+        "_shardsvrSetUserWriteBlockMode": 0,
+        "_transferMods": 0,
+        "abortShardSplit": 0,
+        "abortTransaction": 0,
+        "aggregate": 9,
+        "appendOplogNote": 0,
+        "applyOps": 0,
+        "authenticate": 0,
+        "autoSplitVector": 0,
+        "availableQueryOptions": 2,
+        "buildInfo": 13,
+        "checkShardingIndex": 0,
+        "cleanupOrphaned": 0,
+        "cloneCollectionAsCapped": 0,
+        "clusterAbortTransaction": 0,
+        "clusterAggregate": 0,
+        "clusterCommitTransaction": 0,
+        "clusterDelete": 0,
+        "clusterFind": 0,
+        "clusterGetMore": 0,
+        "clusterInsert": 0,
+        "clusterUpdate": 0,
+        "collMod": 0,
+        "collStats": 11,
+        "commitShardSplit": 0,
+        "commitTransaction": 0,
+        "compact": 0,
+        "compactStructuredEncryptionData": 0,
+        "connPoolStats": 0,
+        "connPoolSync": 0,
+        "connectionStatus": 0,
+        "convertToCapped": 0,
+        "coordinateCommitTransaction": 0,
+        "count": 10,
+        "create": 0,
+        "createBackup": 0,
+        "createIndexes": 3,
+        "createRole": 2,
+        "createUser": 0,
+        "currentOp": 0,
+        "dataSize": 0,
+        "dbCheck": 0,
+        "dbHash": 0,
+        "dbStats": 2,
+        "delete": 1,
+        "distinct": 0,
+        "donorAbortMigration": 0,
+        "donorForgetMigration": 0,
+        "donorStartMigration": 0,
+        "driverOIDTest": 0,
+        "drop": 0,
+        "dropAllRolesFromDatabase": 0,
+        "dropAllUsersFromDatabase": 0,
+        "dropConnections": 0,
+        "dropDatabase": 0,
+        "dropIndexes": 1,
+        "dropRole": 0,
+        "dropUser": 0,
+        "endSessions": 12,
+        "explain": 0,
+        "features": 0,
+        "filemd5": 0,
+        "find": 34,
+        "findAndModify": 0,
+        "flushRouterConfig": 0,
+        "forgetShardSplit": 0,
+        "fsync": 0,
+        "fsyncUnlock": 0,
+        "getClusterParameter": 0,
+        "getCmdLineOpts": 2,
+        "getDatabaseVersion": 0,
+        "getDefaultRWConcern": 0,
+        "getDiagnosticData": 0,
+        "getLastError": 0,
+        "getLog": 1,
+        "getMore": 95,
+        "getParameter": 15,
+        "getShardMap": 0,
+        "getShardVersion": 0,
+        "getnonce": 0,
+        "grantPrivilegesToRole": 0,
+        "grantRolesToRole": 0,
+        "grantRolesToUser": 0,
+        "hello": 36,
+        "hostInfo": 1,
+        "insert": 3,
+        "internalRenameIfOptionsAndIndexesMatch": 0,
+        "invalidateUserCache": 0,
+        "isMaster": 64,
+        "killAllSessions": 0,
+        "killAllSessionsByPattern": 0,
+        "killCursors": 0,
+        "killOp": 0,
+        "killSessions": 0,
+        "listCollections": 3,
+        "listCommands": 0,
+        "listDatabases": 2,
+        "listIndexes": 12,
+        "lockInfo": 0,
+        "logApplicationMessage": 0,
+        "logRotate": 0,
+        "logout": 0,
+        "mapReduce": 0,
+        "mergeChunks": 0,
+        "ping": 4,
+        "planCacheClear": 0,
+        "planCacheClearFilters": 0,
+        "planCacheListFilters": 0,
+        "planCacheSetFilter": 0,
+        "prepareTransaction": 0,
+        "profile": 0,
+        "reIndex": 0,
+        "recipientForgetMigration": 0,
+        "recipientSyncData": 0,
+        "recipientVoteImportedFiles": 0,
+        "refreshSessions": 0,
+        "renameCollection": 0,
+        "replSetAbortPrimaryCatchUp": 0,
+        "replSetFreeze": 0,
+        "replSetGetConfig": 4,
+        "replSetGetRBID": 2,
+        "replSetGetStatus": 9,
+        "replSetHeartbeat": 309,
+        "replSetInitiate": 1,
+        "replSetMaintenance": 0,
+        "replSetReconfig": 2,
+        "replSetRequestVotes": 0,
+        "replSetResizeOplog": 0,
+        "replSetStepDown": 0,
+        "replSetStepDownWithForce": 0,
+        "replSetStepUp": 0,
+        "replSetSyncFrom": 0,
+        "replSetUpdatePosition": 179,
+        "revokePrivilegesFromRole": 0,
+        "revokeRolesFromRole": 0,
+        "revokeRolesFromUser": 0,
+        "rolesInfo": 1,
+        "rotateCertificates": 0,
+        "saslContinue": 60,
+        "saslStart": 8,
+        "serverStatus": 2,
+        "setClusterParameter": 0,
+        "setDefaultRWConcern": 0,
+        "setFeatureCompatibilityVersion": 1,
+        "setIndexCommitQuorum": 0,
+        "setParameter": 0,
+        "setProfilingFilterGlobally": 0,
+        "setShardVersion": 0,
+        "setUserWriteBlockMode": 0,
+        "shardingState": 0,
+        "shutdown": 0,
+        "splitChunk": 0,
+        "splitVector": 0,
+        "startRecordingTraffic": 0,
+        "startSession": 0,
+        "stopRecordingTraffic": 0,
+        "top": 0,
+        "update": 4,
+        "updateRole": 0,
+        "updateUser": 0,
+        "usersInfo": 1,
+        "validate": 0,
+        "validateDBMetadata": 0,
+        "voteCommitIndexBuild": 0,
+        "waitForFailPoint": 0,
+        "whatsmyuri": 0
+      },
+      "uptimeSeconds": 274,
+      "startupWarnings": [
+        "{\"t\":{\"$date\":\"2026-11-06T23:43:25.901+00:00\"},\"s\":\"W\",  \"c\":\"CONTROL\",  \"id\":22204,   \"ctx\":\"initandlisten\",\"msg\":\"Failed to read /sys/kernel/mm/transparent_hugepage/defrag\",\"attr\":{\"error\":\"** WARNING: unrecognized transparent Huge Pages mode of operation in /sys/kernel/mm/transparent_hugepage/defrag: 'defer+madvise''\"},\"tags\":[\"startupWarnings\"]}"
+      ],
+      "hostInfo": {
+        "hostname": "node0",
+        "cpuArch": "x86_64",
+        "numCores": 20,
+        "memSizeMB": 63979,
+        "osType": "Linux",
+        "osName": "Rocky Linux release 8.9 (Green Obsidian)",
+        "osVersion": "Kernel 6.12.115+deb13.1-amd64"
+      }
+    },
+    {
+      "host": "172.21.0.3:27017",
+      "role": "SECONDARY",
+      "replSet": "rs0",
+      "version": "6.0.29-23",
+      "gitVersion": "cb2a6234a5f801eeae2bc735844c8c3bd9b1ba14",
+      "flavor": "psmdb",
+      "psmdbVersion": "6.0.29-23",
+      "storageEngine": "wiredTiger",
+      "fcv": "5.0",
+      "argv": [
+        "/usr/bin/mongod",
+        "-f",
+        "/etc/mongod.conf"
+      ],
+      "options": {
+        "net.bindIp": "0.0.0.0",
+        "net.port": 27017,
+        "processManagement.fork": true,
+        "processManagement.pidFilePath": "/var/run/mongod.pid",
+        "replication.replSetName": "rs0",
+        "security.authorization": "enabled",
+        "security.keyFile": "/etc/rs0-keyfile",
+        "storage.dbPath": "/var/lib/mongo",
+        "storage.engine": "wiredTiger",
+        "storage.journal.enabled": true,
+        "storage.wiredTiger.engineConfig.cacheSizeGB": 1.0,
+        "systemLog.destination": "file",
+        "systemLog.logAppend": true,
+        "systemLog.path": "/var/log/mongo/mongod.log"
+      },
+      "startupParameters": {
+        "internalQueryForceClassicEngine": "true"
+      },
+      "configFile": "/etc/mongod.conf",
+      "parameters": {
+        "KeysRotationIntervalSec": 7776000,
+        "ShardingTaskExecutorPoolHostTimeoutMS": 300000,
+        "ShardingTaskExecutorPoolMaxConnecting": 2,
+        "ShardingTaskExecutorPoolMaxSize": 32767,
+        "ShardingTaskExecutorPoolMaxSizeForConfigServers": -1,
+        "ShardingTaskExecutorPoolMinSize": 1,
+        "ShardingTaskExecutorPoolMinSizeForConfigServers": -1,
+        "ShardingTaskExecutorPoolRefreshRequirementMS": 60000,
+        "ShardingTaskExecutorPoolRefreshTimeoutMS": 20000,
+        "ShardingTaskExecutorPoolReplicaSetMatching": "automatic",
+        "TransactionRecordMinimumLifetimeMinutes": 30,
+        "aggregateOperationResourceConsumptionMetrics": false,
+        "allowDiskUseByDefault": true,
+        "allowDocumentsGreaterThanMaxUserSize": false,
+        "allowMultipleArbiters": false,
+        "allowRolesFromX509Certificates": true,
+        "auditAuthorizationSuccess": false,
+        "authSchemaVersion": 5,
+        "authenticationMechanisms": [
+          "MONGODB-X509",
+          "SCRAM-SHA-1",
+          "SCRAM-SHA-256"
+        ],
+        "authorizationManagerCacheSize": 100,
+        "authorizationManagerPinnedUsers": [],
+        "authorizationManagerPinnedUsersRefreshIntervalMillis": 1000,
+        "awsEC2InstanceMetadataUrl": "http://169.254.169.254",
+        "awsECSInstanceMetadataUrl": "http://169.254.170.2",
+        "awsStsHost": "",
+        "backtraceLogFile": "",
+        "balancerChunksSelectionTimeoutMs": 5000,
+        "balancerMigrationsThrottlingMs": 1000,
+        "batchedDeletesTargetBatchDocs": 10,
+        "batchedDeletesTargetBatchTimeMS": 5,
+        "batchedDeletesTargetStagedDocBytes": 31457280,
+        "batchedExpiredChangeStreamPreImageRemoval": true,
+        "bgSyncOplogFetcherBatchSize": 13981010,
+        "bsonTestValidationVersion": 2,
+        "changeSyncSourceThresholdMillis": 5,
+        "chunkDefragmentationThrottlingMS": 1000,
+        "chunkMigrationConcurrency": 1,
+        "chunkMigrationFetcherMaxBufferedSizeBytesPerThread": 67174400,
+        "clientCursorMonitorFrequencySecs": 4,
+        "clusterAuthMode": "keyFile",
+        "clusterIpSourceAllowlist": null,
+        "collectionBulkLoaderBatchSizeInBytes": 262144,
+        "collectionClonerBatchSize": 0,
+        "collectionClonerUsesExhaust": true,
+        "connPoolMaxConnsPerHost": 200,
+        "connPoolMaxInUseConnsPerHost": 2147483647,
+        "connectTimeoutMs": 10000,
+        "coordinateCommitReturnImmediatelyAfterPersistingDecision": false,
+        "createRollbackDataFiles": true,
+        "cursorTimeoutMillis": 600000,
+        "dbCheckCollectionTryLockMaxAttempts": 5,
+        "dbCheckCollectionTryLockMaxBackoffMillis": 60000,
+        "dbCheckCollectionTryLockMinBackoffMillis": 10,
+        "dbCheckCollectionTryLockTimeoutMillis": 10,
+        "dbCheckHealthLogEveryNBatches": 25,
+        "deprecatedWireOpsWarningPeriodInSeconds": 3600,
+        "diagnosticDataCollectionDirectoryPath": "/var/lib/mongo/diagnostic.data",
+        "diagnosticDataCollectionDirectorySizeMB": 200,
+        "diagnosticDataCollectionEnableLatencyHistograms": false,
+        "diagnosticDataCollectionEnabled": true,
+        "diagnosticDataCollectionFileSizeMB": 10,
+        "diagnosticDataCollectionPeriodMillis": 1000,
+        "diagnosticDataCollectionSamplesPerChunk": 300,
+        "diagnosticDataCollectionSamplesPerInterimUpdate": 10,
+        "diagnosticDataCollectionStatsNamespaces": [],
+        "diagnosticDataCollectionVerboseTCMalloc": false,
+        "disableJavaScriptJIT": true,
+        "disableLogicalSessionCacheRefresh": false,
+        "disableNonSSLConnectionLogging": false,
+        "disableNonTLSConnectionLogging": false,
+        "disableResumableRangeDeleter": false,
+        "disableSplitHorizonIPCheck": false,
+        "disabledSecureAllocatorDomains": [],
+        "documentUnitSizeBytes": 128,
+        "enableDefaultWriteConcernUpdatesForInitiate": false,
+        "enableElectionHandoff": true,
+        "enableFinerGrainedCatalogCacheRefresh": false,
+        "enableFlowControl": true,
+        "enableLocalhostAuthBypass": true,
+        "enableOverrideClusterChainingSetting": false,
+        "enableSearchMeta": true,
+        "enableShardedIndexConsistencyCheck": true,
+        "enableTemporarilyUnavailableExceptions": false,
+        "enableTestCommands": false,
+        "enableTimeoutOfInactiveSessionCursors": false,
+        "enforceUserClusterSeparation": true,
+        "expiredChangeStreamPreImageRemovalJobSleepSecs": 10,
+        "fassertOnLockTimeoutForStepUpDown": 30,
+        "featureCompatibilityVersion": {
+          "version": "5.0"
+        },
+        "featureFlagAlwaysCreateConfigTransactionsPartialIndexOnStepUp": {
+          "value": false
+        },
+        "featureFlagBalanceAccordingToDataSize": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagBatchMultiDeletes": {
+          "value": false
+        },
+        "featureFlagBlender": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagBucketUnpackWithSort": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagChangeStreamPreAndPostImages": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagChangeStreamsFurtherEnrichedEvents": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagChangeStreamsRewrite": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagChangeStreamsVisibility": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagClusterWideConfig": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagClusterWideConfigM2": {
+          "value": false
+        },
+        "featureFlagClusteredIndexes": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagCollModIndexUnique": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagColumnstoreIndexes": {
+          "value": false
+        },
+        "featureFlagCommandsAcceptCollectionUUID": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagCommonQueryFramework": {
+          "value": false
+        },
+        "featureFlagConcurrencyInChunkMigration": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagConnHealthMetrics": {
+          "value": false
+        },
+        "featureFlagDerivedMetadata": {
+          "value": false
+        },
+        "featureFlagDocumentSourceListCatalog": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagEnableExecutionControl": {
+          "value": false
+        },
+        "featureFlagEnableShardingOptional": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagExactTopNAccumulator": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagFLE2": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagFileCopyBasedInitialSync": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagFill": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagFryer": {
+          "value": false
+        },
+        "featureFlagHealthMonitoring": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagInternalTransactions": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagLastPointQuery": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagLoadBalancer": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagLocf": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagMigrationRecipientCriticalSection": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagMongoStore": {
+          "value": false
+        },
+        "featureFlagNewPersistedChunkVersionFormat": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagNewWriteErrorExceptionFormat": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagNoChangeStreamEventsDueToOrphans": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagNoMoreAutoSplitter": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagOptionalCfgSvr": {
+          "value": false
+        },
+        "featureFlagOrphanTracking": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagPerCollBalancingSettings": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagQueryStats": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagRecoverableRefineCollectionShardKeyCoordinator": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagRecoverableShardsvrReshardCollectionCoordinator": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagRequireTenantID": {
+          "value": false
+        },
+        "featureFlagResharding": {
+          "value": true,
+          "version": "5.0"
+        },
+        "featureFlagRetryableFindAndModify": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagSBEGroupPushdown": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagSBELookupPushdown": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagSbeFull": {
+          "value": false
+        },
+        "featureFlagSbePlanCache": {
+          "value": false
+        },
+        "featureFlagSearchBatchSizeLimit": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagSearchMeta": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagSearchShardedFacets": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagSelectiveBackup": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagShardKeyIndexOptionalHashedSharding": {
+          "value": true,
+          "version": "5.0"
+        },
+        "featureFlagShardMerge": {
+          "value": false
+        },
+        "featureFlagShardSplit": {
+          "value": false
+        },
+        "featureFlagShardedLookup": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagShardedSearchCustomSort": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagShardedTimeSeries": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagShardedTimeSeriesUpdateDelete": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagShardingDataTransformMetrics": {
+          "value": false
+        },
+        "featureFlagSortArray": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagSpoon": {
+          "value": true,
+          "version": "5.0"
+        },
+        "featureFlagTimeseriesBucketCompression": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagTimeseriesBucketCompressionWithArrays": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagTimeseriesMetricIndexes": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagTimeseriesUpdatesAndDeletes": {
+          "value": true,
+          "version": "5.0"
+        },
+        "featureFlagToaster": {
+          "value": false
+        },
+        "featureFlagUpdateDocumentShardKeyUsingTransactionApi": {
+          "value": false
+        },
+        "featureFlagUserWriteBlocking": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagVectorSearchPublicPreview": {
+          "value": true,
+          "version": "6.0"
+        },
+        "fileBasedInitialSyncExtendCursorTimeoutMS": 180000,
+        "fileBasedInitialSyncMaxCyclesWithoutProgress": 3,
+        "fileBasedInitialSyncMaxLagSec": 300,
+        "findChunksOnConfigTimeoutMS": 900000,
+        "fixedServiceExecutorRecursionLimit": 8,
+        "fixedServiceExecutorThreadLimit": 1000,
+        "flowControlDecayConstant": 0.5,
+        "flowControlFudgeFactor": 0.95,
+        "flowControlMaxSamples": 1000000,
+        "flowControlMinTicketsPerSecond": 100,
+        "flowControlSamplePeriod": 1000,
+        "flowControlTargetLagSeconds": 10,
+        "flowControlThresholdLagPercentage": 0.5,
+        "flowControlTicketAdderConstant": 1000,
+        "flowControlTicketMultiplierConstant": 1.05,
+        "flowControlWarnThresholdSeconds": 10,
+        "forceRollbackViaRefetch": false,
+        "globalConnPoolIdleTimeoutMinutes": 2147483647,
+        "heapProfilingEnabled": false,
+        "heapProfilingSampleIntervalBytes": 262144,
+        "heartBeatFrequencyMs": 10000,
+        "honorSystemUmask": false,
+        "httpVerboseLogging": false,
+        "indexEntryUnitSizeBytes": 16,
+        "indexMaxNumGeneratedKeysPerDocument": 100000,
+        "initialServiceExecutorThreadingModel": "dedicated",
+        "initialSyncMethod": "logical",
+        "initialSyncOplogBuffer": "collection",
+        "initialSyncOplogBufferPeekCacheSize": 10000,
+        "initialSyncOplogFetcherBatchSize": 13981010,
+        "initialSyncSourceReadPreference": "",
+        "initialSyncTransientErrorRetryPeriodSeconds": 86400,
+        "internalBatchUserMultiDeletesForTest": false,
+        "internalCascadesOptimizerDisableBranchAndBound": false,
+        "internalCascadesOptimizerDisableGroupByAndUnionRIDIntersect": false,
+        "internalCascadesOptimizerDisableHashJoinRIDIntersect": false,
+        "internalCascadesOptimizerDisableIndexes": false,
+        "internalCascadesOptimizerDisableMergeJoinRIDIntersect": false,
+        "internalCascadesOptimizerDisableScan": false,
+        "internalCascadesOptimizerKeepRejectedPlans": false,
+        "internalDocumentSourceCursorBatchSizeBytes": 4194304,
+        "internalDocumentSourceDensifyMaxMemoryBytes": 104857600,
+        "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+        "internalDocumentSourceLookupCacheSizeBytes": 104857600,
+        "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+        "internalGeoNearQuery2DMaxCoveringCells": 16,
+        "internalGeoPredicateQuery2DMaxCoveringCells": 16,
+        "internalIndexBuildBulkLoadYieldIterations": 1000,
+        "internalInsertMaxBatchSize": 64,
+        "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+        "internalPartialFilterExpressionMaxDepth": 4,
+        "internalPipelineLengthLimit": 1000,
+        "internalProhibitShardOperationRetry": false,
+        "internalQueryAggMulticastMaxConcurrency": 100,
+        "internalQueryAggMulticastTimeoutMS": 60000,
+        "internalQueryAlwaysMergeOnPrimaryShard": false,
+        "internalQueryAppendIdToSetWindowFieldsSort": false,
+        "internalQueryCacheDisableInactiveEntries": false,
+        "internalQueryCacheEvictionRatio": 10.0,
+        "internalQueryCacheMaxEntriesPerCollection": 5000,
+        "internalQueryCacheMaxSizeBytesBeforeStripDebugInfo": 536870912,
+        "internalQueryCacheSize": 5000,
+        "internalQueryCacheWorksGrowthCoefficient": 2.0,
+        "internalQueryCollectionMaxDataSizeBytesToChooseHashJoin": 104857600,
+        "internalQueryCollectionMaxNoOfDocumentsToChooseHashJoin": 10000,
+        "internalQueryCollectionMaxStorageSizeBytesToChooseHashJoin": 104857600,
+        "internalQueryDesugarWhereToFunction": false,
+        "internalQueryDisableExchange": false,
+        "internalQueryDisableLookupExecutionUsingHashJoin": false,
+        "internalQueryDocumentSourceWriterBatchExtraReservedBytes": 0,
+        "internalQueryEnableCSTParser": false,
+        "internalQueryEnableCascadesOptimizer": false,
+        "internalQueryEnableLoggingV2OplogEntries": true,
+        "internalQueryEnableSamplingCardinalityEstimator": true,
+        "internalQueryEnumerationMaxIntersectPerAnd": 3,
+        "internalQueryEnumerationMaxOrSolutions": 10,
+        "internalQueryEnumerationPreferLockstepOrEnumeration": false,
+        "internalQueryExecYieldIterations": 1000,
+        "internalQueryExecYieldPeriodMS": 10,
+        "internalQueryExplainSizeThresholdBytes": 10485760,
+        "internalQueryFLEAlwaysUseHighCardinalityMode": false,
+        "internalQueryFLERewriteMemoryLimit": 14680064,
+        "internalQueryFacetBufferSizeBytes": 104857600,
+        "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+        "internalQueryForceClassicEngine": true,
+        "internalQueryForceIntersectionPlans": false,
+        "internalQueryGlobalProfilingFilter": false,
+        "internalQueryIgnoreUnknownJSONSchemaKeywords": false,
+        "internalQueryJavaScriptFnTimeoutMillis": 60000,
+        "internalQueryJavaScriptHeapSizeLimitMB": 100,
+        "internalQueryMaxAddToSetBytes": 104857600,
+        "internalQueryMaxAllowedDensifyDocs": 500000,
+        "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+        "internalQueryMaxDocValidationErrorConsideredValues": 10,
+        "internalQueryMaxJsEmitBytes": 104857600,
+        "internalQueryMaxNumberOfFieldsToChooseFilteredColumnScan": 12,
+        "internalQueryMaxNumberOfFieldsToChooseUnfilteredColumnScan": 5,
+        "internalQueryMaxPushBytes": 104857600,
+        "internalQueryMaxRangeBytes": 104857600,
+        "internalQueryMaxScansToExplode": 200,
+        "internalQueryPlanEvaluationCollFraction": 0.3,
+        "internalQueryPlanEvaluationCollFractionSbe": 0.0,
+        "internalQueryPlanEvaluationMaxResults": 101,
+        "internalQueryPlanEvaluationWorks": 10000,
+        "internalQueryPlanEvaluationWorksSbe": 10000,
+        "internalQueryPlanOrChildrenIndependently": true,
+        "internalQueryPlanTieBreakingWithIndexHeuristics": true,
+        "internalQueryPlannerEnableHashIntersection": false,
+        "internalQueryPlannerEnableIndexIntersection": true,
+        "internalQueryPlannerGenerateCoveredWholeIndexScans": false,
+        "internalQueryPlannerMaxIndexedSolutions": 64,
+        "internalQueryProhibitBlockingMergeOnMongoS": false,
+        "internalQueryProhibitMergingOnMongoS": false,
+        "internalQueryS2GeoCoarsestLevel": 0,
+        "internalQueryS2GeoFinestLevel": 23,
+        "internalQueryS2GeoMaxCells": 20,
+        "internalQuerySlotBasedExecutionDisableGroupPushdown": false,
+        "internalQuerySlotBasedExecutionDisableLookupPushdown": false,
+        "internalQuerySlotBasedExecutionHashAggApproxMemoryUseInBytesBeforeSpill": 104857600,
+        "internalQuerySlotBasedExecutionHashAggForceIncreasedSpilling": false,
+        "internalQuerySlotBasedExecutionHashAggMemoryCheckPerAdvanceAtLeast": 1024,
+        "internalQuerySlotBasedExecutionHashAggMemoryCheckPerAdvanceAtMost": 2,
+        "internalQuerySlotBasedExecutionHashAggMemoryUseCheckMargin": 0.7,
+        "internalQuerySlotBasedExecutionHashLookupApproxMemoryUseInBytesBeforeSpill": 104857600,
+        "internalQuerySlotBasedExecutionMaxStaticIndexScanIntervals": 1000,
+        "internalQuerySpillingMaxWaitTimeout": 1000,
+        "internalQueryStatsCacheSize": "1%",
+        "internalQueryStatsErrorsAreCommandFatal": false,
+        "internalQueryStatsRateLimit": 0,
+        "internalQueryTopNAccumulatorBytes": 104857600,
+        "internalSessionsReapThreshold": 1000,
+        "internalValidateFeaturesAsMaster": true,
+        "internalValidateFeaturesAsPrimary": true,
+        "javascriptProtection": false,
+        "joinIngressSessionsOnShutdown": false,
+        "journalCommitInterval": 100,
+        "jsHeapLimitMB": 1100,
+        "ldapAuthzQueryTemplate": "",
+        "ldapConnectionPoolSizePerHost": 2,
+        "ldapDebug": false,
+        "ldapFollowReferrals": false,
+        "ldapQueryPassword": "###",
+        "ldapQueryUser": "",
+        "ldapServers": "",
+        "ldapTimeoutMS": 10000,
+        "ldapUseConnectionPool": false,
+        "ldapUserCacheInvalidationInterval": 30,
+        "ldapUserToDNMapping": "[{match: \"(.+)\", substitution: \"{0}\"}]",
+        "loadBalancerPort": 0,
+        "loadRoutingTableOnStartup": true,
+        "localLogicalSessionTimeoutMinutes": 30,
+        "localThresholdMs": 15,
+        "lockCodeSegmentsInMemory": false,
+        "logComponentVerbosity": {
+          "verbosity": 0,
+          "accessControl": {
+            "verbosity": -1
+          },
+          "assert": {
+            "verbosity": -1
+          },
+          "command": {
+            "verbosity": -1
+          },
+          "control": {
+            "verbosity": -1
+          },
+          "executor": {
+            "verbosity": -1
+          },
+          "geo": {
+            "verbosity": -1
+          },
+          "index": {
+            "verbosity": -1
+          },
+          "network": {
+            "verbosity": -1,
+            "asio": {
+              "verbosity": -1
+            },
+            "bridge": {
+              "verbosity": -1
+            },
+            "connectionPool": {
+              "verbosity": -1
+            }
+          },
+          "processHealth": {
+            "verbosity": -1
+          },
+          "query": {
+            "verbosity": -1
+          },
+          "queryStats": {
+            "verbosity": -1
+          },
+          "replication": {
+            "verbosity": -1,
+            "election": {
+              "verbosity": -1
+            },
+            "heartbeats": {
+              "verbosity": -1
+            },
+            "initialSync": {
+              "verbosity": -1
+            },
+            "rollback": {
+              "verbosity": -1
+            }
+          },
+          "sharding": {
+            "verbosity": -1,
+            "rangeDeleter": {
+              "verbosity": -1
+            },
+            "shardingCatalogRefresh": {
+              "verbosity": -1
+            },
+            "migration": {
+              "verbosity": -1
+            },
+            "reshard": {
+              "verbosity": -1
+            },
+            "migrationPerf": {
+              "verbosity": -1
+            }
+          },
+          "storage": {
+            "verbosity": -1,
+            "recovery": {
+              "verbosity": -1
+            },
+            "journal": {
+              "verbosity": -1
+            },
+            "wt": {
+              "verbosity": -1,
+              "wtBackup": {
+                "verbosity": -1
+              },
+              "wtCheckpoint": {
+                "verbosity": -1
+              },
+              "wtCompact": {
+                "verbosity": -1
+              },
+              "wtEviction": {
+                "verbosity": -1
+              },
+              "wtHS": {
+                "verbosity": -1
+              },
+              "wtRecovery": {
+                "verbosity": -1
+              },
+              "wtRTS": {
+                "verbosity": -1
+              },
+              "wtSalvage": {
+                "verbosity": -1
+              },
+              "wtTiered": {
+                "verbosity": -1
+              },
+              "wtTimestamp": {
+                "verbosity": -1
+              },
+              "wtTransaction": {
+                "verbosity": -1
+              },
+              "wtVerify": {
+                "verbosity": -1
+              },
+              "wtWriteLog": {
+                "verbosity": -1
+              }
+            }
+          },
+          "write": {
+            "verbosity": -1
+          },
+          "ftdc": {
+            "verbosity": -1
+          },
+          "tracking": {
+            "verbosity": -1
+          },
+          "transaction": {
+            "verbosity": -1
+          },
+          "tenantMigration": {
+            "verbosity": -1
+          },
+          "test": {
+            "verbosity": -1
+          }
+        },
+        "logLevel": 0,
+        "logicalSessionRefreshMillis": 300000,
+        "maintainValidCursorsAcrossSBEYieldandReadCommands": false,
+        "maxAcceptableLogicalClockDriftSecs": 31536000,
+        "maxBSONDepth": 200,
+        "maxCatchUpPercentageBeforeBlockingWrites": 10,
+        "maxIndexBuildDrainBatchSize": 1000,
+        "maxIndexBuildDrainMemoryUsageMegabytes": 16,
+        "maxIndexBuildMemoryUsageMegabytes": 200,
+        "maxIteratorsMemoryUsagePercentage": 0.1,
+        "maxLogSizeKB": 10,
+        "maxNumActiveUserIndexBuilds": 3,
+        "maxNumSyncSourceChangesPerHour": 3,
+        "maxNumberOfTransactionOperationsInSingleOplogEntry": 2147483647,
+        "maxOplogTruncationPointsAfterStartup": 100,
+        "maxOplogTruncationPointsDuringStartup": 100,
+        "maxSessions": 1000000,
+        "maxSyncSourceLagSecs": 30,
+        "maxTenantMigrationDonorServiceThreadPoolSize": 8,
+        "maxTenantMigrationRecipientThreadPoolSize": 128,
+        "maxTimeMSForHedgedReads": 150,
+        "maxTransactionLockRequestTimeoutMillis": 5,
+        "maxValidateMBperSec": 0,
+        "maxValidateMemoryUsageMB": 200,
+        "metadataRefreshInTransactionMaxWaitBehindCritSecMS": 500,
+        "migrateCloneInsertionBatchDelayMS": 0,
+        "migrateCloneInsertionBatchSize": 0,
+        "migrationLockAcquisitionMaxWaitMS": 500,
+        "minNumChunksForSessionsCollection": 1024,
+        "minOplogEntriesPerThread": 16,
+        "minOplogTruncationPoints": 10,
+        "minSnapshotHistoryWindowInSeconds": 300,
+        "mirrorReads": {
+          "samplingRate": 0.01,
+          "maxTimeMS": 1000
+        },
+        "mongosShutdownTimeoutMillisForSignaledShutdown": 15000,
+        "mrEnableSingleReduceOptimization": false,
+        "multitenancySupport": false,
+        "newShardExistingClusterTimeKeysExpirationSecs": 604800,
+        "notablescan": false,
+        "numInitialSyncAttempts": 10,
+        "numInitialSyncConnectAttempts": 10,
+        "numInitialSyncOplogFindAttempts": 3,
+        "ocspCacheSize": 300,
+        "ocspEnabled": true,
+        "ocspStaplingRefreshPeriodSecs": -1,
+        "ocspValidationRefreshPeriodSecs": -1,
+        "opensslCipherConfig": "HIGH:!EXPORT:!aNULL@STRENGTH",
+        "opensslCipherSuiteConfig": "",
+        "opensslDiffieHellmanParameters": "",
+        "operationMemoryPoolBlockInitialSizeKB": 1,
+        "operationMemoryPoolBlockMaxSizeKB": 2048,
+        "oplogApplicationEnforcesSteadyStateConstraints": false,
+        "oplogBatchDelayMillis": 0,
+        "oplogFetcherInitialSyncMaxFetcherRestarts": 10,
+        "oplogFetcherSteadyStateMaxFetcherRestarts": 1,
+        "oplogFetcherUsesExhaust": true,
+        "oplogInitialFindMaxSeconds": 60,
+        "oplogNetworkTimeoutBufferSeconds": 5,
+        "oplogRetriedFindMaxSeconds": 2,
+        "oplogSamplingLogIntervalSeconds": 10,
+        "oplogTruncationCheckPeriodSeconds": 300,
+        "oplogTruncationPointSizeMB": 0,
+        "opportunisticSecondaryTargeting": false,
+        "orphanCleanupDelaySecs": 900,
+        "perconaTelemetry": true,
+        "perconaTelemetryGracePeriod": 86400,
+        "perconaTelemetryHistoryKeepInterval": 604800,
+        "perconaTelemetryPath": "/usr/local/percona/telemetry/psmdb",
+        "perconaTelemetryScrapeInterval": 86400,
+        "periodicNoopIntervalSecs": 10,
+        "persistedChunkCacheUpdateMaxBatchSize": 1000,
+        "planCacheSize": "5%",
+        "priorityTakeoverFreshnessWindowSeconds": 2,
+        "processUmask": 63,
+        "profileOperationResourceConsumptionMetrics": false,
+        "profilingRateLimit": 1,
+        "quiet": false,
+        "rangeDeleterBatchDelayMS": 20,
+        "rangeDeleterBatchSize": 2147483647,
+        "readHedgingMode": "on",
+        "receiveChunkWaitForRangeDeleterTimeoutMS": 10000,
+        "recoverFromOplogAsStandalone": false,
+        "recoverToOplogTimestamp": "",
+        "redactClientLogData": false,
+        "remainingReshardingOperationTimeThresholdMillis": 2000,
+        "replBatchLimitBytes": 104857600,
+        "replBatchLimitOperations": 5000,
+        "replElectionTimeoutOffsetLimitFraction": 0.15,
+        "replWriterMinThreadCount": 0,
+        "replWriterThreadCount": 16,
+        "replicaSetMonitorProtocol": "streamable",
+        "reportOpWriteConcernCountersInServerStatus": false,
+        "reservedServiceExecutorRecursionLimit": 8,
+        "reshardingCollectionClonerBatchSizeInBytes": 102400,
+        "reshardingCoordinatorServiceMaxThreadCount": 3,
+        "reshardingCriticalSectionTimeoutMillis": 5000,
+        "reshardingDelayBeforeRemainingOperationTimeQueryMillis": 0,
+        "reshardingDonorServiceMaxThreadCount": 2,
+        "reshardingMinimumOperationDurationMillis": 300000,
+        "reshardingOplogApplierMaxLockRequestTimeoutMillis": 5,
+        "reshardingOplogBatchLimitBytes": 104857600,
+        "reshardingOplogBatchLimitOperations": 5000,
+        "reshardingOplogBatchTaskCount": 4,
+        "reshardingRecipientServiceMaxThreadCount": 8,
+        "reshardingTxnClonerProgressBatchSize": 1000,
+        "resumableIndexBuildMajorityOpTimeTimeoutMillis": 10000,
+        "rewriteStateChangeErrors": true,
+        "rollbackRemoteOplogQueryBatchSize": 2000,
+        "rollbackTimeLimitSecs": 86400,
+        "roundtripBsonColumnOnValidate": false,
+        "routingTableCacheChunkBucketSize": 500,
+        "saslHostName": "node1",
+        "saslServiceName": "mongodb",
+        "saslauthdPath": "",
+        "scramIterationCount": 10000,
+        "scramSHA256IterationCount": 15000,
+        "scriptingEngineInterruptIntervalMS": 1000,
+        "sessionMaxBatchSize": 1000,
+        "sessionWriteConcernTimeoutSystemMillis": 60000,
+        "shardSplitGarbageCollectionDelayMS": 900000,
+        "shardSplitTimeoutMS": 3600000,
+        "shardedIndexConsistencyCheckIntervalMS": 600000,
+        "shutdownTimeoutMillisForSignaledShutdown": 15000,
+        "skipApplyingDbCheckBatchOnSecondary": false,
+        "skipCorruptDocumentsWhenCloning": false,
+        "skipDroppingHashedShardKeyIndex": false,
+        "skipShardingConfigurationChecks": false,
+        "skipShellCursorFinalize": false,
+        "sslMode": "disabled",
+        "sslWithholdClientCertificate": false,
+        "startupAuthSchemaValidation": true,
+        "startupRecoveryForRestore": false,
+        "storageEngineConcurrentReadTransactions": 0,
+        "storageEngineConcurrentWriteTransactions": 0,
+        "storageEngineQueueingPolicy": "fifoQueue",
+        "storageGlobalParams.directoryperdb": false,
+        "storeFindAndModifyImagesInSideCollection": true,
+        "suppressNetworkInterfaceTransportLayerExceptions": {
+          "value": false
+        },
+        "suppressNoTLSPeerCertificateWarning": false,
+        "syncdelay": 60.0,
+        "synchronousServiceExecutorRecursionLimit": 8,
+        "takeUnstableCheckpointOnShutdown": false,
+        "taskExecutorPoolSize": 1,
+        "tcmallocAggressiveMemoryDecommit": 0,
+        "tcmallocMaxTotalThreadCacheBytes": 1073741824,
+        "tcmallocReleaseRate": 1.0,
+        "tcpFastOpenClient": true,
+        "tcpFastOpenQueueSize": 1024,
+        "tcpFastOpenServer": true,
+        "temporarilyUnavailableBackoffBaseMs": 1000,
+        "temporarilyUnavailableMaxRetries": 10,
+        "tenantApplierBatchSizeBytes": 16777216,
+        "tenantApplierBatchSizeOps": 500,
+        "tenantApplierThreadCount": 5,
+        "tenantMigrationBlockingStateTimeoutMS": 3600000,
+        "tenantMigrationDisableX509Auth": false,
+        "tenantMigrationExcludeDonorHostTimeoutMS": 60000,
+        "tenantMigrationExternalKeysRemovalBufferSecs": 86400,
+        "tenantMigrationGarbageCollectionDelayMS": 900000,
+        "tenantMigrationOplogBufferPeekCacheSize": 10000,
+        "tenantMigrationOplogFetcherBatchSize": 13981010,
+        "testingDiagnosticsEnabled": false,
+        "testingSnapshotBehaviorInIsolation": false,
+        "timeseriesBucketMaxCount": 1000,
+        "timeseriesBucketMaxSize": 128000,
+        "timeseriesIdleBucketExpiryMaxCountPerAttempt": 3,
+        "timeseriesIdleBucketExpiryMemoryUsageThreshold": 0,
+        "timeseriesInsertMaxRetriesOnDuplicates": 32,
+        "timeseriesValidateCompressedBuckets": true,
+        "tlsCATrusts": null,
+        "tlsMode": "disabled",
+        "tlsOCSPSlowResponderWarningSecs": 5,
+        "tlsOCSPStaplingTimeoutSecs": -1,
+        "tlsOCSPVerifyTimeoutSecs": 4,
+        "tlsUseSystemCA": false,
+        "tlsWithholdClientCertificate": false,
+        "tlsX509ExpirationWarningThresholdDays": 30,
+        "totalUnitWriteSizeBytes": 128,
+        "traceExceptions": false,
+        "traceWriteConflictExceptions": false,
+        "trafficRecordingDirectory": "",
+        "transactionLifetimeLimitSeconds": 60,
+        "transactionSizeLimitBytes": 9223372036854775807,
+        "transactionTooLargeForCacheThreshold": 0.75,
+        "ttlMonitorEnabled": true,
+        "ttlMonitorSleepSecs": 60,
+        "unsupportedSyncSource": "",
+        "upsertMaxRetryAttemptsOnDuplicateKeyError": 250,
+        "useReadOnceCursorsForIndexBuilds": true,
+        "waitForSecondaryBeforeNoopWriteMS": 10,
+        "warmMinConnectionsInShardingTaskExecutorPoolOnStartup": true,
+        "warmMinConnectionsInShardingTaskExecutorPoolOnStartupWaitMS": 2000,
+        "watchdogPeriodSeconds": -1,
+        "wiredTigerConcurrentReadTransactions": 0,
+        "wiredTigerConcurrentWriteTransactions": 0,
+        "wiredTigerCursorCacheSize": -100,
+        "wiredTigerDirectoryForIndexes": false,
+        "wiredTigerEngineRuntimeConfig": "",
+        "wiredTigerEvictionDirtyMaxGB": 0.0,
+        "wiredTigerEvictionDirtyTargetGB": 0.0,
+        "wiredTigerFileHandleCloseIdleTime": 600,
+        "wiredTigerFileHandleCloseMinimum": 2000,
+        "wiredTigerFileHandleCloseScanInterval": 10,
+        "wiredTigerMaxCacheOverflowSizeGB": 0.0,
+        "wiredTigerSessionCloseIdleTimeSecs": 300,
+        "wiredTigerSkipTableLoggingChecksOnStartup": false,
+        "wiredTigerStressConfig": false,
+        "writePeriodicNoops": true
+      },
+      "commandCounters": {
+        "_addShard": 0,
+        "_configsvrAbortReshardCollection": 0,
+        "_configsvrAddShard": 0,
+        "_configsvrAddShardToZone": 0,
+        "_configsvrBalancerCollectionStatus": 0,
+        "_configsvrBalancerStart": 0,
+        "_configsvrBalancerStatus": 0,
+        "_configsvrBalancerStop": 0,
+        "_configsvrCleanupReshardCollection": 0,
+        "_configsvrClearJumboFlag": 0,
+        "_configsvrCollMod": 0,
+        "_configsvrCommitChunkMigration": 0,
+        "_configsvrCommitChunkSplit": 0,
+        "_configsvrCommitChunksMerge": 0,
+        "_configsvrCommitMovePrimary": 0,
+        "_configsvrCommitReshardCollection": 0,
+        "_configsvrConfigureCollectionBalancing": 0,
+        "_configsvrCreateDatabase": 0,
+        "_configsvrEnsureChunkVersionIsGreaterThan": 0,
+        "_configsvrMoveChunk": 0,
+        "_configsvrMoveRange": 0,
+        "_configsvrRefineCollectionShardKey": 0,
+        "_configsvrRemoveChunks": 0,
+        "_configsvrRemoveShard": 0,
+        "_configsvrRemoveShardFromZone": 0,
+        "_configsvrRemoveTags": 0,
+        "_configsvrRenameCollectionMetadata": 0,
+        "_configsvrRepairShardedCollectionChunksHistory": 0,
+        "_configsvrReshardCollection": 0,
+        "_configsvrRunRestore": 0,
+        "_configsvrSetAllowMigrations": 0,
+        "_configsvrSetClusterParameter": 0,
+        "_configsvrSetUserWriteBlockMode": 0,
+        "_configsvrUpdateZoneKeyRange": 0,
+        "_flushDatabaseCacheUpdates": 0,
+        "_flushDatabaseCacheUpdatesWithWriteConcern": 0,
+        "_flushReshardingStateChange": 0,
+        "_flushRoutingTableCacheUpdates": 0,
+        "_flushRoutingTableCacheUpdatesWithWriteConcern": 0,
+        "_getNextSessionMods": 0,
+        "_getUserCacheGeneration": 0,
+        "_isSelf": 0,
+        "_killOperations": 0,
+        "_mergeAuthzCollections": 0,
+        "_migrateClone": 0,
+        "_recvChunkAbort": 0,
+        "_recvChunkCommit": 0,
+        "_recvChunkReleaseCritSec": 0,
+        "_recvChunkStart": 0,
+        "_recvChunkStatus": 0,
+        "_shardsvrAbortReshardCollection": 0,
+        "_shardsvrCleanupReshardCollection": 0,
+        "_shardsvrCloneCatalogData": 0,
+        "_shardsvrCollMod": 0,
+        "_shardsvrCollModParticipant": 0,
+        "_shardsvrCommitReshardCollection": 0,
+        "_shardsvrCompactStructuredEncryptionData": 0,
+        "_shardsvrCreateCollection": 0,
+        "_shardsvrCreateCollectionParticipant": 0,
+        "_shardsvrDropCollection": 0,
+        "_shardsvrDropCollectionIfUUIDNotMatching": 0,
+        "_shardsvrDropCollectionParticipant": 0,
+        "_shardsvrDropDatabase": 0,
+        "_shardsvrDropDatabaseParticipant": 0,
+        "_shardsvrDropIndexes": 0,
+        "_shardsvrGetStatsForBalancing": 0,
+        "_shardsvrJoinMigrations": 0,
+        "_shardsvrMovePrimary": 0,
+        "_shardsvrMoveRange": 0,
+        "_shardsvrParticipantBlock": 0,
+        "_shardsvrRefineCollectionShardKey": 0,
+        "_shardsvrRenameCollection": 0,
+        "_shardsvrRenameCollectionParticipant": 0,
+        "_shardsvrRenameCollectionParticipantUnblock": 0,
+        "_shardsvrReshardCollection": 0,
+        "_shardsvrReshardingOperationTime": 0,
+        "_shardsvrSetAllowMigrations": 0,
+        "_shardsvrSetClusterParameter": 0,
+        "_shardsvrSetUserWriteBlockMode": 0,
+        "_transferMods": 0,
+        "abortShardSplit": 0,
+        "abortTransaction": 0,
+        "aggregate": 0,
+        "appendOplogNote": 0,
+        "applyOps": 0,
+        "authenticate": 0,
+        "autoSplitVector": 0,
+        "availableQueryOptions": 0,
+        "buildInfo": 1,
+        "checkShardingIndex": 0,
+        "cleanupOrphaned": 0,
+        "cloneCollectionAsCapped": 0,
+        "clusterAbortTransaction": 0,
+        "clusterAggregate": 0,
+        "clusterCommitTransaction": 0,
+        "clusterDelete": 0,
+        "clusterFind": 0,
+        "clusterGetMore": 0,
+        "clusterInsert": 0,
+        "clusterUpdate": 0,
+        "collMod": 0,
+        "collStats": 0,
+        "commitShardSplit": 0,
+        "commitTransaction": 0,
+        "compact": 0,
+        "compactStructuredEncryptionData": 0,
+        "connPoolStats": 0,
+        "connPoolSync": 0,
+        "connectionStatus": 0,
+        "convertToCapped": 0,
+        "coordinateCommitTransaction": 0,
+        "count": 0,
+        "create": 0,
+        "createBackup": 0,
+        "createIndexes": 0,
+        "createRole": 0,
+        "createUser": 0,
+        "currentOp": 0,
+        "dataSize": 0,
+        "dbCheck": 0,
+        "dbHash": 0,
+        "dbStats": 0,
+        "delete": 0,
+        "distinct": 0,
+        "donorAbortMigration": 0,
+        "donorForgetMigration": 0,
+        "donorStartMigration": 0,
+        "driverOIDTest": 0,
+        "drop": 0,
+        "dropAllRolesFromDatabase": 0,
+        "dropAllUsersFromDatabase": 0,
+        "dropConnections": 0,
+        "dropDatabase": 0,
+        "dropIndexes": 0,
+        "dropRole": 0,
+        "dropUser": 0,
+        "endSessions": 0,
+        "explain": 0,
+        "features": 0,
+        "filemd5": 0,
+        "find": 10,
+        "findAndModify": 0,
+        "flushRouterConfig": 0,
+        "forgetShardSplit": 0,
+        "fsync": 0,
+        "fsyncUnlock": 0,
+        "getClusterParameter": 0,
+        "getCmdLineOpts": 1,
+        "getDatabaseVersion": 0,
+        "getDefaultRWConcern": 0,
+        "getDiagnosticData": 0,
+        "getLastError": 0,
+        "getLog": 0,
+        "getMore": 0,
+        "getParameter": 1,
+        "getShardMap": 0,
+        "getShardVersion": 0,
+        "getnonce": 0,
+        "grantPrivilegesToRole": 0,
+        "grantRolesToRole": 0,
+        "grantRolesToUser": 0,
+        "hello": 15,
+        "hostInfo": 0,
+        "insert": 0,
+        "internalRenameIfOptionsAndIndexesMatch": 0,
+        "invalidateUserCache": 0,
+        "isMaster": 7,
+        "killAllSessions": 0,
+        "killAllSessionsByPattern": 0,
+        "killCursors": 0,
+        "killOp": 0,
+        "killSessions": 0,
+        "listCollections": 0,
+        "listCommands": 0,
+        "listDatabases": 0,
+        "listIndexes": 2,
+        "lockInfo": 0,
+        "logApplicationMessage": 0,
+        "logRotate": 0,
+        "logout": 0,
+        "mapReduce": 0,
+        "mergeChunks": 0,
+        "ping": 2,
+        "planCacheClear": 0,
+        "planCacheClearFilters": 0,
+        "planCacheListFilters": 0,
+        "planCacheSetFilter": 0,
+        "prepareTransaction": 0,
+        "profile": 0,
+        "reIndex": 0,
+        "recipientForgetMigration": 0,
+        "recipientSyncData": 0,
+        "recipientVoteImportedFiles": 0,
+        "refreshSessions": 0,
+        "renameCollection": 0,
+        "replSetAbortPrimaryCatchUp": 0,
+        "replSetFreeze": 0,
+        "replSetGetConfig": 0,
+        "replSetGetRBID": 0,
+        "replSetGetStatus": 0,
+        "replSetHeartbeat": 12,
+        "replSetInitiate": 0,
+        "replSetMaintenance": 0,
+        "replSetReconfig": 0,
+        "replSetRequestVotes": 0,
+        "replSetResizeOplog": 0,
+        "replSetStepDown": 0,
+        "replSetStepDownWithForce": 0,
+        "replSetStepUp": 0,
+        "replSetSyncFrom": 0,
+        "replSetUpdatePosition": 0,
+        "revokePrivilegesFromRole": 0,
+        "revokeRolesFromRole": 0,
+        "revokeRolesFromUser": 0,
+        "rolesInfo": 0,
+        "rotateCertificates": 0,
+        "saslContinue": 11,
+        "saslStart": 0,
+        "serverStatus": 1,
+        "setClusterParameter": 0,
+        "setDefaultRWConcern": 0,
+        "setFeatureCompatibilityVersion": 0,
+        "setIndexCommitQuorum": 0,
+        "setParameter": 0,
+        "setProfilingFilterGlobally": 0,
+        "setShardVersion": 0,
+        "setUserWriteBlockMode": 0,
+        "shardingState": 0,
+        "shutdown": 0,
+        "splitChunk": 0,
+        "splitVector": 0,
+        "startRecordingTraffic": 0,
+        "startSession": 0,
+        "stopRecordingTraffic": 0,
+        "top": 0,
+        "update": 0,
+        "updateRole": 0,
+        "updateUser": 0,
+        "usersInfo": 0,
+        "validate": 0,
+        "validateDBMetadata": 0,
+        "voteCommitIndexBuild": 0,
+        "waitForFailPoint": 0,
+        "whatsmyuri": 0
+      },
+      "uptimeSeconds": 10,
+      "startupWarnings": [
+        "{\"t\":{\"$date\":\"2026-11-06T23:47:49.684+00:00\"},\"s\":\"W\",  \"c\":\"CONTROL\",  \"id\":22204,   \"ctx\":\"initandlisten\",\"msg\":\"Failed to read /sys/kernel/mm/transparent_hugepage/defrag\",\"attr\":{\"error\":\"** WARNING: unrecognized transparent Huge Pages mode of operation in /sys/kernel/mm/transparent_hugepage/defrag: 'defer+madvise''\"},\"tags\":[\"startupWarnings\"]}"
+      ],
+      "hostInfo": {
+        "hostname": "node1",
+        "cpuArch": "x86_64",
+        "numCores": 20,
+        "memSizeMB": 63979,
+        "osType": "Linux",
+        "osName": "Rocky Linux release 8.9 (Green Obsidian)",
+        "osVersion": "Kernel 6.12.115+deb13.1-amd64"
+      }
+    },
+    {
+      "host": "172.21.0.4:27017",
+      "role": "SECONDARY",
+      "replSet": "rs0",
+      "version": "6.0.29-23",
+      "gitVersion": "cb2a6234a5f801eeae2bc735844c8c3bd9b1ba14",
+      "flavor": "psmdb",
+      "psmdbVersion": "6.0.29-23",
+      "storageEngine": "wiredTiger",
+      "fcv": "5.0",
+      "argv": [
+        "/usr/bin/mongod",
+        "-f",
+        "/etc/mongod.conf"
+      ],
+      "options": {
+        "net.bindIp": "0.0.0.0",
+        "net.port": 27017,
+        "processManagement.fork": true,
+        "processManagement.pidFilePath": "/var/run/mongod.pid",
+        "replication.replSetName": "rs0",
+        "security.authorization": "enabled",
+        "security.keyFile": "/etc/rs0-keyfile",
+        "storage.dbPath": "/var/lib/mongo",
+        "storage.engine": "wiredTiger",
+        "storage.journal.enabled": true,
+        "storage.wiredTiger.engineConfig.cacheSizeGB": 1.0,
+        "systemLog.destination": "file",
+        "systemLog.logAppend": true,
+        "systemLog.path": "/var/log/mongo/mongod.log"
+      },
+      "configFile": "/etc/mongod.conf",
+      "parameters": {
+        "KeysRotationIntervalSec": 7776000,
+        "ShardingTaskExecutorPoolHostTimeoutMS": 300000,
+        "ShardingTaskExecutorPoolMaxConnecting": 2,
+        "ShardingTaskExecutorPoolMaxSize": 32767,
+        "ShardingTaskExecutorPoolMaxSizeForConfigServers": -1,
+        "ShardingTaskExecutorPoolMinSize": 1,
+        "ShardingTaskExecutorPoolMinSizeForConfigServers": -1,
+        "ShardingTaskExecutorPoolRefreshRequirementMS": 60000,
+        "ShardingTaskExecutorPoolRefreshTimeoutMS": 20000,
+        "ShardingTaskExecutorPoolReplicaSetMatching": "automatic",
+        "TransactionRecordMinimumLifetimeMinutes": 30,
+        "aggregateOperationResourceConsumptionMetrics": false,
+        "allowDiskUseByDefault": true,
+        "allowDocumentsGreaterThanMaxUserSize": false,
+        "allowMultipleArbiters": false,
+        "allowRolesFromX509Certificates": true,
+        "auditAuthorizationSuccess": false,
+        "authSchemaVersion": 5,
+        "authenticationMechanisms": [
+          "MONGODB-X509",
+          "SCRAM-SHA-1",
+          "SCRAM-SHA-256"
+        ],
+        "authorizationManagerCacheSize": 100,
+        "authorizationManagerPinnedUsers": [],
+        "authorizationManagerPinnedUsersRefreshIntervalMillis": 1000,
+        "awsEC2InstanceMetadataUrl": "http://169.254.169.254",
+        "awsECSInstanceMetadataUrl": "http://169.254.170.2",
+        "awsStsHost": "",
+        "backtraceLogFile": "",
+        "balancerChunksSelectionTimeoutMs": 5000,
+        "balancerMigrationsThrottlingMs": 1000,
+        "batchedDeletesTargetBatchDocs": 10,
+        "batchedDeletesTargetBatchTimeMS": 5,
+        "batchedDeletesTargetStagedDocBytes": 31457280,
+        "batchedExpiredChangeStreamPreImageRemoval": true,
+        "bgSyncOplogFetcherBatchSize": 13981010,
+        "bsonTestValidationVersion": 2,
+        "changeSyncSourceThresholdMillis": 5,
+        "chunkDefragmentationThrottlingMS": 1000,
+        "chunkMigrationConcurrency": 1,
+        "chunkMigrationFetcherMaxBufferedSizeBytesPerThread": 67174400,
+        "clientCursorMonitorFrequencySecs": 4,
+        "clusterAuthMode": "keyFile",
+        "clusterIpSourceAllowlist": null,
+        "collectionBulkLoaderBatchSizeInBytes": 262144,
+        "collectionClonerBatchSize": 0,
+        "collectionClonerUsesExhaust": true,
+        "connPoolMaxConnsPerHost": 200,
+        "connPoolMaxInUseConnsPerHost": 2147483647,
+        "connectTimeoutMs": 10000,
+        "coordinateCommitReturnImmediatelyAfterPersistingDecision": false,
+        "createRollbackDataFiles": true,
+        "cursorTimeoutMillis": 600000,
+        "dbCheckCollectionTryLockMaxAttempts": 5,
+        "dbCheckCollectionTryLockMaxBackoffMillis": 60000,
+        "dbCheckCollectionTryLockMinBackoffMillis": 10,
+        "dbCheckCollectionTryLockTimeoutMillis": 10,
+        "dbCheckHealthLogEveryNBatches": 25,
+        "deprecatedWireOpsWarningPeriodInSeconds": 3600,
+        "diagnosticDataCollectionDirectoryPath": "/var/lib/mongo/diagnostic.data",
+        "diagnosticDataCollectionDirectorySizeMB": 200,
+        "diagnosticDataCollectionEnableLatencyHistograms": false,
+        "diagnosticDataCollectionEnabled": true,
+        "diagnosticDataCollectionFileSizeMB": 10,
+        "diagnosticDataCollectionPeriodMillis": 1000,
+        "diagnosticDataCollectionSamplesPerChunk": 300,
+        "diagnosticDataCollectionSamplesPerInterimUpdate": 10,
+        "diagnosticDataCollectionStatsNamespaces": [],
+        "diagnosticDataCollectionVerboseTCMalloc": false,
+        "disableJavaScriptJIT": true,
+        "disableLogicalSessionCacheRefresh": false,
+        "disableNonSSLConnectionLogging": false,
+        "disableNonTLSConnectionLogging": false,
+        "disableResumableRangeDeleter": false,
+        "disableSplitHorizonIPCheck": false,
+        "disabledSecureAllocatorDomains": [],
+        "documentUnitSizeBytes": 128,
+        "enableDefaultWriteConcernUpdatesForInitiate": false,
+        "enableElectionHandoff": true,
+        "enableFinerGrainedCatalogCacheRefresh": false,
+        "enableFlowControl": true,
+        "enableLocalhostAuthBypass": true,
+        "enableOverrideClusterChainingSetting": false,
+        "enableSearchMeta": true,
+        "enableShardedIndexConsistencyCheck": true,
+        "enableTemporarilyUnavailableExceptions": false,
+        "enableTestCommands": false,
+        "enableTimeoutOfInactiveSessionCursors": false,
+        "enforceUserClusterSeparation": true,
+        "expiredChangeStreamPreImageRemovalJobSleepSecs": 10,
+        "fassertOnLockTimeoutForStepUpDown": 30,
+        "featureCompatibilityVersion": {
+          "version": "5.0"
+        },
+        "featureFlagAlwaysCreateConfigTransactionsPartialIndexOnStepUp": {
+          "value": false
+        },
+        "featureFlagBalanceAccordingToDataSize": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagBatchMultiDeletes": {
+          "value": false
+        },
+        "featureFlagBlender": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagBucketUnpackWithSort": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagChangeStreamPreAndPostImages": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagChangeStreamsFurtherEnrichedEvents": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagChangeStreamsRewrite": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagChangeStreamsVisibility": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagClusterWideConfig": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagClusterWideConfigM2": {
+          "value": false
+        },
+        "featureFlagClusteredIndexes": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagCollModIndexUnique": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagColumnstoreIndexes": {
+          "value": false
+        },
+        "featureFlagCommandsAcceptCollectionUUID": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagCommonQueryFramework": {
+          "value": false
+        },
+        "featureFlagConcurrencyInChunkMigration": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagConnHealthMetrics": {
+          "value": false
+        },
+        "featureFlagDerivedMetadata": {
+          "value": false
+        },
+        "featureFlagDocumentSourceListCatalog": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagEnableExecutionControl": {
+          "value": false
+        },
+        "featureFlagEnableShardingOptional": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagExactTopNAccumulator": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagFLE2": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagFileCopyBasedInitialSync": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagFill": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagFryer": {
+          "value": false
+        },
+        "featureFlagHealthMonitoring": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagInternalTransactions": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagLastPointQuery": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagLoadBalancer": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagLocf": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagMigrationRecipientCriticalSection": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagMongoStore": {
+          "value": false
+        },
+        "featureFlagNewPersistedChunkVersionFormat": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagNewWriteErrorExceptionFormat": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagNoChangeStreamEventsDueToOrphans": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagNoMoreAutoSplitter": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagOptionalCfgSvr": {
+          "value": false
+        },
+        "featureFlagOrphanTracking": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagPerCollBalancingSettings": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagQueryStats": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagRecoverableRefineCollectionShardKeyCoordinator": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagRecoverableShardsvrReshardCollectionCoordinator": {
+          "value": true,
+          "version": "5.3"
+        },
+        "featureFlagRequireTenantID": {
+          "value": false
+        },
+        "featureFlagResharding": {
+          "value": true,
+          "version": "5.0"
+        },
+        "featureFlagRetryableFindAndModify": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagSBEGroupPushdown": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagSBELookupPushdown": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagSbeFull": {
+          "value": false
+        },
+        "featureFlagSbePlanCache": {
+          "value": false
+        },
+        "featureFlagSearchBatchSizeLimit": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagSearchMeta": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagSearchShardedFacets": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagSelectiveBackup": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagShardKeyIndexOptionalHashedSharding": {
+          "value": true,
+          "version": "5.0"
+        },
+        "featureFlagShardMerge": {
+          "value": false
+        },
+        "featureFlagShardSplit": {
+          "value": false
+        },
+        "featureFlagShardedLookup": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagShardedSearchCustomSort": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagShardedTimeSeries": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagShardedTimeSeriesUpdateDelete": {
+          "value": true,
+          "version": "5.1"
+        },
+        "featureFlagShardingDataTransformMetrics": {
+          "value": false
+        },
+        "featureFlagSortArray": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagSpoon": {
+          "value": true,
+          "version": "5.0"
+        },
+        "featureFlagTimeseriesBucketCompression": {
+          "value": true,
+          "version": "5.2"
+        },
+        "featureFlagTimeseriesBucketCompressionWithArrays": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagTimeseriesMetricIndexes": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagTimeseriesUpdatesAndDeletes": {
+          "value": true,
+          "version": "5.0"
+        },
+        "featureFlagToaster": {
+          "value": false
+        },
+        "featureFlagUpdateDocumentShardKeyUsingTransactionApi": {
+          "value": false
+        },
+        "featureFlagUserWriteBlocking": {
+          "value": true,
+          "version": "6.0"
+        },
+        "featureFlagVectorSearchPublicPreview": {
+          "value": true,
+          "version": "6.0"
+        },
+        "fileBasedInitialSyncExtendCursorTimeoutMS": 180000,
+        "fileBasedInitialSyncMaxCyclesWithoutProgress": 3,
+        "fileBasedInitialSyncMaxLagSec": 300,
+        "findChunksOnConfigTimeoutMS": 900000,
+        "fixedServiceExecutorRecursionLimit": 8,
+        "fixedServiceExecutorThreadLimit": 1000,
+        "flowControlDecayConstant": 0.5,
+        "flowControlFudgeFactor": 0.95,
+        "flowControlMaxSamples": 1000000,
+        "flowControlMinTicketsPerSecond": 100,
+        "flowControlSamplePeriod": 1000,
+        "flowControlTargetLagSeconds": 10,
+        "flowControlThresholdLagPercentage": 0.5,
+        "flowControlTicketAdderConstant": 1000,
+        "flowControlTicketMultiplierConstant": 1.05,
+        "flowControlWarnThresholdSeconds": 10,
+        "forceRollbackViaRefetch": false,
+        "globalConnPoolIdleTimeoutMinutes": 2147483647,
+        "heapProfilingEnabled": false,
+        "heapProfilingSampleIntervalBytes": 262144,
+        "heartBeatFrequencyMs": 10000,
+        "honorSystemUmask": false,
+        "httpVerboseLogging": false,
+        "indexEntryUnitSizeBytes": 16,
+        "indexMaxNumGeneratedKeysPerDocument": 100000,
+        "initialServiceExecutorThreadingModel": "dedicated",
+        "initialSyncMethod": "logical",
+        "initialSyncOplogBuffer": "collection",
+        "initialSyncOplogBufferPeekCacheSize": 10000,
+        "initialSyncOplogFetcherBatchSize": 13981010,
+        "initialSyncSourceReadPreference": "",
+        "initialSyncTransientErrorRetryPeriodSeconds": 86400,
+        "internalBatchUserMultiDeletesForTest": false,
+        "internalCascadesOptimizerDisableBranchAndBound": false,
+        "internalCascadesOptimizerDisableGroupByAndUnionRIDIntersect": false,
+        "internalCascadesOptimizerDisableHashJoinRIDIntersect": false,
+        "internalCascadesOptimizerDisableIndexes": false,
+        "internalCascadesOptimizerDisableMergeJoinRIDIntersect": false,
+        "internalCascadesOptimizerDisableScan": false,
+        "internalCascadesOptimizerKeepRejectedPlans": false,
+        "internalDocumentSourceCursorBatchSizeBytes": 4194304,
+        "internalDocumentSourceDensifyMaxMemoryBytes": 104857600,
+        "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+        "internalDocumentSourceLookupCacheSizeBytes": 104857600,
+        "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+        "internalGeoNearQuery2DMaxCoveringCells": 16,
+        "internalGeoPredicateQuery2DMaxCoveringCells": 16,
+        "internalIndexBuildBulkLoadYieldIterations": 1000,
+        "internalInsertMaxBatchSize": 64,
+        "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+        "internalPartialFilterExpressionMaxDepth": 4,
+        "internalPipelineLengthLimit": 1000,
+        "internalProhibitShardOperationRetry": false,
+        "internalQueryAggMulticastMaxConcurrency": 100,
+        "internalQueryAggMulticastTimeoutMS": 60000,
+        "internalQueryAlwaysMergeOnPrimaryShard": false,
+        "internalQueryAppendIdToSetWindowFieldsSort": false,
+        "internalQueryCacheDisableInactiveEntries": false,
+        "internalQueryCacheEvictionRatio": 10.0,
+        "internalQueryCacheMaxEntriesPerCollection": 5000,
+        "internalQueryCacheMaxSizeBytesBeforeStripDebugInfo": 536870912,
+        "internalQueryCacheSize": 5000,
+        "internalQueryCacheWorksGrowthCoefficient": 2.0,
+        "internalQueryCollectionMaxDataSizeBytesToChooseHashJoin": 104857600,
+        "internalQueryCollectionMaxNoOfDocumentsToChooseHashJoin": 10000,
+        "internalQueryCollectionMaxStorageSizeBytesToChooseHashJoin": 104857600,
+        "internalQueryDesugarWhereToFunction": false,
+        "internalQueryDisableExchange": false,
+        "internalQueryDisableLookupExecutionUsingHashJoin": false,
+        "internalQueryDocumentSourceWriterBatchExtraReservedBytes": 0,
+        "internalQueryEnableCSTParser": false,
+        "internalQueryEnableCascadesOptimizer": false,
+        "internalQueryEnableLoggingV2OplogEntries": true,
+        "internalQueryEnableSamplingCardinalityEstimator": true,
+        "internalQueryEnumerationMaxIntersectPerAnd": 3,
+        "internalQueryEnumerationMaxOrSolutions": 10,
+        "internalQueryEnumerationPreferLockstepOrEnumeration": false,
+        "internalQueryExecYieldIterations": 1000,
+        "internalQueryExecYieldPeriodMS": 10,
+        "internalQueryExplainSizeThresholdBytes": 10485760,
+        "internalQueryFLEAlwaysUseHighCardinalityMode": false,
+        "internalQueryFLERewriteMemoryLimit": 14680064,
+        "internalQueryFacetBufferSizeBytes": 104857600,
+        "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+        "internalQueryForceClassicEngine": true,
+        "internalQueryForceIntersectionPlans": false,
+        "internalQueryGlobalProfilingFilter": false,
+        "internalQueryIgnoreUnknownJSONSchemaKeywords": false,
+        "internalQueryJavaScriptFnTimeoutMillis": 60000,
+        "internalQueryJavaScriptHeapSizeLimitMB": 100,
+        "internalQueryMaxAddToSetBytes": 104857600,
+        "internalQueryMaxAllowedDensifyDocs": 500000,
+        "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+        "internalQueryMaxDocValidationErrorConsideredValues": 10,
+        "internalQueryMaxJsEmitBytes": 104857600,
+        "internalQueryMaxNumberOfFieldsToChooseFilteredColumnScan": 12,
+        "internalQueryMaxNumberOfFieldsToChooseUnfilteredColumnScan": 5,
+        "internalQueryMaxPushBytes": 104857600,
+        "internalQueryMaxRangeBytes": 104857600,
+        "internalQueryMaxScansToExplode": 200,
+        "internalQueryPlanEvaluationCollFraction": 0.3,
+        "internalQueryPlanEvaluationCollFractionSbe": 0.0,
+        "internalQueryPlanEvaluationMaxResults": 101,
+        "internalQueryPlanEvaluationWorks": 10000,
+        "internalQueryPlanEvaluationWorksSbe": 10000,
+        "internalQueryPlanOrChildrenIndependently": true,
+        "internalQueryPlanTieBreakingWithIndexHeuristics": true,
+        "internalQueryPlannerEnableHashIntersection": false,
+        "internalQueryPlannerEnableIndexIntersection": true,
+        "internalQueryPlannerGenerateCoveredWholeIndexScans": false,
+        "internalQueryPlannerMaxIndexedSolutions": 64,
+        "internalQueryProhibitBlockingMergeOnMongoS": false,
+        "internalQueryProhibitMergingOnMongoS": false,
+        "internalQueryS2GeoCoarsestLevel": 0,
+        "internalQueryS2GeoFinestLevel": 23,
+        "internalQueryS2GeoMaxCells": 20,
+        "internalQuerySlotBasedExecutionDisableGroupPushdown": false,
+        "internalQuerySlotBasedExecutionDisableLookupPushdown": false,
+        "internalQuerySlotBasedExecutionHashAggApproxMemoryUseInBytesBeforeSpill": 104857600,
+        "internalQuerySlotBasedExecutionHashAggForceIncreasedSpilling": false,
+        "internalQuerySlotBasedExecutionHashAggMemoryCheckPerAdvanceAtLeast": 1024,
+        "internalQuerySlotBasedExecutionHashAggMemoryCheckPerAdvanceAtMost": 2,
+        "internalQuerySlotBasedExecutionHashAggMemoryUseCheckMargin": 0.7,
+        "internalQuerySlotBasedExecutionHashLookupApproxMemoryUseInBytesBeforeSpill": 104857600,
+        "internalQuerySlotBasedExecutionMaxStaticIndexScanIntervals": 1000,
+        "internalQuerySpillingMaxWaitTimeout": 1000,
+        "internalQueryStatsCacheSize": "1%",
+        "internalQueryStatsErrorsAreCommandFatal": false,
+        "internalQueryStatsRateLimit": 0,
+        "internalQueryTopNAccumulatorBytes": 104857600,
+        "internalSessionsReapThreshold": 1000,
+        "internalValidateFeaturesAsMaster": true,
+        "internalValidateFeaturesAsPrimary": true,
+        "javascriptProtection": false,
+        "joinIngressSessionsOnShutdown": false,
+        "journalCommitInterval": 100,
+        "jsHeapLimitMB": 1100,
+        "ldapAuthzQueryTemplate": "",
+        "ldapConnectionPoolSizePerHost": 2,
+        "ldapDebug": false,
+        "ldapFollowReferrals": false,
+        "ldapQueryPassword": "###",
+        "ldapQueryUser": "",
+        "ldapServers": "",
+        "ldapTimeoutMS": 10000,
+        "ldapUseConnectionPool": false,
+        "ldapUserCacheInvalidationInterval": 30,
+        "ldapUserToDNMapping": "[{match: \"(.+)\", substitution: \"{0}\"}]",
+        "loadBalancerPort": 0,
+        "loadRoutingTableOnStartup": true,
+        "localLogicalSessionTimeoutMinutes": 30,
+        "localThresholdMs": 15,
+        "lockCodeSegmentsInMemory": false,
+        "logComponentVerbosity": {
+          "verbosity": 0,
+          "accessControl": {
+            "verbosity": -1
+          },
+          "assert": {
+            "verbosity": -1
+          },
+          "command": {
+            "verbosity": -1
+          },
+          "control": {
+            "verbosity": -1
+          },
+          "executor": {
+            "verbosity": -1
+          },
+          "geo": {
+            "verbosity": -1
+          },
+          "index": {
+            "verbosity": -1
+          },
+          "network": {
+            "verbosity": -1,
+            "asio": {
+              "verbosity": -1
+            },
+            "bridge": {
+              "verbosity": -1
+            },
+            "connectionPool": {
+              "verbosity": -1
+            }
+          },
+          "processHealth": {
+            "verbosity": -1
+          },
+          "query": {
+            "verbosity": -1
+          },
+          "queryStats": {
+            "verbosity": -1
+          },
+          "replication": {
+            "verbosity": -1,
+            "election": {
+              "verbosity": -1
+            },
+            "heartbeats": {
+              "verbosity": -1
+            },
+            "initialSync": {
+              "verbosity": -1
+            },
+            "rollback": {
+              "verbosity": -1
+            }
+          },
+          "sharding": {
+            "verbosity": -1,
+            "rangeDeleter": {
+              "verbosity": -1
+            },
+            "shardingCatalogRefresh": {
+              "verbosity": -1
+            },
+            "migration": {
+              "verbosity": -1
+            },
+            "reshard": {
+              "verbosity": -1
+            },
+            "migrationPerf": {
+              "verbosity": -1
+            }
+          },
+          "storage": {
+            "verbosity": -1,
+            "recovery": {
+              "verbosity": -1
+            },
+            "journal": {
+              "verbosity": -1
+            },
+            "wt": {
+              "verbosity": -1,
+              "wtBackup": {
+                "verbosity": -1
+              },
+              "wtCheckpoint": {
+                "verbosity": -1
+              },
+              "wtCompact": {
+                "verbosity": -1
+              },
+              "wtEviction": {
+                "verbosity": -1
+              },
+              "wtHS": {
+                "verbosity": -1
+              },
+              "wtRecovery": {
+                "verbosity": -1
+              },
+              "wtRTS": {
+                "verbosity": -1
+              },
+              "wtSalvage": {
+                "verbosity": -1
+              },
+              "wtTiered": {
+                "verbosity": -1
+              },
+              "wtTimestamp": {
+                "verbosity": -1
+              },
+              "wtTransaction": {
+                "verbosity": -1
+              },
+              "wtVerify": {
+                "verbosity": -1
+              },
+              "wtWriteLog": {
+                "verbosity": -1
+              }
+            }
+          },
+          "write": {
+            "verbosity": -1
+          },
+          "ftdc": {
+            "verbosity": -1
+          },
+          "tracking": {
+            "verbosity": -1
+          },
+          "transaction": {
+            "verbosity": -1
+          },
+          "tenantMigration": {
+            "verbosity": -1
+          },
+          "test": {
+            "verbosity": -1
+          }
+        },
+        "logLevel": 0,
+        "logicalSessionRefreshMillis": 300000,
+        "maintainValidCursorsAcrossSBEYieldandReadCommands": false,
+        "maxAcceptableLogicalClockDriftSecs": 31536000,
+        "maxBSONDepth": 200,
+        "maxCatchUpPercentageBeforeBlockingWrites": 10,
+        "maxIndexBuildDrainBatchSize": 1000,
+        "maxIndexBuildDrainMemoryUsageMegabytes": 16,
+        "maxIndexBuildMemoryUsageMegabytes": 200,
+        "maxIteratorsMemoryUsagePercentage": 0.1,
+        "maxLogSizeKB": 10,
+        "maxNumActiveUserIndexBuilds": 3,
+        "maxNumSyncSourceChangesPerHour": 3,
+        "maxNumberOfTransactionOperationsInSingleOplogEntry": 2147483647,
+        "maxOplogTruncationPointsAfterStartup": 100,
+        "maxOplogTruncationPointsDuringStartup": 100,
+        "maxSessions": 1000000,
+        "maxSyncSourceLagSecs": 30,
+        "maxTenantMigrationDonorServiceThreadPoolSize": 8,
+        "maxTenantMigrationRecipientThreadPoolSize": 128,
+        "maxTimeMSForHedgedReads": 150,
+        "maxTransactionLockRequestTimeoutMillis": 5,
+        "maxValidateMBperSec": 0,
+        "maxValidateMemoryUsageMB": 200,
+        "metadataRefreshInTransactionMaxWaitBehindCritSecMS": 500,
+        "migrateCloneInsertionBatchDelayMS": 0,
+        "migrateCloneInsertionBatchSize": 0,
+        "migrationLockAcquisitionMaxWaitMS": 500,
+        "minNumChunksForSessionsCollection": 1024,
+        "minOplogEntriesPerThread": 16,
+        "minOplogTruncationPoints": 10,
+        "minSnapshotHistoryWindowInSeconds": 300,
+        "mirrorReads": {
+          "samplingRate": 0.01,
+          "maxTimeMS": 1000
+        },
+        "mongosShutdownTimeoutMillisForSignaledShutdown": 15000,
+        "mrEnableSingleReduceOptimization": false,
+        "multitenancySupport": false,
+        "newShardExistingClusterTimeKeysExpirationSecs": 604800,
+        "notablescan": false,
+        "numInitialSyncAttempts": 10,
+        "numInitialSyncConnectAttempts": 10,
+        "numInitialSyncOplogFindAttempts": 3,
+        "ocspCacheSize": 300,
+        "ocspEnabled": true,
+        "ocspStaplingRefreshPeriodSecs": -1,
+        "ocspValidationRefreshPeriodSecs": -1,
+        "opensslCipherConfig": "HIGH:!EXPORT:!aNULL@STRENGTH",
+        "opensslCipherSuiteConfig": "",
+        "opensslDiffieHellmanParameters": "",
+        "operationMemoryPoolBlockInitialSizeKB": 1,
+        "operationMemoryPoolBlockMaxSizeKB": 2048,
+        "oplogApplicationEnforcesSteadyStateConstraints": false,
+        "oplogBatchDelayMillis": 0,
+        "oplogFetcherInitialSyncMaxFetcherRestarts": 10,
+        "oplogFetcherSteadyStateMaxFetcherRestarts": 1,
+        "oplogFetcherUsesExhaust": true,
+        "oplogInitialFindMaxSeconds": 60,
+        "oplogNetworkTimeoutBufferSeconds": 5,
+        "oplogRetriedFindMaxSeconds": 2,
+        "oplogSamplingLogIntervalSeconds": 10,
+        "oplogTruncationCheckPeriodSeconds": 300,
+        "oplogTruncationPointSizeMB": 0,
+        "opportunisticSecondaryTargeting": false,
+        "orphanCleanupDelaySecs": 900,
+        "perconaTelemetry": true,
+        "perconaTelemetryGracePeriod": 86400,
+        "perconaTelemetryHistoryKeepInterval": 604800,
+        "perconaTelemetryPath": "/usr/local/percona/telemetry/psmdb",
+        "perconaTelemetryScrapeInterval": 86400,
+        "periodicNoopIntervalSecs": 10,
+        "persistedChunkCacheUpdateMaxBatchSize": 1000,
+        "planCacheSize": "5%",
+        "priorityTakeoverFreshnessWindowSeconds": 2,
+        "processUmask": 63,
+        "profileOperationResourceConsumptionMetrics": false,
+        "profilingRateLimit": 1,
+        "quiet": false,
+        "rangeDeleterBatchDelayMS": 20,
+        "rangeDeleterBatchSize": 2147483647,
+        "readHedgingMode": "on",
+        "receiveChunkWaitForRangeDeleterTimeoutMS": 10000,
+        "recoverFromOplogAsStandalone": false,
+        "recoverToOplogTimestamp": "",
+        "redactClientLogData": false,
+        "remainingReshardingOperationTimeThresholdMillis": 2000,
+        "replBatchLimitBytes": 104857600,
+        "replBatchLimitOperations": 5000,
+        "replElectionTimeoutOffsetLimitFraction": 0.15,
+        "replWriterMinThreadCount": 0,
+        "replWriterThreadCount": 16,
+        "replicaSetMonitorProtocol": "streamable",
+        "reportOpWriteConcernCountersInServerStatus": false,
+        "reservedServiceExecutorRecursionLimit": 8,
+        "reshardingCollectionClonerBatchSizeInBytes": 102400,
+        "reshardingCoordinatorServiceMaxThreadCount": 3,
+        "reshardingCriticalSectionTimeoutMillis": 5000,
+        "reshardingDelayBeforeRemainingOperationTimeQueryMillis": 0,
+        "reshardingDonorServiceMaxThreadCount": 2,
+        "reshardingMinimumOperationDurationMillis": 300000,
+        "reshardingOplogApplierMaxLockRequestTimeoutMillis": 5,
+        "reshardingOplogBatchLimitBytes": 104857600,
+        "reshardingOplogBatchLimitOperations": 5000,
+        "reshardingOplogBatchTaskCount": 4,
+        "reshardingRecipientServiceMaxThreadCount": 8,
+        "reshardingTxnClonerProgressBatchSize": 1000,
+        "resumableIndexBuildMajorityOpTimeTimeoutMillis": 10000,
+        "rewriteStateChangeErrors": true,
+        "rollbackRemoteOplogQueryBatchSize": 2000,
+        "rollbackTimeLimitSecs": 86400,
+        "roundtripBsonColumnOnValidate": false,
+        "routingTableCacheChunkBucketSize": 500,
+        "saslHostName": "node2",
+        "saslServiceName": "mongodb",
+        "saslauthdPath": "",
+        "scramIterationCount": 10000,
+        "scramSHA256IterationCount": 15000,
+        "scriptingEngineInterruptIntervalMS": 1000,
+        "sessionMaxBatchSize": 1000,
+        "sessionWriteConcernTimeoutSystemMillis": 60000,
+        "shardSplitGarbageCollectionDelayMS": 900000,
+        "shardSplitTimeoutMS": 3600000,
+        "shardedIndexConsistencyCheckIntervalMS": 600000,
+        "shutdownTimeoutMillisForSignaledShutdown": 15000,
+        "skipApplyingDbCheckBatchOnSecondary": false,
+        "skipCorruptDocumentsWhenCloning": false,
+        "skipDroppingHashedShardKeyIndex": false,
+        "skipShardingConfigurationChecks": false,
+        "skipShellCursorFinalize": false,
+        "sslMode": "disabled",
+        "sslWithholdClientCertificate": false,
+        "startupAuthSchemaValidation": true,
+        "startupRecoveryForRestore": false,
+        "storageEngineConcurrentReadTransactions": 0,
+        "storageEngineConcurrentWriteTransactions": 0,
+        "storageEngineQueueingPolicy": "fifoQueue",
+        "storageGlobalParams.directoryperdb": false,
+        "storeFindAndModifyImagesInSideCollection": true,
+        "suppressNetworkInterfaceTransportLayerExceptions": {
+          "value": false
+        },
+        "suppressNoTLSPeerCertificateWarning": false,
+        "syncdelay": 60.0,
+        "synchronousServiceExecutorRecursionLimit": 8,
+        "takeUnstableCheckpointOnShutdown": false,
+        "taskExecutorPoolSize": 1,
+        "tcmallocAggressiveMemoryDecommit": 0,
+        "tcmallocMaxTotalThreadCacheBytes": 1073741824,
+        "tcmallocReleaseRate": 1.0,
+        "tcpFastOpenClient": true,
+        "tcpFastOpenQueueSize": 1024,
+        "tcpFastOpenServer": true,
+        "temporarilyUnavailableBackoffBaseMs": 1000,
+        "temporarilyUnavailableMaxRetries": 10,
+        "tenantApplierBatchSizeBytes": 16777216,
+        "tenantApplierBatchSizeOps": 500,
+        "tenantApplierThreadCount": 5,
+        "tenantMigrationBlockingStateTimeoutMS": 3600000,
+        "tenantMigrationDisableX509Auth": false,
+        "tenantMigrationExcludeDonorHostTimeoutMS": 60000,
+        "tenantMigrationExternalKeysRemovalBufferSecs": 86400,
+        "tenantMigrationGarbageCollectionDelayMS": 900000,
+        "tenantMigrationOplogBufferPeekCacheSize": 10000,
+        "tenantMigrationOplogFetcherBatchSize": 13981010,
+        "testingDiagnosticsEnabled": false,
+        "testingSnapshotBehaviorInIsolation": false,
+        "timeseriesBucketMaxCount": 1000,
+        "timeseriesBucketMaxSize": 128000,
+        "timeseriesIdleBucketExpiryMaxCountPerAttempt": 3,
+        "timeseriesIdleBucketExpiryMemoryUsageThreshold": 0,
+        "timeseriesInsertMaxRetriesOnDuplicates": 32,
+        "timeseriesValidateCompressedBuckets": true,
+        "tlsCATrusts": null,
+        "tlsMode": "disabled",
+        "tlsOCSPSlowResponderWarningSecs": 5,
+        "tlsOCSPStaplingTimeoutSecs": -1,
+        "tlsOCSPVerifyTimeoutSecs": 4,
+        "tlsUseSystemCA": false,
+        "tlsWithholdClientCertificate": false,
+        "tlsX509ExpirationWarningThresholdDays": 30,
+        "totalUnitWriteSizeBytes": 128,
+        "traceExceptions": false,
+        "traceWriteConflictExceptions": false,
+        "trafficRecordingDirectory": "",
+        "transactionLifetimeLimitSeconds": 60,
+        "transactionSizeLimitBytes": 9223372036854775807,
+        "transactionTooLargeForCacheThreshold": 0.75,
+        "ttlMonitorEnabled": true,
+        "ttlMonitorSleepSecs": 60,
+        "unsupportedSyncSource": "",
+        "upsertMaxRetryAttemptsOnDuplicateKeyError": 250,
+        "useReadOnceCursorsForIndexBuilds": true,
+        "waitForSecondaryBeforeNoopWriteMS": 10,
+        "warmMinConnectionsInShardingTaskExecutorPoolOnStartup": true,
+        "warmMinConnectionsInShardingTaskExecutorPoolOnStartupWaitMS": 2000,
+        "watchdogPeriodSeconds": -1,
+        "wiredTigerConcurrentReadTransactions": 0,
+        "wiredTigerConcurrentWriteTransactions": 0,
+        "wiredTigerCursorCacheSize": -100,
+        "wiredTigerDirectoryForIndexes": false,
+        "wiredTigerEngineRuntimeConfig": "",
+        "wiredTigerEvictionDirtyMaxGB": 0.0,
+        "wiredTigerEvictionDirtyTargetGB": 0.0,
+        "wiredTigerFileHandleCloseIdleTime": 600,
+        "wiredTigerFileHandleCloseMinimum": 2000,
+        "wiredTigerFileHandleCloseScanInterval": 10,
+        "wiredTigerMaxCacheOverflowSizeGB": 0.0,
+        "wiredTigerSessionCloseIdleTimeSecs": 300,
+        "wiredTigerSkipTableLoggingChecksOnStartup": false,
+        "wiredTigerStressConfig": false,
+        "writePeriodicNoops": true
+      },
+      "commandCounters": {
+        "_addShard": 0,
+        "_configsvrAbortReshardCollection": 0,
+        "_configsvrAddShard": 0,
+        "_configsvrAddShardToZone": 0,
+        "_configsvrBalancerCollectionStatus": 0,
+        "_configsvrBalancerStart": 0,
+        "_configsvrBalancerStatus": 0,
+        "_configsvrBalancerStop": 0,
+        "_configsvrCleanupReshardCollection": 0,
+        "_configsvrClearJumboFlag": 0,
+        "_configsvrCollMod": 0,
+        "_configsvrCommitChunkMigration": 0,
+        "_configsvrCommitChunkSplit": 0,
+        "_configsvrCommitChunksMerge": 0,
+        "_configsvrCommitMovePrimary": 0,
+        "_configsvrCommitReshardCollection": 0,
+        "_configsvrConfigureCollectionBalancing": 0,
+        "_configsvrCreateDatabase": 0,
+        "_configsvrEnsureChunkVersionIsGreaterThan": 0,
+        "_configsvrMoveChunk": 0,
+        "_configsvrMoveRange": 0,
+        "_configsvrRefineCollectionShardKey": 0,
+        "_configsvrRemoveChunks": 0,
+        "_configsvrRemoveShard": 0,
+        "_configsvrRemoveShardFromZone": 0,
+        "_configsvrRemoveTags": 0,
+        "_configsvrRenameCollectionMetadata": 0,
+        "_configsvrRepairShardedCollectionChunksHistory": 0,
+        "_configsvrReshardCollection": 0,
+        "_configsvrRunRestore": 0,
+        "_configsvrSetAllowMigrations": 0,
+        "_configsvrSetClusterParameter": 0,
+        "_configsvrSetUserWriteBlockMode": 0,
+        "_configsvrUpdateZoneKeyRange": 0,
+        "_flushDatabaseCacheUpdates": 0,
+        "_flushDatabaseCacheUpdatesWithWriteConcern": 0,
+        "_flushReshardingStateChange": 0,
+        "_flushRoutingTableCacheUpdates": 0,
+        "_flushRoutingTableCacheUpdatesWithWriteConcern": 0,
+        "_getNextSessionMods": 0,
+        "_getUserCacheGeneration": 0,
+        "_isSelf": 0,
+        "_killOperations": 0,
+        "_mergeAuthzCollections": 0,
+        "_migrateClone": 0,
+        "_recvChunkAbort": 0,
+        "_recvChunkCommit": 0,
+        "_recvChunkReleaseCritSec": 0,
+        "_recvChunkStart": 0,
+        "_recvChunkStatus": 0,
+        "_shardsvrAbortReshardCollection": 0,
+        "_shardsvrCleanupReshardCollection": 0,
+        "_shardsvrCloneCatalogData": 0,
+        "_shardsvrCollMod": 0,
+        "_shardsvrCollModParticipant": 0,
+        "_shardsvrCommitReshardCollection": 0,
+        "_shardsvrCompactStructuredEncryptionData": 0,
+        "_shardsvrCreateCollection": 0,
+        "_shardsvrCreateCollectionParticipant": 0,
+        "_shardsvrDropCollection": 0,
+        "_shardsvrDropCollectionIfUUIDNotMatching": 0,
+        "_shardsvrDropCollectionParticipant": 0,
+        "_shardsvrDropDatabase": 0,
+        "_shardsvrDropDatabaseParticipant": 0,
+        "_shardsvrDropIndexes": 0,
+        "_shardsvrGetStatsForBalancing": 0,
+        "_shardsvrJoinMigrations": 0,
+        "_shardsvrMovePrimary": 0,
+        "_shardsvrMoveRange": 0,
+        "_shardsvrParticipantBlock": 0,
+        "_shardsvrRefineCollectionShardKey": 0,
+        "_shardsvrRenameCollection": 0,
+        "_shardsvrRenameCollectionParticipant": 0,
+        "_shardsvrRenameCollectionParticipantUnblock": 0,
+        "_shardsvrReshardCollection": 0,
+        "_shardsvrReshardingOperationTime": 0,
+        "_shardsvrSetAllowMigrations": 0,
+        "_shardsvrSetClusterParameter": 0,
+        "_shardsvrSetUserWriteBlockMode": 0,
+        "_transferMods": 0,
+        "abortShardSplit": 0,
+        "abortTransaction": 0,
+        "aggregate": 0,
+        "appendOplogNote": 0,
+        "applyOps": 0,
+        "authenticate": 0,
+        "autoSplitVector": 0,
+        "availableQueryOptions": 0,
+        "buildInfo": 3,
+        "checkShardingIndex": 0,
+        "cleanupOrphaned": 0,
+        "cloneCollectionAsCapped": 0,
+        "clusterAbortTransaction": 0,
+        "clusterAggregate": 0,
+        "clusterCommitTransaction": 0,
+        "clusterDelete": 0,
+        "clusterFind": 0,
+        "clusterGetMore": 0,
+        "clusterInsert": 0,
+        "clusterUpdate": 0,
+        "collMod": 0,
+        "collStats": 11,
+        "commitShardSplit": 0,
+        "commitTransaction": 0,
+        "compact": 0,
+        "compactStructuredEncryptionData": 0,
+        "connPoolStats": 0,
+        "connPoolSync": 0,
+        "connectionStatus": 0,
+        "convertToCapped": 0,
+        "coordinateCommitTransaction": 0,
+        "count": 10,
+        "create": 0,
+        "createBackup": 0,
+        "createIndexes": 0,
+        "createRole": 0,
+        "createUser": 0,
+        "currentOp": 0,
+        "dataSize": 0,
+        "dbCheck": 0,
+        "dbHash": 0,
+        "dbStats": 2,
+        "delete": 0,
+        "distinct": 0,
+        "donorAbortMigration": 0,
+        "donorForgetMigration": 0,
+        "donorStartMigration": 0,
+        "driverOIDTest": 0,
+        "drop": 0,
+        "dropAllRolesFromDatabase": 0,
+        "dropAllUsersFromDatabase": 0,
+        "dropConnections": 0,
+        "dropDatabase": 0,
+        "dropIndexes": 0,
+        "dropRole": 0,
+        "dropUser": 0,
+        "endSessions": 1,
+        "explain": 0,
+        "features": 0,
+        "filemd5": 0,
+        "find": 45,
+        "findAndModify": 0,
+        "flushRouterConfig": 0,
+        "forgetShardSplit": 0,
+        "fsync": 0,
+        "fsyncUnlock": 0,
+        "getClusterParameter": 0,
+        "getCmdLineOpts": 2,
+        "getDatabaseVersion": 0,
+        "getDefaultRWConcern": 0,
+        "getDiagnosticData": 0,
+        "getLastError": 0,
+        "getLog": 1,
+        "getMore": 92,
+        "getParameter": 2,
+        "getShardMap": 0,
+        "getShardVersion": 0,
+        "getnonce": 0,
+        "grantPrivilegesToRole": 0,
+        "grantRolesToRole": 0,
+        "grantRolesToUser": 0,
+        "hello": 29,
+        "hostInfo": 1,
+        "insert": 0,
+        "internalRenameIfOptionsAndIndexesMatch": 0,
+        "invalidateUserCache": 0,
+        "isMaster": 12,
+        "killAllSessions": 0,
+        "killAllSessionsByPattern": 0,
+        "killCursors": 0,
+        "killOp": 0,
+        "killSessions": 0,
+        "listCollections": 2,
+        "listCommands": 0,
+        "listDatabases": 1,
+        "listIndexes": 12,
+        "lockInfo": 0,
+        "logApplicationMessage": 0,
+        "logRotate": 0,
+        "logout": 0,
+        "mapReduce": 0,
+        "mergeChunks": 0,
+        "ping": 2,
+        "planCacheClear": 0,
+        "planCacheClearFilters": 0,
+        "planCacheListFilters": 0,
+        "planCacheSetFilter": 0,
+        "prepareTransaction": 0,
+        "profile": 0,
+        "reIndex": 0,
+        "recipientForgetMigration": 0,
+        "recipientSyncData": 0,
+        "recipientVoteImportedFiles": 0,
+        "refreshSessions": 0,
+        "renameCollection": 0,
+        "replSetAbortPrimaryCatchUp": 0,
+        "replSetFreeze": 0,
+        "replSetGetConfig": 0,
+        "replSetGetRBID": 2,
+        "replSetGetStatus": 0,
+        "replSetHeartbeat": 301,
+        "replSetInitiate": 0,
+        "replSetMaintenance": 0,
+        "replSetReconfig": 0,
+        "replSetRequestVotes": 0,
+        "replSetResizeOplog": 0,
+        "replSetStepDown": 0,
+        "replSetStepDownWithForce": 0,
+        "replSetStepUp": 0,
+        "replSetSyncFrom": 0,
+        "replSetUpdatePosition": 97,
+        "revokePrivilegesFromRole": 0,
+        "revokeRolesFromRole": 0,
+        "revokeRolesFromUser": 0,
+        "rolesInfo": 0,
+        "rotateCertificates": 0,
+        "saslContinue": 24,
+        "saslStart": 4,
+        "serverStatus": 2,
+        "setClusterParameter": 0,
+        "setDefaultRWConcern": 0,
+        "setFeatureCompatibilityVersion": 0,
+        "setIndexCommitQuorum": 0,
+        "setParameter": 0,
+        "setProfilingFilterGlobally": 0,
+        "setShardVersion": 0,
+        "setUserWriteBlockMode": 0,
+        "shardingState": 0,
+        "shutdown": 0,
+        "splitChunk": 0,
+        "splitVector": 0,
+        "startRecordingTraffic": 0,
+        "startSession": 0,
+        "stopRecordingTraffic": 0,
+        "top": 0,
+        "update": 0,
+        "updateRole": 0,
+        "updateUser": 0,
+        "usersInfo": 0,
+        "validate": 0,
+        "validateDBMetadata": 0,
+        "voteCommitIndexBuild": 0,
+        "waitForFailPoint": 0,
+        "whatsmyuri": 0
+      },
+      "uptimeSeconds": 293,
+      "startupWarnings": [
+        "{\"t\":{\"$date\":\"2026-11-06T23:43:06.316+00:00\"},\"s\":\"W\",  \"c\":\"CONTROL\",  \"id\":22204,   \"ctx\":\"initandlisten\",\"msg\":\"Failed to read /sys/kernel/mm/transparent_hugepage/defrag\",\"attr\":{\"error\":\"** WARNING: unrecognized transparent Huge Pages mode of operation in /sys/kernel/mm/transparent_hugepage/defrag: 'defer+madvise''\"},\"tags\":[\"startupWarnings\"]}"
+      ],
+      "hostInfo": {
+        "hostname": "node2",
+        "cpuArch": "x86_64",
+        "numCores": 20,
+        "memSizeMB": 63979,
+        "osType": "Linux",
+        "osName": "Rocky Linux release 8.9 (Green Obsidian)",
+        "osVersion": "Kernel 6.12.115+deb13.1-amd64"
+      }
+    }
+  ],
+  "data": {
+    "databases": [
+      {
+        "name": "admin",
+        "sizeOnDisk": 188416,
+        "collections": null
+      }
+    ]
+  },
+  "security": {
+    "users": [
+      {
+        "user": "dba",
+        "db": "admin",
+        "mechanisms": [
+          "SCRAM-SHA-1",
+          "SCRAM-SHA-256"
+        ],
+        "roles": [
+          {
+            "role": "root",
+            "db": "admin"
+          }
+        ]
+      }
+    ],
+    "roles": [
+      {
+        "role": "metricsReader",
+        "db": "admin",
+        "privileges": [
+          {
+            "resource": {
+              "cluster": true
+            },
+            "actions": [
+              "operationMetrics",
+              "serverStatus"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

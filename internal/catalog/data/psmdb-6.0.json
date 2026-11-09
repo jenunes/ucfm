@@ -1,0 +1,6249 @@
+{
+ "flavor": "psmdb",
+ "version": "6.0",
+ "sourceTag": "psmdb-6.0.29-23",
+ "provisional": false,
+ "fcv": {
+  "latest": "6.0",
+  "lastContinuous": "5.3",
+  "lastLTS": "5.0"
+ },
+ "startupOptions": {
+  "arbiter": {
+   "name": "arbiter",
+   "source": "src/mongo/db/mongod_options_legacy.idl"
+  },
+  "auditLog.destination": {
+   "name": "auditLog.destination",
+   "deprecatedNames": [
+    "audit.destination"
+   ],
+   "short": "auditDestination",
+   "source": "src/mongo/db/audit/audit_options.idl"
+  },
+  "auditLog.filter": {
+   "name": "auditLog.filter",
+   "deprecatedNames": [
+    "audit.filter"
+   ],
+   "short": "auditFilter",
+   "source": "src/mongo/db/audit/audit_options.idl"
+  },
+  "auditLog.format": {
+   "name": "auditLog.format",
+   "deprecatedNames": [
+    "audit.format"
+   ],
+   "short": "auditFormat",
+   "source": "src/mongo/db/audit/audit_options.idl"
+  },
+  "auditLog.path": {
+   "name": "auditLog.path",
+   "deprecatedNames": [
+    "audit.path"
+   ],
+   "short": "auditPath",
+   "source": "src/mongo/db/audit/audit_options.idl"
+  },
+  "auth": {
+   "name": "auth",
+   "source": "src/mongo/db/mongod_options_general.idl"
+  },
+  "cacheSize": {
+   "name": "cacheSize",
+   "source": "src/mongo/db/mongod_options_legacy.idl"
+  },
+  "command": {
+   "name": "command",
+   "source": "src/mongo/db/mongod_options_legacy.idl"
+  },
+  "config": {
+   "name": "config",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "configExpand": {
+   "name": "configExpand",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "configExpandTimeoutSecs": {
+   "name": "configExpandTimeoutSecs",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "configsvr": {
+   "name": "configsvr",
+   "source": "src/mongo/db/mongod_options_sharding.idl"
+  },
+  "cpu": {
+   "name": "cpu",
+   "source": "src/mongo/db/mongod_options_general.idl"
+  },
+  "crashOnInvalidBSONError": {
+   "name": "crashOnInvalidBSONError",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "enableExperimentalStorageDetailsCmd": {
+   "name": "enableExperimentalStorageDetailsCmd",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "help": {
+   "name": "help",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "install": {
+   "name": "install",
+   "source": "src/mongo/db/windows_options.idl"
+  },
+  "logpath": {
+   "name": "logpath",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "master": {
+   "name": "master",
+   "source": "src/mongo/db/mongod_options_replication.idl"
+  },
+  "moveParanoia": {
+   "name": "moveParanoia",
+   "source": "src/mongo/db/mongod_options_sharding.idl"
+  },
+  "net.bindIp": {
+   "name": "net.bindIp",
+   "short": "bind_ip",
+   "source": "src/mongo/db/server_options_nongeneral.idl"
+  },
+  "net.bindIpAll": {
+   "name": "net.bindIpAll",
+   "short": "bind_ip_all",
+   "source": "src/mongo/db/server_options_nongeneral.idl"
+  },
+  "net.compression.compressors": {
+   "name": "net.compression.compressors",
+   "short": "networkMessageCompressors",
+   "source": "src/mongo/transport/message_compressor_options_server.idl"
+  },
+  "net.ipv6": {
+   "name": "net.ipv6",
+   "short": "ipv6",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "net.listenBacklog": {
+   "name": "net.listenBacklog",
+   "short": "listenBacklog",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "net.maxIncomingConnections": {
+   "name": "net.maxIncomingConnections",
+   "short": "maxConns",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "net.maxIncomingConnectionsOverride": {
+   "name": "net.maxIncomingConnectionsOverride",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "net.port": {
+   "name": "net.port",
+   "short": "port",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "net.reservedAdminThreads": {
+   "name": "net.reservedAdminThreads",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "net.ssl.mode": {
+   "name": "net.ssl.mode",
+   "short": "sslMode",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.CAFile": {
+   "name": "net.tls.CAFile",
+   "deprecatedNames": [
+    "net.ssl.CAFile",
+    "sslCAFile"
+   ],
+   "short": "tlsCAFile",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.CRLFile": {
+   "name": "net.tls.CRLFile",
+   "deprecatedNames": [
+    "net.ssl.CRLFile",
+    "sslCRLFile"
+   ],
+   "short": "tlsCRLFile",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.FIPSMode": {
+   "name": "net.tls.FIPSMode",
+   "deprecatedNames": [
+    "net.ssl.FIPSMode",
+    "sslFIPSMode"
+   ],
+   "short": "tlsFIPSMode",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.allowConnectionsWithoutCertificates": {
+   "name": "net.tls.allowConnectionsWithoutCertificates",
+   "deprecatedNames": [
+    "net.ssl.allowConnectionsWithoutCertificates",
+    "net.ssl.weakCertificateValidation",
+    "net.tls.weakCertificateValidation",
+    "sslAllowConnectionsWithoutCertificates",
+    "sslWeakCertificateValidation",
+    "tlsWeakCertificateValidation"
+   ],
+   "short": "tlsAllowConnectionsWithoutCertificates",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.allowInvalidCertificates": {
+   "name": "net.tls.allowInvalidCertificates",
+   "deprecatedNames": [
+    "net.ssl.allowInvalidCertificates",
+    "sslAllowInvalidCertificates"
+   ],
+   "short": "tlsAllowInvalidCertificates",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.allowInvalidHostnames": {
+   "name": "net.tls.allowInvalidHostnames",
+   "deprecatedNames": [
+    "net.ssl.allowInvalidHostnames",
+    "sslAllowInvalidHostnames"
+   ],
+   "short": "tlsAllowInvalidHostnames",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.certificateKeyFile": {
+   "name": "net.tls.certificateKeyFile",
+   "deprecatedNames": [
+    "net.ssl.PEMKeyFile",
+    "sslPEMKeyFile"
+   ],
+   "short": "tlsCertificateKeyFile",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.certificateKeyFilePassword": {
+   "name": "net.tls.certificateKeyFilePassword",
+   "deprecatedNames": [
+    "net.ssl.PEMKeyPassword",
+    "sslPEMKeyPassword"
+   ],
+   "short": "tlsCertificateKeyFilePassword",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.certificateSelector": {
+   "name": "net.tls.certificateSelector",
+   "deprecatedNames": [
+    "net.ssl.certificateSelector",
+    "sslCertificateSelector"
+   ],
+   "short": "tlsCertificateSelector",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.clusterCAFile": {
+   "name": "net.tls.clusterCAFile",
+   "deprecatedNames": [
+    "net.ssl.clusterCAFile",
+    "sslClusterCAFile"
+   ],
+   "short": "tlsClusterCAFile",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.clusterCertificateSelector": {
+   "name": "net.tls.clusterCertificateSelector",
+   "deprecatedNames": [
+    "net.ssl.clusterCertificateSelector",
+    "sslClusterCertificateSelector"
+   ],
+   "short": "tlsClusterCertificateSelector",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.clusterFile": {
+   "name": "net.tls.clusterFile",
+   "deprecatedNames": [
+    "net.ssl.clusterFile",
+    "sslClusterFile"
+   ],
+   "short": "tlsClusterFile",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.clusterPassword": {
+   "name": "net.tls.clusterPassword",
+   "deprecatedNames": [
+    "net.ssl.clusterPassword",
+    "sslClusterPassword"
+   ],
+   "short": "tlsClusterPassword",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.disabledProtocols": {
+   "name": "net.tls.disabledProtocols",
+   "deprecatedNames": [
+    "net.ssl.disabledProtocols",
+    "sslDisabledProtocols"
+   ],
+   "short": "tlsDisabledProtocols",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.logVersions": {
+   "name": "net.tls.logVersions",
+   "short": "tlsLogVersions",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.mode": {
+   "name": "net.tls.mode",
+   "short": "tlsMode",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.tlsCipherConfig": {
+   "name": "net.tls.tlsCipherConfig",
+   "deprecatedNames": [
+    "net.ssl.sslCipherConfig",
+    "sslCipherConfig"
+   ],
+   "short": "tlsCipherConfig",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.tls.tlsOnNormalPorts": {
+   "name": "net.tls.tlsOnNormalPorts",
+   "deprecatedNames": [
+    "net.ssl.sslOnNormalPorts",
+    "sslOnNormalPorts"
+   ],
+   "short": "tlsOnNormalPorts",
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "net.transportLayer": {
+   "name": "net.transportLayer",
+   "short": "transportLayer",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "net.unixDomainSocket.enabled": {
+   "name": "net.unixDomainSocket.enabled",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "net.unixDomainSocket.filePermissions": {
+   "name": "net.unixDomainSocket.filePermissions",
+   "short": "filePermissions",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "net.unixDomainSocket.pathPrefix": {
+   "name": "net.unixDomainSocket.pathPrefix",
+   "short": "unixSocketPrefix",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "net.wireObjectCheck": {
+   "name": "net.wireObjectCheck",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "noMoveParanoia": {
+   "name": "noMoveParanoia",
+   "source": "src/mongo/db/mongod_options_sharding.idl"
+  },
+  "noauth": {
+   "name": "noauth",
+   "source": "src/mongo/db/server_options_nongeneral.idl"
+  },
+  "nojournal": {
+   "name": "nojournal",
+   "deprecatedNames": [
+    "nodur"
+   ],
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "noobjcheck": {
+   "name": "noobjcheck",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "noscripting": {
+   "name": "noscripting",
+   "source": "src/mongo/s/mongos_options.idl"
+  },
+  "notablescan": {
+   "name": "notablescan",
+   "source": "src/mongo/db/mongod_options_general.idl"
+  },
+  "nounixsocket": {
+   "name": "nounixsocket",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "objcheck": {
+   "name": "objcheck",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "opIdMem": {
+   "name": "opIdMem",
+   "source": "src/mongo/db/mongod_options_legacy.idl"
+  },
+  "operationProfiling.filter": {
+   "name": "operationProfiling.filter",
+   "short": "profileFilter",
+   "source": "src/mongo/db/server_options_nongeneral.idl"
+  },
+  "operationProfiling.mode": {
+   "name": "operationProfiling.mode",
+   "source": "src/mongo/db/mongod_options_general.idl"
+  },
+  "operationProfiling.rateLimit": {
+   "name": "operationProfiling.rateLimit",
+   "short": "rateLimit",
+   "source": "src/mongo/db/server_options_nongeneral.idl"
+  },
+  "operationProfiling.slowOpSampleRate": {
+   "name": "operationProfiling.slowOpSampleRate",
+   "short": "slowOpSampleRate",
+   "source": "src/mongo/db/server_options_nongeneral.idl"
+  },
+  "operationProfiling.slowOpThresholdMs": {
+   "name": "operationProfiling.slowOpThresholdMs",
+   "short": "slowms",
+   "source": "src/mongo/db/server_options_nongeneral.idl"
+  },
+  "outputConfig": {
+   "name": "outputConfig",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "pairwith": {
+   "name": "pairwith",
+   "source": "src/mongo/db/mongod_options_legacy.idl"
+  },
+  "processManagement.fork": {
+   "name": "processManagement.fork",
+   "short": "fork",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "processManagement.pidFilePath": {
+   "name": "processManagement.pidFilePath",
+   "short": "pidfilepath",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "processManagement.timeZoneInfo": {
+   "name": "processManagement.timeZoneInfo",
+   "short": "timeZoneInfo",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "processManagement.windowsService.description": {
+   "name": "processManagement.windowsService.description",
+   "short": "serviceDescription",
+   "source": "src/mongo/db/windows_options.idl"
+  },
+  "processManagement.windowsService.displayName": {
+   "name": "processManagement.windowsService.displayName",
+   "short": "serviceDisplayName",
+   "source": "src/mongo/db/windows_options.idl"
+  },
+  "processManagement.windowsService.serviceName": {
+   "name": "processManagement.windowsService.serviceName",
+   "short": "serviceName",
+   "source": "src/mongo/db/windows_options.idl"
+  },
+  "processManagement.windowsService.servicePassword": {
+   "name": "processManagement.windowsService.servicePassword",
+   "short": "servicePassword",
+   "source": "src/mongo/db/windows_options.idl"
+  },
+  "processManagement.windowsService.serviceUser": {
+   "name": "processManagement.windowsService.serviceUser",
+   "short": "serviceUser",
+   "source": "src/mongo/db/windows_options.idl"
+  },
+  "profile": {
+   "name": "profile",
+   "source": "src/mongo/db/mongod_options_general.idl"
+  },
+  "reinstall": {
+   "name": "reinstall",
+   "source": "src/mongo/db/windows_options.idl"
+  },
+  "remove": {
+   "name": "remove",
+   "source": "src/mongo/db/windows_options.idl"
+  },
+  "repair": {
+   "name": "repair",
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "replication.enableMajorityReadConcern": {
+   "name": "replication.enableMajorityReadConcern",
+   "short": "enableMajorityReadConcern",
+   "source": "src/mongo/db/mongod_options_replication.idl"
+  },
+  "replication.localPingThresholdMs": {
+   "name": "replication.localPingThresholdMs",
+   "short": "localThreshold",
+   "source": "src/mongo/s/mongos_options.idl"
+  },
+  "replication.oplogSizeMB": {
+   "name": "replication.oplogSizeMB",
+   "short": "oplogSize",
+   "source": "src/mongo/db/mongod_options_replication.idl"
+  },
+  "replication.replSet": {
+   "name": "replication.replSet",
+   "short": "replSet",
+   "source": "src/mongo/db/mongod_options_replication.idl"
+  },
+  "replication.replSetName": {
+   "name": "replication.replSetName",
+   "source": "src/mongo/db/mongod_options_replication.idl"
+  },
+  "replication.serverless": {
+   "name": "replication.serverless",
+   "short": "serverless",
+   "source": "src/mongo/db/mongod_options_replication.idl"
+  },
+  "restore": {
+   "name": "restore",
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "security.authSchemaVersion": {
+   "name": "security.authSchemaVersion",
+   "source": "src/mongo/db/mongod_options_general.idl"
+  },
+  "security.authenticationMechanisms": {
+   "name": "security.authenticationMechanisms",
+   "source": "src/mongo/db/auth/sasl_options.idl"
+  },
+  "security.authorization": {
+   "name": "security.authorization",
+   "source": "src/mongo/db/mongod_options_general.idl"
+  },
+  "security.clusterAuthMode": {
+   "name": "security.clusterAuthMode",
+   "short": "clusterAuthMode",
+   "source": "src/mongo/db/cluster_auth_mode_option.idl"
+  },
+  "security.clusterIpSourceAllowlist": {
+   "name": "security.clusterIpSourceAllowlist",
+   "deprecatedNames": [
+    "clusterIpSourceWhitelist",
+    "security.clusterIpSourceWhitelist"
+   ],
+   "short": "clusterIpSourceAllowlist",
+   "source": "src/mongo/db/mongod_options_general.idl"
+  },
+  "security.enableEncryption": {
+   "name": "security.enableEncryption",
+   "short": "enableEncryption",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.enableLocalhostAuthBypass": {
+   "name": "security.enableLocalhostAuthBypass",
+   "source": "src/mongo/db/mongod_options_general.idl"
+  },
+  "security.encryptionCipherMode": {
+   "name": "security.encryptionCipherMode",
+   "short": "encryptionCipherMode",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.encryptionKeyFile": {
+   "name": "security.encryptionKeyFile",
+   "short": "encryptionKeyFile",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.javascriptEnabled": {
+   "name": "security.javascriptEnabled",
+   "source": "src/mongo/s/mongos_options.idl"
+  },
+  "security.keyFile": {
+   "name": "security.keyFile",
+   "short": "keyFile",
+   "source": "src/mongo/db/keyfile_option.idl"
+  },
+  "security.kmip.activateKeys": {
+   "name": "security.kmip.activateKeys",
+   "short": "kmipActivateKeys",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.kmip.clientCertificateFile": {
+   "name": "security.kmip.clientCertificateFile",
+   "short": "kmipClientCertificateFile",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.kmip.clientCertificatePassword": {
+   "name": "security.kmip.clientCertificatePassword",
+   "short": "kmipClientCertificatePassword",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.kmip.connectRetries": {
+   "name": "security.kmip.connectRetries",
+   "short": "kmipConnectRetries",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.kmip.connectTimeoutMS": {
+   "name": "security.kmip.connectTimeoutMS",
+   "short": "kmipConnectTimeoutMS",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.kmip.keyIdentifier": {
+   "name": "security.kmip.keyIdentifier",
+   "short": "kmipKeyIdentifier",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.kmip.keyStatePollingSeconds": {
+   "name": "security.kmip.keyStatePollingSeconds",
+   "short": "kmipKeyStatePollingSeconds",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.kmip.port": {
+   "name": "security.kmip.port",
+   "short": "kmipPort",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.kmip.rotateMasterKey": {
+   "name": "security.kmip.rotateMasterKey",
+   "short": "kmipRotateMasterKey",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.kmip.serverCAFile": {
+   "name": "security.kmip.serverCAFile",
+   "short": "kmipServerCAFile",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.kmip.serverName": {
+   "name": "security.kmip.serverName",
+   "short": "kmipServerName",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.kmip.useLegacyProtocol": {
+   "name": "security.kmip.useLegacyProtocol",
+   "short": "kmipUseLegacyProtocol",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.ldap.authz.queryTemplate": {
+   "name": "security.ldap.authz.queryTemplate",
+   "short": "ldapAuthzQueryTemplate",
+   "source": "src/mongo/db/mongod_options_ldapauthz.idl"
+  },
+  "security.ldap.bind.method": {
+   "name": "security.ldap.bind.method",
+   "short": "ldapBindMethod",
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "security.ldap.bind.queryPassword": {
+   "name": "security.ldap.bind.queryPassword",
+   "short": "ldapQueryPassword",
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "security.ldap.bind.queryUser": {
+   "name": "security.ldap.bind.queryUser",
+   "short": "ldapQueryUser",
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "security.ldap.bind.saslMechanisms": {
+   "name": "security.ldap.bind.saslMechanisms",
+   "short": "ldapBindSaslMechanisms",
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "security.ldap.servers": {
+   "name": "security.ldap.servers",
+   "short": "ldapServers",
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "security.ldap.timeoutMS": {
+   "name": "security.ldap.timeoutMS",
+   "short": "ldapTimeoutMS",
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "security.ldap.transportSecurity": {
+   "name": "security.ldap.transportSecurity",
+   "short": "ldapTransportSecurity",
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "security.ldap.userToDNMapping": {
+   "name": "security.ldap.userToDNMapping",
+   "short": "ldapUserToDNMapping",
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "security.ldap.validateLDAPServerConfig": {
+   "name": "security.ldap.validateLDAPServerConfig",
+   "short": "ldapValidateLDAPServerConfig",
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "security.redactClientLogData": {
+   "name": "security.redactClientLogData",
+   "short": "redactClientLogData",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "security.relaxPermChecks": {
+   "name": "security.relaxPermChecks",
+   "short": "relaxPermChecks",
+   "source": "src/mongo/db/server_options_general.idl"
+  },
+  "security.sasl.hostName": {
+   "name": "security.sasl.hostName",
+   "source": "src/mongo/db/auth/sasl_options.idl"
+  },
+  "security.sasl.saslauthdSocketPath": {
+   "name": "security.sasl.saslauthdSocketPath",
+   "source": "src/mongo/db/auth/sasl_options.idl"
+  },
+  "security.sasl.serviceName": {
+   "name": "security.sasl.serviceName",
+   "source": "src/mongo/db/auth/sasl_options.idl"
+  },
+  "security.transitionToAuth": {
+   "name": "security.transitionToAuth",
+   "short": "transitionToAuth",
+   "source": "src/mongo/db/server_options_nongeneral.idl"
+  },
+  "security.vault.checkMaxVersions": {
+   "name": "security.vault.checkMaxVersions",
+   "short": "vaultCheckMaxVersions",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.vault.disableTLSForTesting": {
+   "name": "security.vault.disableTLSForTesting",
+   "short": "vaultDisableTLSForTesting",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.vault.port": {
+   "name": "security.vault.port",
+   "short": "vaultPort",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.vault.rotateMasterKey": {
+   "name": "security.vault.rotateMasterKey",
+   "short": "vaultRotateMasterKey",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.vault.secret": {
+   "name": "security.vault.secret",
+   "short": "vaultSecret",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.vault.secretVersion": {
+   "name": "security.vault.secretVersion",
+   "short": "vaultSecretVersion",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.vault.serverCAFile": {
+   "name": "security.vault.serverCAFile",
+   "short": "vaultServerCAFile",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.vault.serverName": {
+   "name": "security.vault.serverName",
+   "short": "vaultServerName",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "security.vault.tokenFile": {
+   "name": "security.vault.tokenFile",
+   "short": "vaultTokenFile",
+   "source": "src/mongo/db/mongod_options_encryption.idl"
+  },
+  "service": {
+   "name": "service",
+   "source": "src/mongo/db/windows_options.idl"
+  },
+  "setParameter": {
+   "name": "setParameter",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "sharding._overrideShardIdentity": {
+   "name": "sharding._overrideShardIdentity",
+   "source": "src/mongo/db/mongod_options_sharding.idl"
+  },
+  "sharding.archiveMovedChunks": {
+   "name": "sharding.archiveMovedChunks",
+   "source": "src/mongo/db/mongod_options_sharding.idl"
+  },
+  "sharding.clusterRole": {
+   "name": "sharding.clusterRole",
+   "source": "src/mongo/db/mongod_options_sharding.idl"
+  },
+  "sharding.configDB": {
+   "name": "sharding.configDB",
+   "short": "configdb",
+   "source": "src/mongo/s/mongos_options.idl"
+  },
+  "shardsvr": {
+   "name": "shardsvr",
+   "source": "src/mongo/db/mongod_options_sharding.idl"
+  },
+  "shutdown": {
+   "name": "shutdown",
+   "source": "src/mongo/db/mongod_options_general.idl"
+  },
+  "slave": {
+   "name": "slave",
+   "source": "src/mongo/db/mongod_options_replication.idl"
+  },
+  "storage.dbPath": {
+   "name": "storage.dbPath",
+   "short": "dbpath",
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "storage.directoryPerDB": {
+   "name": "storage.directoryPerDB",
+   "short": "directoryperdb",
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "storage.engine": {
+   "name": "storage.engine",
+   "short": "storageEngine",
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "storage.groupCollections": {
+   "name": "storage.groupCollections",
+   "short": "groupCollections",
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "storage.inMemory.collectionConfig.configString": {
+   "name": "storage.inMemory.collectionConfig.configString",
+   "short": "inMemoryCollectionConfigString",
+   "source": "src/mongo/db/storage/inmemory/inmemory_global_options.idl"
+  },
+  "storage.inMemory.engineConfig.configString": {
+   "name": "storage.inMemory.engineConfig.configString",
+   "short": "inMemoryEngineConfigString",
+   "source": "src/mongo/db/storage/inmemory/inmemory_global_options.idl"
+  },
+  "storage.inMemory.engineConfig.inMemorySizeGB": {
+   "name": "storage.inMemory.engineConfig.inMemorySizeGB",
+   "short": "inMemorySizeGB",
+   "source": "src/mongo/db/storage/inmemory/inmemory_global_options.idl"
+  },
+  "storage.inMemory.engineConfig.statisticsLogDelaySecs": {
+   "name": "storage.inMemory.engineConfig.statisticsLogDelaySecs",
+   "short": "inMemoryStatisticsLogDelaySecs",
+   "source": "src/mongo/db/storage/inmemory/inmemory_global_options.idl"
+  },
+  "storage.inMemory.indexConfig.configString": {
+   "name": "storage.inMemory.indexConfig.configString",
+   "short": "inMemoryIndexConfigString",
+   "source": "src/mongo/db/storage/inmemory/inmemory_global_options.idl"
+  },
+  "storage.journal.commitIntervalMs": {
+   "name": "storage.journal.commitIntervalMs",
+   "short": "journalCommitInterval",
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "storage.journal.enabled": {
+   "name": "storage.journal.enabled",
+   "deprecatedNames": [
+    "dur"
+   ],
+   "short": "journal",
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "storage.oplogMinRetentionHours": {
+   "name": "storage.oplogMinRetentionHours",
+   "short": "oplogMinRetentionHours",
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "storage.queryableBackupMode": {
+   "name": "storage.queryableBackupMode",
+   "short": "queryableBackupMode",
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "storage.syncPeriodSecs": {
+   "name": "storage.syncPeriodSecs",
+   "short": "syncdelay",
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "storage.wiredTiger.collectionConfig.blockCompressor": {
+   "name": "storage.wiredTiger.collectionConfig.blockCompressor",
+   "short": "wiredTigerCollectionBlockCompressor",
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_global_options.idl"
+  },
+  "storage.wiredTiger.collectionConfig.configString": {
+   "name": "storage.wiredTiger.collectionConfig.configString",
+   "short": "wiredTigerCollectionConfigString",
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_global_options.idl"
+  },
+  "storage.wiredTiger.engineConfig.cacheSizeGB": {
+   "name": "storage.wiredTiger.engineConfig.cacheSizeGB",
+   "short": "wiredTigerCacheSizeGB",
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_global_options.idl"
+  },
+  "storage.wiredTiger.engineConfig.checkpointSizeMB": {
+   "name": "storage.wiredTiger.engineConfig.checkpointSizeMB",
+   "short": "wiredTigerCheckpointSizeMB",
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_global_options.idl"
+  },
+  "storage.wiredTiger.engineConfig.configString": {
+   "name": "storage.wiredTiger.engineConfig.configString",
+   "short": "wiredTigerEngineConfigString",
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_global_options.idl"
+  },
+  "storage.wiredTiger.engineConfig.directoryForIndexes": {
+   "name": "storage.wiredTiger.engineConfig.directoryForIndexes",
+   "short": "wiredTigerDirectoryForIndexes",
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_global_options.idl"
+  },
+  "storage.wiredTiger.engineConfig.journalCompressor": {
+   "name": "storage.wiredTiger.engineConfig.journalCompressor",
+   "short": "wiredTigerJournalCompressor",
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_global_options.idl"
+  },
+  "storage.wiredTiger.engineConfig.maxCacheOverflowFileSizeGB": {
+   "name": "storage.wiredTiger.engineConfig.maxCacheOverflowFileSizeGB",
+   "short": "wiredTigerMaxCacheOverflowFileSizeGB",
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_global_options.idl"
+  },
+  "storage.wiredTiger.engineConfig.statisticsLogDelaySecs": {
+   "name": "storage.wiredTiger.engineConfig.statisticsLogDelaySecs",
+   "short": "wiredTigerStatisticsLogDelaySecs",
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_global_options.idl"
+  },
+  "storage.wiredTiger.engineConfig.zstdCompressionLevel": {
+   "name": "storage.wiredTiger.engineConfig.zstdCompressionLevel",
+   "short": "zstdDefaultCompressionLevel",
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_global_options.idl"
+  },
+  "storage.wiredTiger.indexConfig.configString": {
+   "name": "storage.wiredTiger.indexConfig.configString",
+   "short": "wiredTigerIndexConfigString",
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_global_options.idl"
+  },
+  "storage.wiredTiger.indexConfig.prefixCompression": {
+   "name": "storage.wiredTiger.indexConfig.prefixCompression",
+   "short": "wiredTigerIndexPrefixCompression",
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_global_options.idl"
+  },
+  "sysinfo": {
+   "name": "sysinfo",
+   "source": "src/mongo/db/mongod_options_general.idl"
+  },
+  "syslog": {
+   "name": "syslog",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "systemLog.destination": {
+   "name": "systemLog.destination",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "systemLog.logAppend": {
+   "name": "systemLog.logAppend",
+   "short": "logappend",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "systemLog.logRotate": {
+   "name": "systemLog.logRotate",
+   "short": "logRotate",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "systemLog.path": {
+   "name": "systemLog.path",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "systemLog.quiet": {
+   "name": "systemLog.quiet",
+   "short": "quiet",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "systemLog.syslogFacility": {
+   "name": "systemLog.syslogFacility",
+   "short": "syslogFacility",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "systemLog.timeStampFormat": {
+   "name": "systemLog.timeStampFormat",
+   "short": "timeStampFormat",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "systemLog.traceAllExceptions": {
+   "name": "systemLog.traceAllExceptions",
+   "short": "traceExceptions",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "systemLog.verbosity": {
+   "name": "systemLog.verbosity",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "test": {
+   "name": "test",
+   "source": "src/mongo/s/mongos_options.idl"
+  },
+  "upgrade": {
+   "name": "upgrade",
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "verbose": {
+   "name": "verbose",
+   "source": "src/mongo/db/server_options_base.idl"
+  },
+  "version": {
+   "name": "version",
+   "source": "src/mongo/db/server_options_general.idl"
+  }
+ },
+ "serverParameters": {
+  "AlwaysRecordTraffic": {
+   "name": "AlwaysRecordTraffic",
+   "setAt": [
+    "startup"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/db/traffic_recorder.idl"
+  },
+  "KeysRotationIntervalSec": {
+   "name": "KeysRotationIntervalSec",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/keys_collection_manager.idl"
+  },
+  "KillSessionsMaxConcurrency": {
+   "name": "KillSessionsMaxConcurrency",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/s/commands/cluster_commands.idl"
+  },
+  "KillSessionsPerHostTimeoutMS": {
+   "name": "KillSessionsPerHostTimeoutMS",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/s/commands/cluster_commands.idl"
+  },
+  "ShardingTaskExecutorPoolHostTimeoutMS": {
+   "name": "ShardingTaskExecutorPoolHostTimeoutMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/sharding_task_executor_pool.idl"
+  },
+  "ShardingTaskExecutorPoolMaxConnecting": {
+   "name": "ShardingTaskExecutorPoolMaxConnecting",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/sharding_task_executor_pool.idl"
+  },
+  "ShardingTaskExecutorPoolMaxSize": {
+   "name": "ShardingTaskExecutorPoolMaxSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/sharding_task_executor_pool.idl"
+  },
+  "ShardingTaskExecutorPoolMaxSizeForConfigServers": {
+   "name": "ShardingTaskExecutorPoolMaxSizeForConfigServers",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/sharding_task_executor_pool.idl"
+  },
+  "ShardingTaskExecutorPoolMinSize": {
+   "name": "ShardingTaskExecutorPoolMinSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/sharding_task_executor_pool.idl"
+  },
+  "ShardingTaskExecutorPoolMinSizeForConfigServers": {
+   "name": "ShardingTaskExecutorPoolMinSizeForConfigServers",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/sharding_task_executor_pool.idl"
+  },
+  "ShardingTaskExecutorPoolRefreshRequirementMS": {
+   "name": "ShardingTaskExecutorPoolRefreshRequirementMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/sharding_task_executor_pool.idl"
+  },
+  "ShardingTaskExecutorPoolRefreshTimeoutMS": {
+   "name": "ShardingTaskExecutorPoolRefreshTimeoutMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/sharding_task_executor_pool.idl"
+  },
+  "ShardingTaskExecutorPoolReplicaSetMatching": {
+   "name": "ShardingTaskExecutorPoolReplicaSetMatching",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/sharding_task_executor_pool.idl"
+  },
+  "TransactionRecordMinimumLifetimeMinutes": {
+   "name": "TransactionRecordMinimumLifetimeMinutes",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/logical_session_cache.idl"
+  },
+  "acceptApiVersion2": {
+   "name": "acceptApiVersion2",
+   "setAt": [
+    "startup"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/db/api_parameters.idl"
+  },
+  "activeFaultDurationSecs": {
+   "name": "activeFaultDurationSecs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/process_health/health_monitoring_server_parameters.idl"
+  },
+  "aggregateOperationResourceConsumptionMetrics": {
+   "name": "aggregateOperationResourceConsumptionMetrics",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/stats/operation_resource_consumption.idl"
+  },
+  "allowDiskUseByDefault": {
+   "name": "allowDiskUseByDefault",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/exec/disk_use_options.idl"
+  },
+  "allowDocumentsGreaterThanMaxUserSize": {
+   "name": "allowDocumentsGreaterThanMaxUserSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "allowMultipleArbiters": {
+   "name": "allowMultipleArbiters",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "allowRolesFromX509Certificates": {
+   "name": "allowRolesFromX509Certificates",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/authorization_manager_global_parameters.idl"
+  },
+  "auditAuthorizationSuccess": {
+   "name": "auditAuthorizationSuccess",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/audit/audit_parameters.idl"
+  },
+  "authSchemaVersion": {
+   "name": "authSchemaVersion",
+   "setAt": [
+    "readonly"
+   ],
+   "source": "src/mongo/db/auth/authorization_manager_global_parameters.idl"
+  },
+  "authenticationMechanisms": {
+   "name": "authenticationMechanisms",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/sasl_options.idl"
+  },
+  "authorizationManagerCacheSize": {
+   "name": "authorizationManagerCacheSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/authorization_manager_impl_parameters.idl"
+  },
+  "authorizationManagerPinnedUsers": {
+   "name": "authorizationManagerPinnedUsers",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/authorization_manager_impl_parameters.idl"
+  },
+  "authorizationManagerPinnedUsersRefreshIntervalMillis": {
+   "name": "authorizationManagerPinnedUsersRefreshIntervalMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/authorization_manager_impl_parameters.idl"
+  },
+  "automationServiceDescriptor": {
+   "name": "automationServiceDescriptor",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/commands/parameters.idl"
+  },
+  "awsEC2InstanceMetadataUrl": {
+   "name": "awsEC2InstanceMetadataUrl",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/client/sasl_aws_client_options.idl"
+  },
+  "awsECSInstanceMetadataUrl": {
+   "name": "awsECSInstanceMetadataUrl",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/client/sasl_aws_client_options.idl"
+  },
+  "awsStsHost": {
+   "name": "awsStsHost",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/sasl_options.idl"
+  },
+  "backtraceLogFile": {
+   "name": "backtraceLogFile",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/initialize_server_global_state.idl"
+  },
+  "balancerChunksSelectionTimeoutMs": {
+   "name": "balancerChunksSelectionTimeoutMs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_config_server_parameters.idl"
+  },
+  "balancerMigrationsThrottlingMs": {
+   "name": "balancerMigrationsThrottlingMs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_config_server_parameters.idl"
+  },
+  "batchedDeletesTargetBatchDocs": {
+   "name": "batchedDeletesTargetBatchDocs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/exec/batched_delete_stage.idl"
+  },
+  "batchedDeletesTargetBatchTimeMS": {
+   "name": "batchedDeletesTargetBatchTimeMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/exec/batched_delete_stage.idl"
+  },
+  "batchedDeletesTargetStagedDocBytes": {
+   "name": "batchedDeletesTargetStagedDocBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/exec/batched_delete_stage.idl"
+  },
+  "batchedExpiredChangeStreamPreImageRemoval": {
+   "name": "batchedExpiredChangeStreamPreImageRemoval",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/pipeline/change_stream_preimage.idl"
+  },
+  "bgSyncOplogFetcherBatchSize": {
+   "name": "bgSyncOplogFetcherBatchSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "bsonTestValidationVersion": {
+   "name": "bsonTestValidationVersion",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/bson/bson_validate.idl"
+  },
+  "changeStreamOptions": {
+   "name": "changeStreamOptions",
+   "setAt": [
+    "cluster"
+   ],
+   "source": "src/mongo/db/change_stream_options_parameter.idl"
+  },
+  "changeSyncSourceThresholdMillis": {
+   "name": "changeSyncSourceThresholdMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "chunkDefragmentationThrottlingMS": {
+   "name": "chunkDefragmentationThrottlingMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_config_server_parameters.idl"
+  },
+  "chunkMigrationConcurrency": {
+   "name": "chunkMigrationConcurrency",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "chunkMigrationFetcherMaxBufferedSizeBytesPerThread": {
+   "name": "chunkMigrationFetcherMaxBufferedSizeBytesPerThread",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "clientCursorMonitorFrequencySecs": {
+   "name": "clientCursorMonitorFrequencySecs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/cursor_server_params.idl"
+  },
+  "clusterAuthMode": {
+   "name": "clusterAuthMode",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters_auth.idl"
+  },
+  "clusterIpSourceAllowlist": {
+   "name": "clusterIpSourceAllowlist",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/db/mongod_options_general.idl"
+  },
+  "collectionBulkLoaderBatchSizeInBytes": {
+   "name": "collectionBulkLoaderBatchSizeInBytes",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "collectionClonerBatchSize": {
+   "name": "collectionClonerBatchSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "collectionClonerUsesExhaust": {
+   "name": "collectionClonerUsesExhaust",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "configReplicasProbedByHealthMonitoring": {
+   "name": "configReplicasProbedByHealthMonitoring",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/process_health/health_monitoring_server_parameters.idl"
+  },
+  "connPoolMaxConnsPerHost": {
+   "name": "connPoolMaxConnsPerHost",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/client/global_conn_pool.idl"
+  },
+  "connPoolMaxInUseConnsPerHost": {
+   "name": "connPoolMaxInUseConnsPerHost",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/client/global_conn_pool.idl"
+  },
+  "connectTimeoutMs": {
+   "name": "connectTimeoutMs",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/client/sdam/sdam_configuration_parameters.idl"
+  },
+  "coordinateCommitReturnImmediatelyAfterPersistingDecision": {
+   "name": "coordinateCommitReturnImmediatelyAfterPersistingDecision",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/transaction_coordinator_params.idl"
+  },
+  "createRollbackDataFiles": {
+   "name": "createRollbackDataFiles",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/rollback_impl.idl"
+  },
+  "cursorTimeoutMillis": {
+   "name": "cursorTimeoutMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/cursor_server_params.idl"
+  },
+  "dbCheckCollectionTryLockMaxAttempts": {
+   "name": "dbCheckCollectionTryLockMaxAttempts",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/dbcheck.idl"
+  },
+  "dbCheckCollectionTryLockMaxBackoffMillis": {
+   "name": "dbCheckCollectionTryLockMaxBackoffMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/dbcheck.idl"
+  },
+  "dbCheckCollectionTryLockMinBackoffMillis": {
+   "name": "dbCheckCollectionTryLockMinBackoffMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/dbcheck.idl"
+  },
+  "dbCheckCollectionTryLockTimeoutMillis": {
+   "name": "dbCheckCollectionTryLockTimeoutMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/dbcheck.idl"
+  },
+  "dbCheckHealthLogEveryNBatches": {
+   "name": "dbCheckHealthLogEveryNBatches",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/dbcheck.idl"
+  },
+  "defaultFindReplicaSetHostTimeoutMS": {
+   "name": "defaultFindReplicaSetHostTimeoutMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/client/replica_set_monitor_server_parameters.idl"
+  },
+  "deprecatedWireOpsWarningPeriodInSeconds": {
+   "name": "deprecatedWireOpsWarningPeriodInSeconds",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/rpc/unsupported_wire_ops.idl"
+  },
+  "diagnosticDataCollectionDirectoryPath": {
+   "name": "diagnosticDataCollectionDirectoryPath",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ftdc/ftdc_server.idl"
+  },
+  "diagnosticDataCollectionDirectorySizeMB": {
+   "name": "diagnosticDataCollectionDirectorySizeMB",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ftdc/ftdc_server.idl"
+  },
+  "diagnosticDataCollectionEnableLatencyHistograms": {
+   "name": "diagnosticDataCollectionEnableLatencyHistograms",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ftdc/ftdc_server.idl"
+  },
+  "diagnosticDataCollectionEnabled": {
+   "name": "diagnosticDataCollectionEnabled",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ftdc/ftdc_server.idl"
+  },
+  "diagnosticDataCollectionFileSizeMB": {
+   "name": "diagnosticDataCollectionFileSizeMB",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ftdc/ftdc_server.idl"
+  },
+  "diagnosticDataCollectionPeriodMillis": {
+   "name": "diagnosticDataCollectionPeriodMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ftdc/ftdc_server.idl"
+  },
+  "diagnosticDataCollectionSamplesPerChunk": {
+   "name": "diagnosticDataCollectionSamplesPerChunk",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ftdc/ftdc_server.idl"
+  },
+  "diagnosticDataCollectionSamplesPerInterimUpdate": {
+   "name": "diagnosticDataCollectionSamplesPerInterimUpdate",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ftdc/ftdc_server.idl"
+  },
+  "diagnosticDataCollectionStatsNamespaces": {
+   "name": "diagnosticDataCollectionStatsNamespaces",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ftdc/ftdc_mongod.idl"
+  },
+  "diagnosticDataCollectionVerboseTCMalloc": {
+   "name": "diagnosticDataCollectionVerboseTCMalloc",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ftdc/ftdc_server.idl"
+  },
+  "disableJavaScriptJIT": {
+   "name": "disableJavaScriptJIT",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/scripting/mozjs/engine.idl"
+  },
+  "disableLogicalSessionCacheRefresh": {
+   "name": "disableLogicalSessionCacheRefresh",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/logical_session_cache.idl"
+  },
+  "disableNonTLSConnectionLogging": {
+   "name": "disableNonTLSConnectionLogging",
+   "setAt": [
+    "startup"
+   ],
+   "deprecatedNames": [
+    "disableNonSSLConnectionLogging"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "disableResumableRangeDeleter": {
+   "name": "disableResumableRangeDeleter",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "disableSplitHorizonIPCheck": {
+   "name": "disableSplitHorizonIPCheck",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "disabledSecureAllocatorDomains": {
+   "name": "disabledSecureAllocatorDomains",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/server_options_helpers.idl"
+  },
+  "documentUnitSizeBytes": {
+   "name": "documentUnitSizeBytes",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/stats/operation_resource_consumption.idl"
+  },
+  "enableDefaultWriteConcernUpdatesForInitiate": {
+   "name": "enableDefaultWriteConcernUpdatesForInitiate",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "enableElectionHandoff": {
+   "name": "enableElectionHandoff",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/replication_coordinator_impl.idl"
+  },
+  "enableFinerGrainedCatalogCacheRefresh": {
+   "name": "enableFinerGrainedCatalogCacheRefresh",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/s/mongod_and_mongos_server_parameters.idl"
+  },
+  "enableFlowControl": {
+   "name": "enableFlowControl",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/flow_control_parameters.idl"
+  },
+  "enableIndexBuildCommitQuorum": {
+   "name": "enableIndexBuildCommitQuorum",
+   "setAt": [
+    "startup"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/db/storage/two_phase_index_build_knobs.idl"
+  },
+  "enableLocalhostAuthBypass": {
+   "name": "enableLocalhostAuthBypass",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/enable_localhost_auth_bypass_parameter.idl"
+  },
+  "enableOverrideClusterChainingSetting": {
+   "name": "enableOverrideClusterChainingSetting",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "enableReconfigRollbackCommittedWritesCheck": {
+   "name": "enableReconfigRollbackCommittedWritesCheck",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "enableSearchMeta": {
+   "name": "enableSearchMeta",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "enableShardedIndexConsistencyCheck": {
+   "name": "enableShardedIndexConsistencyCheck",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "enableTemporarilyUnavailableExceptions": {
+   "name": "enableTemporarilyUnavailableExceptions",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/concurrency/exception_util.idl"
+  },
+  "enableTestCommands": {
+   "name": "enableTestCommands",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/commands/test_commands_enabled.idl"
+  },
+  "enableTimeoutOfInactiveSessionCursors": {
+   "name": "enableTimeoutOfInactiveSessionCursors",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "enforceUserClusterSeparation": {
+   "name": "enforceUserClusterSeparation",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/auth_options.idl"
+  },
+  "expiredChangeStreamPreImageRemovalJobSleepSecs": {
+   "name": "expiredChangeStreamPreImageRemovalJobSleepSecs",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/pipeline/change_stream_preimage.idl"
+  },
+  "failpoint.*": {
+   "name": "failpoint.*",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/fail_point_server_parameter.idl"
+  },
+  "fassertOnLockTimeoutForStepUpDown": {
+   "name": "fassertOnLockTimeoutForStepUpDown",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "featureCompatibilityVersion": {
+   "name": "featureCompatibilityVersion",
+   "setAt": [
+    "readonly"
+   ],
+   "source": "src/mongo/db/commands/feature_compatibility_version.idl"
+  },
+  "fileBasedInitialSyncExtendCursorTimeoutMS": {
+   "name": "fileBasedInitialSyncExtendCursorTimeoutMS",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "fileBasedInitialSyncMaxCyclesWithoutProgress": {
+   "name": "fileBasedInitialSyncMaxCyclesWithoutProgress",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "fileBasedInitialSyncMaxLagSec": {
+   "name": "fileBasedInitialSyncMaxLagSec",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "findChunksOnConfigTimeoutMS": {
+   "name": "findChunksOnConfigTimeoutMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/client/shard_remote.idl"
+  },
+  "fixedServiceExecutorRecursionLimit": {
+   "name": "fixedServiceExecutorRecursionLimit",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/transport/service_executor.idl"
+  },
+  "fixedServiceExecutorThreadLimit": {
+   "name": "fixedServiceExecutorThreadLimit",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/transport/service_executor.idl"
+  },
+  "flowControlDecayConstant": {
+   "name": "flowControlDecayConstant",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/flow_control_parameters.idl"
+  },
+  "flowControlFudgeFactor": {
+   "name": "flowControlFudgeFactor",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/flow_control_parameters.idl"
+  },
+  "flowControlMaxSamples": {
+   "name": "flowControlMaxSamples",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/flow_control_parameters.idl"
+  },
+  "flowControlMinTicketsPerSecond": {
+   "name": "flowControlMinTicketsPerSecond",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/flow_control_parameters.idl"
+  },
+  "flowControlSamplePeriod": {
+   "name": "flowControlSamplePeriod",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/flow_control_parameters.idl"
+  },
+  "flowControlTargetLagSeconds": {
+   "name": "flowControlTargetLagSeconds",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/flow_control_parameters.idl"
+  },
+  "flowControlThresholdLagPercentage": {
+   "name": "flowControlThresholdLagPercentage",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/flow_control_parameters.idl"
+  },
+  "flowControlTicketAdderConstant": {
+   "name": "flowControlTicketAdderConstant",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/flow_control_parameters.idl"
+  },
+  "flowControlTicketMultiplierConstant": {
+   "name": "flowControlTicketMultiplierConstant",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/flow_control_parameters.idl"
+  },
+  "flowControlWarnThresholdSeconds": {
+   "name": "flowControlWarnThresholdSeconds",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/flow_control_parameters.idl"
+  },
+  "forceRollbackViaRefetch": {
+   "name": "forceRollbackViaRefetch",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "globalConnPoolIdleTimeoutMinutes": {
+   "name": "globalConnPoolIdleTimeoutMinutes",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/client/global_conn_pool.idl"
+  },
+  "healthMonitoringIntensities": {
+   "name": "healthMonitoringIntensities",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/process_health/health_monitoring_server_parameters.idl"
+  },
+  "healthMonitoringIntervals": {
+   "name": "healthMonitoringIntervals",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/process_health/health_monitoring_server_parameters.idl"
+  },
+  "heapProfilingEnabled": {
+   "name": "heapProfilingEnabled",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/tcmalloc_parameters.idl"
+  },
+  "heapProfilingSampleIntervalBytes": {
+   "name": "heapProfilingSampleIntervalBytes",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/tcmalloc_parameters.idl"
+  },
+  "heartBeatFrequencyMs": {
+   "name": "heartBeatFrequencyMs",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/client/sdam/sdam_configuration_parameters.idl"
+  },
+  "honorSystemUmask": {
+   "name": "honorSystemUmask",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/initialize_server_global_state.idl"
+  },
+  "httpVerboseLogging": {
+   "name": "httpVerboseLogging",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/util/net/http_client_options.idl"
+  },
+  "indexEntryUnitSizeBytes": {
+   "name": "indexEntryUnitSizeBytes",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/stats/operation_resource_consumption.idl"
+  },
+  "indexMaxNumGeneratedKeysPerDocument": {
+   "name": "indexMaxNumGeneratedKeysPerDocument",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/storage_parameters.idl"
+  },
+  "initialServiceExecutorThreadingModel": {
+   "name": "initialServiceExecutorThreadingModel",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/transport/service_executor.idl"
+  },
+  "initialSyncMethod": {
+   "name": "initialSyncMethod",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "initialSyncOplogBuffer": {
+   "name": "initialSyncOplogBuffer",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "initialSyncOplogBufferPeekCacheSize": {
+   "name": "initialSyncOplogBufferPeekCacheSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "initialSyncOplogFetcherBatchSize": {
+   "name": "initialSyncOplogFetcherBatchSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "initialSyncSourceReadPreference": {
+   "name": "initialSyncSourceReadPreference",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "initialSyncTransientErrorRetryPeriodSeconds": {
+   "name": "initialSyncTransientErrorRetryPeriodSeconds",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "internalBatchUserMultiDeletesForTest": {
+   "name": "internalBatchUserMultiDeletesForTest",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ops/delete_request.idl"
+  },
+  "internalCascadesOptimizerDisableBranchAndBound": {
+   "name": "internalCascadesOptimizerDisableBranchAndBound",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalCascadesOptimizerDisableGroupByAndUnionRIDIntersect": {
+   "name": "internalCascadesOptimizerDisableGroupByAndUnionRIDIntersect",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalCascadesOptimizerDisableHashJoinRIDIntersect": {
+   "name": "internalCascadesOptimizerDisableHashJoinRIDIntersect",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalCascadesOptimizerDisableIndexes": {
+   "name": "internalCascadesOptimizerDisableIndexes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalCascadesOptimizerDisableMergeJoinRIDIntersect": {
+   "name": "internalCascadesOptimizerDisableMergeJoinRIDIntersect",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalCascadesOptimizerDisableScan": {
+   "name": "internalCascadesOptimizerDisableScan",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalCascadesOptimizerKeepRejectedPlans": {
+   "name": "internalCascadesOptimizerKeepRejectedPlans",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalDocumentSourceCursorBatchSizeBytes": {
+   "name": "internalDocumentSourceCursorBatchSizeBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalDocumentSourceDensifyMaxMemoryBytes": {
+   "name": "internalDocumentSourceDensifyMaxMemoryBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalDocumentSourceGroupMaxMemoryBytes": {
+   "name": "internalDocumentSourceGroupMaxMemoryBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalDocumentSourceLookupCacheSizeBytes": {
+   "name": "internalDocumentSourceLookupCacheSizeBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": {
+   "name": "internalDocumentSourceSetWindowFieldsMaxMemoryBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalGeoNearQuery2DMaxCoveringCells": {
+   "name": "internalGeoNearQuery2DMaxCoveringCells",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/expression_index_knobs.idl"
+  },
+  "internalGeoPredicateQuery2DMaxCoveringCells": {
+   "name": "internalGeoPredicateQuery2DMaxCoveringCells",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/expression_index_knobs.idl"
+  },
+  "internalIndexBuildBulkLoadYieldIterations": {
+   "name": "internalIndexBuildBulkLoadYieldIterations",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/catalog/multi_index_block.idl"
+  },
+  "internalInsertMaxBatchSize": {
+   "name": "internalInsertMaxBatchSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalLookupStageIntermediateDocumentMaxSizeBytes": {
+   "name": "internalLookupStageIntermediateDocumentMaxSizeBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalMaxSubPipelineViewDepth": {
+   "name": "internalMaxSubPipelineViewDepth",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalPartialFilterExpressionMaxDepth": {
+   "name": "internalPartialFilterExpressionMaxDepth",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalPipelineLengthLimit": {
+   "name": "internalPipelineLengthLimit",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalProhibitShardOperationRetry": {
+   "name": "internalProhibitShardOperationRetry",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/client/shard_remote.idl"
+  },
+  "internalQueryAggMulticastMaxConcurrency": {
+   "name": "internalQueryAggMulticastMaxConcurrency",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryAggMulticastTimeoutMS": {
+   "name": "internalQueryAggMulticastTimeoutMS",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryAlwaysMergeOnPrimaryShard": {
+   "name": "internalQueryAlwaysMergeOnPrimaryShard",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/query/cluster_query_knobs.idl"
+  },
+  "internalQueryAppendIdToSetWindowFieldsSort": {
+   "name": "internalQueryAppendIdToSetWindowFieldsSort",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryCacheDisableInactiveEntries": {
+   "name": "internalQueryCacheDisableInactiveEntries",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryCacheEvictionRatio": {
+   "name": "internalQueryCacheEvictionRatio",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryCacheMaxEntriesPerCollection": {
+   "name": "internalQueryCacheMaxEntriesPerCollection",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "deprecatedNames": [
+    "internalQueryCacheSize"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryCacheMaxSizeBytesBeforeStripDebugInfo": {
+   "name": "internalQueryCacheMaxSizeBytesBeforeStripDebugInfo",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryCacheWorksGrowthCoefficient": {
+   "name": "internalQueryCacheWorksGrowthCoefficient",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryCollectionMaxDataSizeBytesToChooseHashJoin": {
+   "name": "internalQueryCollectionMaxDataSizeBytesToChooseHashJoin",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryCollectionMaxNoOfDocumentsToChooseHashJoin": {
+   "name": "internalQueryCollectionMaxNoOfDocumentsToChooseHashJoin",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryCollectionMaxStorageSizeBytesToChooseHashJoin": {
+   "name": "internalQueryCollectionMaxStorageSizeBytesToChooseHashJoin",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryDefaultDOP": {
+   "name": "internalQueryDefaultDOP",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryDesugarWhereToFunction": {
+   "name": "internalQueryDesugarWhereToFunction",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryDisableExchange": {
+   "name": "internalQueryDisableExchange",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/query/cluster_query_knobs.idl"
+  },
+  "internalQueryDisableLookupExecutionUsingHashJoin": {
+   "name": "internalQueryDisableLookupExecutionUsingHashJoin",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryDocumentSourceWriterBatchExtraReservedBytes": {
+   "name": "internalQueryDocumentSourceWriterBatchExtraReservedBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryEnableCSTParser": {
+   "name": "internalQueryEnableCSTParser",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryEnableCascadesOptimizer": {
+   "name": "internalQueryEnableCascadesOptimizer",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryEnableLoggingV2OplogEntries": {
+   "name": "internalQueryEnableLoggingV2OplogEntries",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryEnableSamplingCardinalityEstimator": {
+   "name": "internalQueryEnableSamplingCardinalityEstimator",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryEnumerationMaxIntersectPerAnd": {
+   "name": "internalQueryEnumerationMaxIntersectPerAnd",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryEnumerationMaxOrSolutions": {
+   "name": "internalQueryEnumerationMaxOrSolutions",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryEnumerationPreferLockstepOrEnumeration": {
+   "name": "internalQueryEnumerationPreferLockstepOrEnumeration",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryExecYieldIterations": {
+   "name": "internalQueryExecYieldIterations",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryExecYieldPeriodMS": {
+   "name": "internalQueryExecYieldPeriodMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryExplainSizeThresholdBytes": {
+   "name": "internalQueryExplainSizeThresholdBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryFLEAlwaysUseHighCardinalityMode": {
+   "name": "internalQueryFLEAlwaysUseHighCardinalityMode",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryFLERewriteMemoryLimit": {
+   "name": "internalQueryFLERewriteMemoryLimit",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryFacetBufferSizeBytes": {
+   "name": "internalQueryFacetBufferSizeBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryFacetMaxOutputDocSizeBytes": {
+   "name": "internalQueryFacetMaxOutputDocSizeBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryForceClassicEngine": {
+   "name": "internalQueryForceClassicEngine",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryForceIntersectionPlans": {
+   "name": "internalQueryForceIntersectionPlans",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryGlobalProfilingFilter": {
+   "name": "internalQueryGlobalProfilingFilter",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryIgnoreUnknownJSONSchemaKeywords": {
+   "name": "internalQueryIgnoreUnknownJSONSchemaKeywords",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryJavaScriptFnTimeoutMillis": {
+   "name": "internalQueryJavaScriptFnTimeoutMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryJavaScriptHeapSizeLimitMB": {
+   "name": "internalQueryJavaScriptHeapSizeLimitMB",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryMaxAddToSetBytes": {
+   "name": "internalQueryMaxAddToSetBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryMaxAllowedDensifyDocs": {
+   "name": "internalQueryMaxAllowedDensifyDocs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryMaxBlockingSortMemoryUsageBytes": {
+   "name": "internalQueryMaxBlockingSortMemoryUsageBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryMaxDocValidationErrorConsideredValues": {
+   "name": "internalQueryMaxDocValidationErrorConsideredValues",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryMaxJsEmitBytes": {
+   "name": "internalQueryMaxJsEmitBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryMaxNumberOfFieldsToChooseFilteredColumnScan": {
+   "name": "internalQueryMaxNumberOfFieldsToChooseFilteredColumnScan",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryMaxNumberOfFieldsToChooseUnfilteredColumnScan": {
+   "name": "internalQueryMaxNumberOfFieldsToChooseUnfilteredColumnScan",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryMaxPushBytes": {
+   "name": "internalQueryMaxPushBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryMaxRangeBytes": {
+   "name": "internalQueryMaxRangeBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryMaxScansToExplode": {
+   "name": "internalQueryMaxScansToExplode",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryPlanEvaluationCollFraction": {
+   "name": "internalQueryPlanEvaluationCollFraction",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryPlanEvaluationCollFractionSbe": {
+   "name": "internalQueryPlanEvaluationCollFractionSbe",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryPlanEvaluationMaxResults": {
+   "name": "internalQueryPlanEvaluationMaxResults",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryPlanEvaluationWorks": {
+   "name": "internalQueryPlanEvaluationWorks",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryPlanEvaluationWorksSbe": {
+   "name": "internalQueryPlanEvaluationWorksSbe",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryPlanOrChildrenIndependently": {
+   "name": "internalQueryPlanOrChildrenIndependently",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryPlanTieBreakingWithIndexHeuristics": {
+   "name": "internalQueryPlanTieBreakingWithIndexHeuristics",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryPlannerEnableHashIntersection": {
+   "name": "internalQueryPlannerEnableHashIntersection",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryPlannerEnableIndexIntersection": {
+   "name": "internalQueryPlannerEnableIndexIntersection",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryPlannerGenerateCoveredWholeIndexScans": {
+   "name": "internalQueryPlannerGenerateCoveredWholeIndexScans",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryPlannerMaxIndexedSolutions": {
+   "name": "internalQueryPlannerMaxIndexedSolutions",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryProhibitBlockingMergeOnMongoS": {
+   "name": "internalQueryProhibitBlockingMergeOnMongoS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryProhibitMergingOnMongoS": {
+   "name": "internalQueryProhibitMergingOnMongoS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/query/cluster_query_knobs.idl"
+  },
+  "internalQueryS2GeoCoarsestLevel": {
+   "name": "internalQueryS2GeoCoarsestLevel",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/expression_index_knobs.idl"
+  },
+  "internalQueryS2GeoFinestLevel": {
+   "name": "internalQueryS2GeoFinestLevel",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/expression_index_knobs.idl"
+  },
+  "internalQueryS2GeoMaxCells": {
+   "name": "internalQueryS2GeoMaxCells",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/expression_index_knobs.idl"
+  },
+  "internalQuerySlotBasedExecutionDisableGroupPushdown": {
+   "name": "internalQuerySlotBasedExecutionDisableGroupPushdown",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQuerySlotBasedExecutionDisableLookupPushdown": {
+   "name": "internalQuerySlotBasedExecutionDisableLookupPushdown",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQuerySlotBasedExecutionHashAggApproxMemoryUseInBytesBeforeSpill": {
+   "name": "internalQuerySlotBasedExecutionHashAggApproxMemoryUseInBytesBeforeSpill",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQuerySlotBasedExecutionHashAggForceIncreasedSpilling": {
+   "name": "internalQuerySlotBasedExecutionHashAggForceIncreasedSpilling",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQuerySlotBasedExecutionHashAggMemoryCheckPerAdvanceAtLeast": {
+   "name": "internalQuerySlotBasedExecutionHashAggMemoryCheckPerAdvanceAtLeast",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQuerySlotBasedExecutionHashAggMemoryCheckPerAdvanceAtMost": {
+   "name": "internalQuerySlotBasedExecutionHashAggMemoryCheckPerAdvanceAtMost",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQuerySlotBasedExecutionHashAggMemoryUseCheckMargin": {
+   "name": "internalQuerySlotBasedExecutionHashAggMemoryUseCheckMargin",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQuerySlotBasedExecutionHashLookupApproxMemoryUseInBytesBeforeSpill": {
+   "name": "internalQuerySlotBasedExecutionHashLookupApproxMemoryUseInBytesBeforeSpill",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQuerySlotBasedExecutionMaxStaticIndexScanIntervals": {
+   "name": "internalQuerySlotBasedExecutionMaxStaticIndexScanIntervals",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQuerySpillingMaxWaitTimeout": {
+   "name": "internalQuerySpillingMaxWaitTimeout",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryStatsCacheSize": {
+   "name": "internalQueryStatsCacheSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryStatsErrorsAreCommandFatal": {
+   "name": "internalQueryStatsErrorsAreCommandFatal",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryStatsRateLimit": {
+   "name": "internalQueryStatsRateLimit",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalQueryTopNAccumulatorBytes": {
+   "name": "internalQueryTopNAccumulatorBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "internalSessionsReapThreshold": {
+   "name": "internalSessionsReapThreshold",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/internal_transactions_reap_service.idl"
+  },
+  "internalValidateFeaturesAsPrimary": {
+   "name": "internalValidateFeaturesAsPrimary",
+   "setAt": [
+    "startup"
+   ],
+   "deprecatedNames": [
+    "internalValidateFeaturesAsMaster"
+   ],
+   "source": "src/mongo/db/commands/feature_compatibility_version.idl"
+  },
+  "javascriptProtection": {
+   "name": "javascriptProtection",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/scripting/mozjs/engine.idl"
+  },
+  "joinIngressSessionsOnShutdown": {
+   "name": "joinIngressSessionsOnShutdown",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/transport/service_entry_point_impl.idl"
+  },
+  "journalCommitInterval": {
+   "name": "journalCommitInterval",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/storage_parameters.idl"
+  },
+  "jsHeapLimitMB": {
+   "name": "jsHeapLimitMB",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/scripting/mozjs/engine.idl"
+  },
+  "ldapAuthzQueryTemplate": {
+   "name": "ldapAuthzQueryTemplate",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/db/mongod_options_ldapauthz.idl"
+  },
+  "ldapConnectionPoolSizePerHost": {
+   "name": "ldapConnectionPoolSizePerHost",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "ldapDebug": {
+   "name": "ldapDebug",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "ldapFollowReferrals": {
+   "name": "ldapFollowReferrals",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "ldapQueryPassword": {
+   "name": "ldapQueryPassword",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "ldapQueryUser": {
+   "name": "ldapQueryUser",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "ldapServers": {
+   "name": "ldapServers",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "ldapTimeoutMS": {
+   "name": "ldapTimeoutMS",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "ldapUseConnectionPool": {
+   "name": "ldapUseConnectionPool",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "ldapUserCacheInvalidationInterval": {
+   "name": "ldapUserCacheInvalidationInterval",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "ldapUserToDNMapping": {
+   "name": "ldapUserToDNMapping",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/db/ldap_options.idl"
+  },
+  "loadBalancerPort": {
+   "name": "loadBalancerPort",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/s/mongos_server_parameters.idl"
+  },
+  "loadRoutingTableOnStartup": {
+   "name": "loadRoutingTableOnStartup",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/s/mongod_and_mongos_server_parameters.idl"
+  },
+  "localLogicalSessionTimeoutMinutes": {
+   "name": "localLogicalSessionTimeoutMinutes",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/logical_session_id.idl"
+  },
+  "localThresholdMs": {
+   "name": "localThresholdMs",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/client/sdam/sdam_configuration_parameters.idl"
+  },
+  "lockCodeSegmentsInMemory": {
+   "name": "lockCodeSegmentsInMemory",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/pin_code_segments_params.idl"
+  },
+  "logComponentVerbosity": {
+   "name": "logComponentVerbosity",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/commands/parameters.idl"
+  },
+  "logLevel": {
+   "name": "logLevel",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/commands/parameters.idl"
+  },
+  "logicalSessionRefreshMillis": {
+   "name": "logicalSessionRefreshMillis",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/logical_session_cache.idl"
+  },
+  "maintainValidCursorsAcrossSBEYieldandReadCommands": {
+   "name": "maintainValidCursorsAcrossSBEYieldandReadCommands",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/storage_parameters.idl"
+  },
+  "maxAcceptableLogicalClockDriftSecs": {
+   "name": "maxAcceptableLogicalClockDriftSecs",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/vector_clock.idl"
+  },
+  "maxBSONDepth": {
+   "name": "maxBSONDepth",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/rpc/object_check.idl"
+  },
+  "maxCatchUpPercentageBeforeBlockingWrites": {
+   "name": "maxCatchUpPercentageBeforeBlockingWrites",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "maxIndexBuildDrainBatchSize": {
+   "name": "maxIndexBuildDrainBatchSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/index/index_build_interceptor.idl"
+  },
+  "maxIndexBuildDrainMemoryUsageMegabytes": {
+   "name": "maxIndexBuildDrainMemoryUsageMegabytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/index/index_build_interceptor.idl"
+  },
+  "maxIndexBuildMemoryUsageMegabytes": {
+   "name": "maxIndexBuildMemoryUsageMegabytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/catalog/multi_index_block.idl"
+  },
+  "maxIteratorsMemoryUsagePercentage": {
+   "name": "maxIteratorsMemoryUsagePercentage",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/sorter/sorter.idl"
+  },
+  "maxLogSizeKB": {
+   "name": "maxLogSizeKB",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/initialize_server_global_state.idl"
+  },
+  "maxNumActiveUserIndexBuilds": {
+   "name": "maxNumActiveUserIndexBuilds",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/two_phase_index_build_knobs.idl"
+  },
+  "maxNumSyncSourceChangesPerHour": {
+   "name": "maxNumSyncSourceChangesPerHour",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "maxNumberOfTransactionOperationsInSingleOplogEntry": {
+   "name": "maxNumberOfTransactionOperationsInSingleOplogEntry",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/transaction_participant.idl"
+  },
+  "maxOplogTruncationPointsAfterStartup": {
+   "name": "maxOplogTruncationPointsAfterStartup",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/oplog_stone_parameters.idl"
+  },
+  "maxOplogTruncationPointsDuringStartup": {
+   "name": "maxOplogTruncationPointsDuringStartup",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/oplog_stone_parameters.idl"
+  },
+  "maxSessions": {
+   "name": "maxSessions",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/logical_session_cache.idl"
+  },
+  "maxSyncSourceLagSecs": {
+   "name": "maxSyncSourceLagSecs",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "maxTenantMigrationDonorServiceThreadPoolSize": {
+   "name": "maxTenantMigrationDonorServiceThreadPoolSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "maxTenantMigrationRecipientThreadPoolSize": {
+   "name": "maxTenantMigrationRecipientThreadPoolSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "maxTimeMSForHedgedReads": {
+   "name": "maxTimeMSForHedgedReads",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/mongos_server_parameters.idl"
+  },
+  "maxTransactionLockRequestTimeoutMillis": {
+   "name": "maxTransactionLockRequestTimeoutMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/transaction_participant.idl"
+  },
+  "maxValidateMBperSec": {
+   "name": "maxValidateMBperSec",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/catalog/validate.idl"
+  },
+  "maxValidateMemoryUsageMB": {
+   "name": "maxValidateMemoryUsageMB",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/catalog/validate.idl"
+  },
+  "metadataRefreshInTransactionMaxWaitBehindCritSecMS": {
+   "name": "metadataRefreshInTransactionMaxWaitBehindCritSecMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_api_d_params.idl"
+  },
+  "migrateCloneInsertionBatchDelayMS": {
+   "name": "migrateCloneInsertionBatchDelayMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "migrateCloneInsertionBatchSize": {
+   "name": "migrateCloneInsertionBatchSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "migrationLockAcquisitionMaxWaitMS": {
+   "name": "migrationLockAcquisitionMaxWaitMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "minNumChunksForSessionsCollection": {
+   "name": "minNumChunksForSessionsCollection",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_config_server_parameters.idl"
+  },
+  "minOplogEntriesPerThread": {
+   "name": "minOplogEntriesPerThread",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "minOplogTruncationPoints": {
+   "name": "minOplogTruncationPoints",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/oplog_stone_parameters.idl"
+  },
+  "minSnapshotHistoryWindowInSeconds": {
+   "name": "minSnapshotHistoryWindowInSeconds",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/snapshot_window_options.idl"
+  },
+  "mirrorReads": {
+   "name": "mirrorReads",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/mirror_maestro.idl"
+  },
+  "mongosShutdownTimeoutMillisForSignaledShutdown": {
+   "name": "mongosShutdownTimeoutMillisForSignaledShutdown",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/mongos_server_parameters.idl"
+  },
+  "mrEnableSingleReduceOptimization": {
+   "name": "mrEnableSingleReduceOptimization",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/pipeline/map_reduce_options.idl"
+  },
+  "multitenancySupport": {
+   "name": "multitenancySupport",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/multitenancy.idl"
+  },
+  "newLineAfterPasswordPromptForTest": {
+   "name": "newLineAfterPasswordPromptForTest",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/password_params.idl"
+  },
+  "newShardExistingClusterTimeKeysExpirationSecs": {
+   "name": "newShardExistingClusterTimeKeysExpirationSecs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_config_server_parameters.idl"
+  },
+  "notablescan": {
+   "name": "notablescan",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/storage_parameters.idl"
+  },
+  "numInitialSyncAttempts": {
+   "name": "numInitialSyncAttempts",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/replication_coordinator_impl.idl"
+  },
+  "numInitialSyncConnectAttempts": {
+   "name": "numInitialSyncConnectAttempts",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "numInitialSyncOplogFindAttempts": {
+   "name": "numInitialSyncOplogFindAttempts",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "ocspCacheSize": {
+   "name": "ocspCacheSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "ocspEnabled": {
+   "name": "ocspEnabled",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "ocspStaplingRefreshPeriodSecs": {
+   "name": "ocspStaplingRefreshPeriodSecs",
+   "setAt": [
+    "startup"
+   ],
+   "deprecatedNames": [
+    "ocspValidationRefreshPeriodSecs"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "opensslCipherConfig": {
+   "name": "opensslCipherConfig",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "opensslCipherSuiteConfig": {
+   "name": "opensslCipherSuiteConfig",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "opensslDiffieHellmanParameters": {
+   "name": "opensslDiffieHellmanParameters",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "operationMemoryPoolBlockInitialSizeKB": {
+   "name": "operationMemoryPoolBlockInitialSizeKB",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/storage_parameters.idl"
+  },
+  "operationMemoryPoolBlockMaxSizeKB": {
+   "name": "operationMemoryPoolBlockMaxSizeKB",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/storage_parameters.idl"
+  },
+  "oplogApplicationEnforcesSteadyStateConstraints": {
+   "name": "oplogApplicationEnforcesSteadyStateConstraints",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "oplogBatchDelayMillis": {
+   "name": "oplogBatchDelayMillis",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "oplogFetcherInitialSyncMaxFetcherRestarts": {
+   "name": "oplogFetcherInitialSyncMaxFetcherRestarts",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "oplogFetcherSteadyStateMaxFetcherRestarts": {
+   "name": "oplogFetcherSteadyStateMaxFetcherRestarts",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "oplogFetcherUsesExhaust": {
+   "name": "oplogFetcherUsesExhaust",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "oplogInitialFindMaxSeconds": {
+   "name": "oplogInitialFindMaxSeconds",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "oplogNetworkTimeoutBufferSeconds": {
+   "name": "oplogNetworkTimeoutBufferSeconds",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "oplogRetriedFindMaxSeconds": {
+   "name": "oplogRetriedFindMaxSeconds",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "oplogSamplingLogIntervalSeconds": {
+   "name": "oplogSamplingLogIntervalSeconds",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/oplog_stone_parameters.idl"
+  },
+  "oplogTruncationCheckPeriodSeconds": {
+   "name": "oplogTruncationCheckPeriodSeconds",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/oplog_stone_parameters.idl"
+  },
+  "oplogTruncationPointSizeMB": {
+   "name": "oplogTruncationPointSizeMB",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/oplog_stone_parameters.idl"
+  },
+  "opportunisticSecondaryTargeting": {
+   "name": "opportunisticSecondaryTargeting",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/executor/network_interface_tl.idl"
+  },
+  "orphanCleanupDelaySecs": {
+   "name": "orphanCleanupDelaySecs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "perconaTelemetry": {
+   "name": "perconaTelemetry",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/telemetry/telemetry_parameter.idl"
+  },
+  "perconaTelemetryGracePeriod": {
+   "name": "perconaTelemetryGracePeriod",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/telemetry/telemetry_parameter.idl"
+  },
+  "perconaTelemetryHistoryKeepInterval": {
+   "name": "perconaTelemetryHistoryKeepInterval",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/telemetry/telemetry_parameter.idl"
+  },
+  "perconaTelemetryPath": {
+   "name": "perconaTelemetryPath",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/telemetry/telemetry_parameter.idl"
+  },
+  "perconaTelemetryScrapeInterval": {
+   "name": "perconaTelemetryScrapeInterval",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/telemetry/telemetry_parameter.idl"
+  },
+  "periodicNoopIntervalSecs": {
+   "name": "periodicNoopIntervalSecs",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/replication_coordinator_impl.idl"
+  },
+  "persistedChunkCacheUpdateMaxBatchSize": {
+   "name": "persistedChunkCacheUpdateMaxBatchSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "pinTaskExecCursorConns": {
+   "name": "pinTaskExecCursorConns",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/executor/task_executor_cursor_parameters.idl"
+  },
+  "planCacheSize": {
+   "name": "planCacheSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/query/query_knobs.idl"
+  },
+  "priorityTakeoverFreshnessWindowSeconds": {
+   "name": "priorityTakeoverFreshnessWindowSeconds",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/topology_coordinator.idl"
+  },
+  "processUmask": {
+   "name": "processUmask",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/initialize_server_global_state.idl"
+  },
+  "profileOperationResourceConsumptionMetrics": {
+   "name": "profileOperationResourceConsumptionMetrics",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/stats/operation_resource_consumption.idl"
+  },
+  "profilingRateLimit": {
+   "name": "profilingRateLimit",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ratelimit_parameter.idl"
+  },
+  "progressMonitor": {
+   "name": "progressMonitor",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/process_health/health_monitoring_server_parameters.idl"
+  },
+  "quiet": {
+   "name": "quiet",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/commands/parameters.idl"
+  },
+  "rangeDeleterBatchDelayMS": {
+   "name": "rangeDeleterBatchDelayMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "rangeDeleterBatchSize": {
+   "name": "rangeDeleterBatchSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "reachableConfigReplicasRequiredByHealthMonitoring": {
+   "name": "reachableConfigReplicasRequiredByHealthMonitoring",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/process_health/health_monitoring_server_parameters.idl"
+  },
+  "readHedgingMode": {
+   "name": "readHedgingMode",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/s/mongos_server_parameters.idl"
+  },
+  "receiveChunkWaitForRangeDeleterTimeoutMS": {
+   "name": "receiveChunkWaitForRangeDeleterTimeoutMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "recoverFromOplogAsStandalone": {
+   "name": "recoverFromOplogAsStandalone",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "recoverToOplogTimestamp": {
+   "name": "recoverToOplogTimestamp",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/mongod_options_storage.idl"
+  },
+  "redactClientLogData": {
+   "name": "redactClientLogData",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/redaction_parameter.idl"
+  },
+  "redactEncryptedFields": {
+   "name": "redactEncryptedFields",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/logv2/logv2_options.idl"
+  },
+  "remainingReshardingOperationTimeThresholdMillis": {
+   "name": "remainingReshardingOperationTimeThresholdMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "replBatchLimitBytes": {
+   "name": "replBatchLimitBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "replBatchLimitOperations": {
+   "name": "replBatchLimitOperations",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "replElectionTimeoutOffsetLimitFraction": {
+   "name": "replElectionTimeoutOffsetLimitFraction",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "replWriterMinThreadCount": {
+   "name": "replWriterMinThreadCount",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "replWriterThreadCount": {
+   "name": "replWriterThreadCount",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "replicaSetMonitorProtocol": {
+   "name": "replicaSetMonitorProtocol",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/client/replica_set_monitor_server_parameters.idl"
+  },
+  "reportOpWriteConcernCountersInServerStatus": {
+   "name": "reportOpWriteConcernCountersInServerStatus",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/stats/server_write_concern_metrics.idl"
+  },
+  "requireApiVersion": {
+   "name": "requireApiVersion",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/db/api_parameters.idl"
+  },
+  "reservedServiceExecutorRecursionLimit": {
+   "name": "reservedServiceExecutorRecursionLimit",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/transport/service_executor.idl"
+  },
+  "reshardingCollectionClonerBatchSizeInBytes": {
+   "name": "reshardingCollectionClonerBatchSizeInBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "reshardingCoordinatorServiceMaxThreadCount": {
+   "name": "reshardingCoordinatorServiceMaxThreadCount",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "reshardingCriticalSectionTimeoutMillis": {
+   "name": "reshardingCriticalSectionTimeoutMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "reshardingDelayBeforeRemainingOperationTimeQueryMillis": {
+   "name": "reshardingDelayBeforeRemainingOperationTimeQueryMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "reshardingDonorServiceMaxThreadCount": {
+   "name": "reshardingDonorServiceMaxThreadCount",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "reshardingMinimumOperationDurationMillis": {
+   "name": "reshardingMinimumOperationDurationMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "reshardingOplogApplierMaxLockRequestTimeoutMillis": {
+   "name": "reshardingOplogApplierMaxLockRequestTimeoutMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "reshardingOplogBatchLimitBytes": {
+   "name": "reshardingOplogBatchLimitBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "reshardingOplogBatchLimitOperations": {
+   "name": "reshardingOplogBatchLimitOperations",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "reshardingOplogBatchTaskCount": {
+   "name": "reshardingOplogBatchTaskCount",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "reshardingRecipientServiceMaxThreadCount": {
+   "name": "reshardingRecipientServiceMaxThreadCount",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "reshardingTxnClonerProgressBatchSize": {
+   "name": "reshardingTxnClonerProgressBatchSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/s/resharding/resharding_server_parameters.idl"
+  },
+  "resumableIndexBuildMajorityOpTimeTimeoutMillis": {
+   "name": "resumableIndexBuildMajorityOpTimeTimeoutMillis",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/two_phase_index_build_knobs.idl"
+  },
+  "rewriteStateChangeErrors": {
+   "name": "rewriteStateChangeErrors",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/rpc/rewrite_state_change_errors_server_parameter.idl"
+  },
+  "roleGraphInvalidationIsFatal": {
+   "name": "roleGraphInvalidationIsFatal",
+   "setAt": [
+    "startup"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/db/auth/auth_options.idl"
+  },
+  "rollbackRemoteOplogQueryBatchSize": {
+   "name": "rollbackRemoteOplogQueryBatchSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "rollbackTimeLimitSecs": {
+   "name": "rollbackTimeLimitSecs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/rollback_impl.idl"
+  },
+  "roundtripBsonColumnOnValidate": {
+   "name": "roundtripBsonColumnOnValidate",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/storage_parameters.idl"
+  },
+  "routingTableCacheChunkBucketSize": {
+   "name": "routingTableCacheChunkBucketSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/s/mongod_and_mongos_server_parameters.idl"
+  },
+  "saslHostName": {
+   "name": "saslHostName",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/sasl_options.idl"
+  },
+  "saslServiceName": {
+   "name": "saslServiceName",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/sasl_options.idl"
+  },
+  "saslauthdPath": {
+   "name": "saslauthdPath",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/sasl_options.idl"
+  },
+  "scramIterationCount": {
+   "name": "scramIterationCount",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/sasl_options.idl"
+  },
+  "scramSHA256IterationCount": {
+   "name": "scramSHA256IterationCount",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/sasl_options.idl"
+  },
+  "scriptingEngineInterruptIntervalMS": {
+   "name": "scriptingEngineInterruptIntervalMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/scripting/deadline_monitor.idl"
+  },
+  "sessionMaxBatchSize": {
+   "name": "sessionMaxBatchSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/sessions_server_parameters.idl"
+  },
+  "sessionWriteConcernTimeoutSystemMillis": {
+   "name": "sessionWriteConcernTimeoutSystemMillis",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/sessions_server_parameters.idl"
+  },
+  "shardSplitGarbageCollectionDelayMS": {
+   "name": "shardSplitGarbageCollectionDelayMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "shardSplitTimeoutMS": {
+   "name": "shardSplitTimeoutMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "shardedIndexConsistencyCheckIntervalMS": {
+   "name": "shardedIndexConsistencyCheckIntervalMS",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/s/sharding_runtime_d_params.idl"
+  },
+  "shutdownTimeoutMillisForSignaledShutdown": {
+   "name": "shutdownTimeoutMillisForSignaledShutdown",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/replication_coordinator_impl.idl"
+  },
+  "skipApplyingDbCheckBatchOnSecondary": {
+   "name": "skipApplyingDbCheckBatchOnSecondary",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "skipCorruptDocumentsWhenCloning": {
+   "name": "skipCorruptDocumentsWhenCloning",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/cloner.idl"
+  },
+  "skipDroppingHashedShardKeyIndex": {
+   "name": "skipDroppingHashedShardKeyIndex",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/storage_parameters.idl"
+  },
+  "skipShardingConfigurationChecks": {
+   "name": "skipShardingConfigurationChecks",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_set_config_params.idl"
+  },
+  "skipShellCursorFinalize": {
+   "name": "skipShellCursorFinalize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/scripting/mozjs/scripting_util.idl"
+  },
+  "sslMode": {
+   "name": "sslMode",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "startupAuthSchemaValidation": {
+   "name": "startupAuthSchemaValidation",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/authorization_manager_global_parameters.idl"
+  },
+  "startupRecoveryForRestore": {
+   "name": "startupRecoveryForRestore",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "storageEngineConcurrentReadTransactions": {
+   "name": "storageEngineConcurrentReadTransactions",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "deprecatedNames": [
+    "wiredTigerConcurrentReadTransactions"
+   ],
+   "source": "src/mongo/db/storage/storage_engine_parameters.idl"
+  },
+  "storageEngineConcurrentWriteTransactions": {
+   "name": "storageEngineConcurrentWriteTransactions",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "deprecatedNames": [
+    "wiredTigerConcurrentWriteTransactions"
+   ],
+   "source": "src/mongo/db/storage/storage_engine_parameters.idl"
+  },
+  "storageEngineQueueingPolicy": {
+   "name": "storageEngineQueueingPolicy",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/storage_engine_parameters.idl"
+  },
+  "storageGlobalParams.directoryperdb": {
+   "name": "storageGlobalParams.directoryperdb",
+   "setAt": [
+    "readonly"
+   ],
+   "source": "src/mongo/db/storage/storage_parameters.idl"
+  },
+  "storeFindAndModifyImagesInSideCollection": {
+   "name": "storeFindAndModifyImagesInSideCollection",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "supportArbitraryClusterKeyIndex": {
+   "name": "supportArbitraryClusterKeyIndex",
+   "setAt": [
+    "startup"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/db/catalog/clustered_collection_options.idl"
+  },
+  "suppressNoTLSPeerCertificateWarning": {
+   "name": "suppressNoTLSPeerCertificateWarning",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "syncdelay": {
+   "name": "syncdelay",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/storage_parameters.idl"
+  },
+  "synchronousServiceExecutorRecursionLimit": {
+   "name": "synchronousServiceExecutorRecursionLimit",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/transport/service_executor.idl"
+  },
+  "takeUnstableCheckpointOnShutdown": {
+   "name": "takeUnstableCheckpointOnShutdown",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/storage_parameters.idl"
+  },
+  "taskExecutorPoolSize": {
+   "name": "taskExecutorPoolSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/executor/task_executor_pool_parameters.idl"
+  },
+  "tcmallocAggressiveMemoryDecommit": {
+   "name": "tcmallocAggressiveMemoryDecommit",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/util/tcmalloc_parameters.idl"
+  },
+  "tcmallocEnableMarkThreadTemporarilyIdle": {
+   "name": "tcmallocEnableMarkThreadTemporarilyIdle",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/util/tcmalloc_parameters.idl"
+  },
+  "tcmallocMaxTotalThreadCacheBytes": {
+   "name": "tcmallocMaxTotalThreadCacheBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/util/tcmalloc_parameters.idl"
+  },
+  "tcmallocReleaseRate": {
+   "name": "tcmallocReleaseRate",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/util/tcmalloc_parameters.idl"
+  },
+  "tcpFastOpenClient": {
+   "name": "tcpFastOpenClient",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/transport/transport_options.idl"
+  },
+  "tcpFastOpenQueueSize": {
+   "name": "tcpFastOpenQueueSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/transport/transport_options.idl"
+  },
+  "tcpFastOpenServer": {
+   "name": "tcpFastOpenServer",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/transport/transport_options.idl"
+  },
+  "temporarilyUnavailableBackoffBaseMs": {
+   "name": "temporarilyUnavailableBackoffBaseMs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/concurrency/exception_util.idl"
+  },
+  "temporarilyUnavailableMaxRetries": {
+   "name": "temporarilyUnavailableMaxRetries",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/concurrency/exception_util.idl"
+  },
+  "tenantApplierBatchSizeBytes": {
+   "name": "tenantApplierBatchSizeBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "tenantApplierBatchSizeOps": {
+   "name": "tenantApplierBatchSizeOps",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "tenantApplierThreadCount": {
+   "name": "tenantApplierThreadCount",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "tenantMigrationBlockingStateTimeoutMS": {
+   "name": "tenantMigrationBlockingStateTimeoutMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "tenantMigrationDisableX509Auth": {
+   "name": "tenantMigrationDisableX509Auth",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "tenantMigrationExcludeDonorHostTimeoutMS": {
+   "name": "tenantMigrationExcludeDonorHostTimeoutMS",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "tenantMigrationExternalKeysRemovalBufferSecs": {
+   "name": "tenantMigrationExternalKeysRemovalBufferSecs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "tenantMigrationGarbageCollectionDelayMS": {
+   "name": "tenantMigrationGarbageCollectionDelayMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "tenantMigrationOplogBufferPeekCacheSize": {
+   "name": "tenantMigrationOplogBufferPeekCacheSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "tenantMigrationOplogFetcherBatchSize": {
+   "name": "tenantMigrationOplogFetcherBatchSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "testBoolClusterParameter": {
+   "name": "testBoolClusterParameter",
+   "setAt": [
+    "cluster"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/idl/cluster_server_parameter.idl"
+  },
+  "testIntClusterParameter": {
+   "name": "testIntClusterParameter",
+   "setAt": [
+    "cluster"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/idl/cluster_server_parameter.idl"
+  },
+  "testStrClusterParameter": {
+   "name": "testStrClusterParameter",
+   "setAt": [
+    "cluster"
+   ],
+   "testOnly": true,
+   "source": "src/mongo/idl/cluster_server_parameter.idl"
+  },
+  "testingDiagnosticsEnabled": {
+   "name": "testingDiagnosticsEnabled",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/testing_options.idl"
+  },
+  "testingSnapshotBehaviorInIsolation": {
+   "name": "testingSnapshotBehaviorInIsolation",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/replication_coordinator_impl.idl"
+  },
+  "timeseriesBucketMaxCount": {
+   "name": "timeseriesBucketMaxCount",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/timeseries/timeseries.idl"
+  },
+  "timeseriesBucketMaxSize": {
+   "name": "timeseriesBucketMaxSize",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/timeseries/timeseries.idl"
+  },
+  "timeseriesIdleBucketExpiryMaxCountPerAttempt": {
+   "name": "timeseriesIdleBucketExpiryMaxCountPerAttempt",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/timeseries/timeseries.idl"
+  },
+  "timeseriesIdleBucketExpiryMemoryUsageThreshold": {
+   "name": "timeseriesIdleBucketExpiryMemoryUsageThreshold",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/timeseries/timeseries.idl"
+  },
+  "timeseriesInsertMaxRetriesOnDuplicates": {
+   "name": "timeseriesInsertMaxRetriesOnDuplicates",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/timeseries/timeseries.idl"
+  },
+  "timeseriesValidateCompressedBuckets": {
+   "name": "timeseriesValidateCompressedBuckets",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/storage_parameters.idl"
+  },
+  "tlsCATrusts": {
+   "name": "tlsCATrusts",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "tlsMode": {
+   "name": "tlsMode",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "tlsOCSPSlowResponderWarningSecs": {
+   "name": "tlsOCSPSlowResponderWarningSecs",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "tlsOCSPStaplingTimeoutSecs": {
+   "name": "tlsOCSPStaplingTimeoutSecs",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "tlsOCSPVerifyTimeoutSecs": {
+   "name": "tlsOCSPVerifyTimeoutSecs",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "tlsUseSystemCA": {
+   "name": "tlsUseSystemCA",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_options_server.idl"
+  },
+  "tlsWithholdClientCertificate": {
+   "name": "tlsWithholdClientCertificate",
+   "setAt": [
+    "startup"
+   ],
+   "deprecatedNames": [
+    "sslWithholdClientCertificate"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "tlsX509ClusterAuthDNOverride": {
+   "name": "tlsX509ClusterAuthDNOverride",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "tlsX509ExpirationWarningThresholdDays": {
+   "name": "tlsX509ExpirationWarningThresholdDays",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/util/net/ssl_parameters.idl"
+  },
+  "totalUnitWriteSizeBytes": {
+   "name": "totalUnitWriteSizeBytes",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/stats/operation_resource_consumption.idl"
+  },
+  "traceExceptions": {
+   "name": "traceExceptions",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/db/commands/parameters.idl"
+  },
+  "traceWriteConflictExceptions": {
+   "name": "traceWriteConflictExceptions",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/concurrency/exception_util.idl"
+  },
+  "trafficRecordingDirectory": {
+   "name": "trafficRecordingDirectory",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/traffic_recorder.idl"
+  },
+  "transactionLifetimeLimitSeconds": {
+   "name": "transactionLifetimeLimitSeconds",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/transaction_participant.idl"
+  },
+  "transactionSizeLimitBytes": {
+   "name": "transactionSizeLimitBytes",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/transaction_participant.idl"
+  },
+  "transactionTooLargeForCacheThreshold": {
+   "name": "transactionTooLargeForCacheThreshold",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/concurrency/exception_util.idl"
+  },
+  "ttlMonitorEnabled": {
+   "name": "ttlMonitorEnabled",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ttl.idl"
+  },
+  "ttlMonitorSleepSecs": {
+   "name": "ttlMonitorSleepSecs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ttl.idl"
+  },
+  "unsupportedSyncSource": {
+   "name": "unsupportedSyncSource",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  },
+  "upsertMaxRetryAttemptsOnDuplicateKeyError": {
+   "name": "upsertMaxRetryAttemptsOnDuplicateKeyError",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/ops/write_ops.idl"
+  },
+  "useReadOnceCursorsForIndexBuilds": {
+   "name": "useReadOnceCursorsForIndexBuilds",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/catalog/multi_index_block.idl"
+  },
+  "userCacheInvalidationIntervalSecs": {
+   "name": "userCacheInvalidationIntervalSecs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/auth/user_cache_invalidator_job_parameters.idl"
+  },
+  "waitForSecondaryBeforeNoopWriteMS": {
+   "name": "waitForSecondaryBeforeNoopWriteMS",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/read_concern_mongod.idl"
+  },
+  "warmMinConnectionsInShardingTaskExecutorPoolOnStartup": {
+   "name": "warmMinConnectionsInShardingTaskExecutorPoolOnStartup",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/s/mongod_and_mongos_server_parameters.idl"
+  },
+  "warmMinConnectionsInShardingTaskExecutorPoolOnStartupWaitMS": {
+   "name": "warmMinConnectionsInShardingTaskExecutorPoolOnStartupWaitMS",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/s/mongod_and_mongos_server_parameters.idl"
+  },
+  "watchdogPeriodSeconds": {
+   "name": "watchdogPeriodSeconds",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/watchdog/watchdog_mongod.idl"
+  },
+  "wiredTigerCursorCacheSize": {
+   "name": "wiredTigerCursorCacheSize",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "wiredTigerDirectoryForIndexes": {
+   "name": "wiredTigerDirectoryForIndexes",
+   "setAt": [
+    "readonly"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "wiredTigerEngineRuntimeConfig": {
+   "name": "wiredTigerEngineRuntimeConfig",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "wiredTigerEvictionDebugMode": {
+   "name": "wiredTigerEvictionDebugMode",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "wiredTigerEvictionDirtyMaxGB": {
+   "name": "wiredTigerEvictionDirtyMaxGB",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "wiredTigerEvictionDirtyTargetGB": {
+   "name": "wiredTigerEvictionDirtyTargetGB",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "wiredTigerFileHandleCloseIdleTime": {
+   "name": "wiredTigerFileHandleCloseIdleTime",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "wiredTigerFileHandleCloseMinimum": {
+   "name": "wiredTigerFileHandleCloseMinimum",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "wiredTigerFileHandleCloseScanInterval": {
+   "name": "wiredTigerFileHandleCloseScanInterval",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "wiredTigerMaxCacheOverflowSizeGB": {
+   "name": "wiredTigerMaxCacheOverflowSizeGB",
+   "setAt": [
+    "runtime"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "wiredTigerSessionCloseIdleTimeSecs": {
+   "name": "wiredTigerSessionCloseIdleTimeSecs",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "wiredTigerSkipTableLoggingChecksOnStartup": {
+   "name": "wiredTigerSkipTableLoggingChecksOnStartup",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "wiredTigerStressConfig": {
+   "name": "wiredTigerStressConfig",
+   "setAt": [
+    "startup"
+   ],
+   "source": "src/mongo/db/storage/wiredtiger/wiredtiger_parameters.idl"
+  },
+  "writePeriodicNoops": {
+   "name": "writePeriodicNoops",
+   "setAt": [
+    "runtime",
+    "startup"
+   ],
+   "source": "src/mongo/db/repl/repl_server_parameters.idl"
+  }
+ },
+ "commands": {
+  "_addShard": {
+   "name": "_addShard",
+   "source": "src/mongo/db/s/add_shard_cmd.idl"
+  },
+  "_configsvrAbortReshardCollection": {
+   "name": "_configsvrAbortReshardCollection",
+   "source": "src/mongo/s/request_types/abort_reshard_collection.idl"
+  },
+  "_configsvrAddShard": {
+   "name": "_configsvrAddShard",
+   "source": "src/mongo/db/s/config/configsvr_add_shard_command.cpp"
+  },
+  "_configsvrAddShardToZone": {
+   "name": "_configsvrAddShardToZone",
+   "source": "src/mongo/db/s/config/configsvr_add_shard_to_zone_command.cpp"
+  },
+  "_configsvrBalancerCollectionStatus": {
+   "name": "_configsvrBalancerCollectionStatus",
+   "source": "src/mongo/s/request_types/balancer_collection_status.idl"
+  },
+  "_configsvrBalancerStart": {
+   "name": "_configsvrBalancerStart",
+   "source": "src/mongo/db/s/config/configsvr_control_balancer_command.cpp"
+  },
+  "_configsvrBalancerStatus": {
+   "name": "_configsvrBalancerStatus",
+   "source": "src/mongo/db/s/config/configsvr_control_balancer_command.cpp"
+  },
+  "_configsvrBalancerStop": {
+   "name": "_configsvrBalancerStop",
+   "source": "src/mongo/db/s/config/configsvr_control_balancer_command.cpp"
+  },
+  "_configsvrCleanupReshardCollection": {
+   "name": "_configsvrCleanupReshardCollection",
+   "source": "src/mongo/s/request_types/cleanup_reshard_collection.idl"
+  },
+  "_configsvrClearJumboFlag": {
+   "name": "_configsvrClearJumboFlag",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_configsvrCollMod": {
+   "name": "_configsvrCollMod",
+   "source": "src/mongo/db/s/sharded_collmod.idl"
+  },
+  "_configsvrCommitChunkMigration": {
+   "name": "_configsvrCommitChunkMigration",
+   "source": "src/mongo/db/s/config/configsvr_commit_chunk_migration_command.cpp"
+  },
+  "_configsvrCommitChunkSplit": {
+   "name": "_configsvrCommitChunkSplit",
+   "source": "src/mongo/db/s/config/configsvr_split_chunk_command.cpp"
+  },
+  "_configsvrCommitChunksMerge": {
+   "name": "_configsvrCommitChunksMerge",
+   "source": "src/mongo/s/request_types/merge_chunk_request.idl"
+  },
+  "_configsvrCommitMovePrimary": {
+   "name": "_configsvrCommitMovePrimary",
+   "source": "src/mongo/s/request_types/move_primary.idl"
+  },
+  "_configsvrCommitReshardCollection": {
+   "name": "_configsvrCommitReshardCollection",
+   "source": "src/mongo/s/request_types/commit_reshard_collection.idl"
+  },
+  "_configsvrConfigureCollectionBalancing": {
+   "name": "_configsvrConfigureCollectionBalancing",
+   "source": "src/mongo/s/request_types/configure_collection_balancing.idl"
+  },
+  "_configsvrCreateDatabase": {
+   "name": "_configsvrCreateDatabase",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_configsvrEnsureChunkVersionIsGreaterThan": {
+   "name": "_configsvrEnsureChunkVersionIsGreaterThan",
+   "source": "src/mongo/s/request_types/ensure_chunk_version_is_greater_than.idl"
+  },
+  "_configsvrMoveChunk": {
+   "name": "_configsvrMoveChunk",
+   "source": "src/mongo/db/s/config/configsvr_move_chunk_command.cpp"
+  },
+  "_configsvrMoveRange": {
+   "name": "_configsvrMoveRange",
+   "source": "src/mongo/s/request_types/move_range_request.idl"
+  },
+  "_configsvrRefineCollectionShardKey": {
+   "name": "_configsvrRefineCollectionShardKey",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_configsvrRemoveChunks": {
+   "name": "_configsvrRemoveChunks",
+   "source": "src/mongo/db/s/remove_chunks.idl"
+  },
+  "_configsvrRemoveShard": {
+   "name": "_configsvrRemoveShard",
+   "source": "src/mongo/db/s/config/configsvr_remove_shard_command.cpp"
+  },
+  "_configsvrRemoveShardFromZone": {
+   "name": "_configsvrRemoveShardFromZone",
+   "source": "src/mongo/db/s/config/configsvr_remove_shard_from_zone_command.cpp"
+  },
+  "_configsvrRemoveTags": {
+   "name": "_configsvrRemoveTags",
+   "source": "src/mongo/db/s/remove_tags.idl"
+  },
+  "_configsvrRenameCollectionMetadata": {
+   "name": "_configsvrRenameCollectionMetadata",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_configsvrRepairShardedCollectionChunksHistory": {
+   "name": "_configsvrRepairShardedCollectionChunksHistory",
+   "source": "src/mongo/db/s/config/configsvr_repair_sharded_collection_chunks_history_command.cpp"
+  },
+  "_configsvrReshardCollection": {
+   "name": "_configsvrReshardCollection",
+   "source": "src/mongo/s/request_types/reshard_collection.idl"
+  },
+  "_configsvrRunRestore": {
+   "name": "_configsvrRunRestore",
+   "source": "src/mongo/db/s/config/configsvr_run_restore_command.cpp"
+  },
+  "_configsvrSetAllowMigrations": {
+   "name": "_configsvrSetAllowMigrations",
+   "source": "src/mongo/s/request_types/set_allow_migrations.idl"
+  },
+  "_configsvrSetClusterParameter": {
+   "name": "_configsvrSetClusterParameter",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_configsvrSetUserWriteBlockMode": {
+   "name": "_configsvrSetUserWriteBlockMode",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_configsvrUpdateZoneKeyRange": {
+   "name": "_configsvrUpdateZoneKeyRange",
+   "source": "src/mongo/db/s/config/configsvr_update_zone_key_range_command.cpp"
+  },
+  "_flushDatabaseCacheUpdates": {
+   "name": "_flushDatabaseCacheUpdates",
+   "source": "src/mongo/s/request_types/flush_database_cache_updates.idl"
+  },
+  "_flushDatabaseCacheUpdatesWithWriteConcern": {
+   "name": "_flushDatabaseCacheUpdatesWithWriteConcern",
+   "source": "src/mongo/s/request_types/flush_database_cache_updates.idl"
+  },
+  "_flushReshardingStateChange": {
+   "name": "_flushReshardingStateChange",
+   "source": "src/mongo/s/request_types/flush_resharding_state_change.idl"
+  },
+  "_flushRoutingTableCacheUpdates": {
+   "name": "_flushRoutingTableCacheUpdates",
+   "source": "src/mongo/s/request_types/flush_routing_table_cache_updates.idl"
+  },
+  "_flushRoutingTableCacheUpdatesWithWriteConcern": {
+   "name": "_flushRoutingTableCacheUpdatesWithWriteConcern",
+   "source": "src/mongo/s/request_types/flush_routing_table_cache_updates.idl"
+  },
+  "_getNextSessionMods": {
+   "name": "_getNextSessionMods",
+   "source": "src/mongo/db/s/migration_chunk_cloner_source_legacy_commands.cpp"
+  },
+  "_getUserCacheGeneration": {
+   "name": "_getUserCacheGeneration",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "_hashBSONElement": {
+   "name": "_hashBSONElement",
+   "source": "src/mongo/db/commands/hashcmd.cpp"
+  },
+  "_isSelf": {
+   "name": "_isSelf",
+   "source": "src/mongo/db/commands/isself.cpp"
+  },
+  "_killOperations": {
+   "name": "_killOperations",
+   "source": "src/mongo/db/commands/kill_operations.idl"
+  },
+  "_mergeAuthzCollections": {
+   "name": "_mergeAuthzCollections",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "_migrateClone": {
+   "name": "_migrateClone",
+   "source": "src/mongo/db/s/migration_chunk_cloner_source_legacy_commands.cpp"
+  },
+  "_recvChunkAbort": {
+   "name": "_recvChunkAbort",
+   "source": "src/mongo/db/s/migration_destination_manager_legacy_commands.cpp"
+  },
+  "_recvChunkCommit": {
+   "name": "_recvChunkCommit",
+   "source": "src/mongo/db/s/migration_destination_manager_legacy_commands.cpp"
+  },
+  "_recvChunkReleaseCritSec": {
+   "name": "_recvChunkReleaseCritSec",
+   "source": "src/mongo/db/s/migration_destination_manager_legacy_commands.cpp"
+  },
+  "_recvChunkStart": {
+   "name": "_recvChunkStart",
+   "source": "src/mongo/db/s/migration_destination_manager_legacy_commands.cpp"
+  },
+  "_recvChunkStatus": {
+   "name": "_recvChunkStatus",
+   "source": "src/mongo/db/s/migration_destination_manager_legacy_commands.cpp"
+  },
+  "_shardsvrAbortReshardCollection": {
+   "name": "_shardsvrAbortReshardCollection",
+   "source": "src/mongo/s/request_types/abort_reshard_collection.idl"
+  },
+  "_shardsvrCleanupReshardCollection": {
+   "name": "_shardsvrCleanupReshardCollection",
+   "source": "src/mongo/s/request_types/cleanup_reshard_collection.idl"
+  },
+  "_shardsvrCloneCatalogData": {
+   "name": "_shardsvrCloneCatalogData",
+   "aliases": [
+    "_cloneCatalogData"
+   ],
+   "source": "src/mongo/db/s/clone_catalog_data_command.cpp"
+  },
+  "_shardsvrCollMod": {
+   "name": "_shardsvrCollMod",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrCollModParticipant": {
+   "name": "_shardsvrCollModParticipant",
+   "source": "src/mongo/db/s/sharded_collmod.idl"
+  },
+  "_shardsvrCommitReshardCollection": {
+   "name": "_shardsvrCommitReshardCollection",
+   "source": "src/mongo/s/request_types/commit_reshard_collection.idl"
+  },
+  "_shardsvrCreateCollection": {
+   "name": "_shardsvrCreateCollection",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrCreateCollectionParticipant": {
+   "name": "_shardsvrCreateCollectionParticipant",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrDropCollection": {
+   "name": "_shardsvrDropCollection",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrDropCollectionIfUUIDNotMatching": {
+   "name": "_shardsvrDropCollectionIfUUIDNotMatching",
+   "source": "src/mongo/s/request_types/drop_collection_if_uuid_not_matching.idl"
+  },
+  "_shardsvrDropCollectionParticipant": {
+   "name": "_shardsvrDropCollectionParticipant",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrDropDatabase": {
+   "name": "_shardsvrDropDatabase",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrDropDatabaseParticipant": {
+   "name": "_shardsvrDropDatabaseParticipant",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrDropIndexes": {
+   "name": "_shardsvrDropIndexes",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrGetStatsForBalancing": {
+   "name": "_shardsvrGetStatsForBalancing",
+   "source": "src/mongo/s/request_types/get_stats_for_balancing.idl"
+  },
+  "_shardsvrJoinMigrations": {
+   "name": "_shardsvrJoinMigrations",
+   "source": "src/mongo/s/request_types/shardsvr_join_migrations_request.idl"
+  },
+  "_shardsvrMovePrimary": {
+   "name": "_shardsvrMovePrimary",
+   "source": "src/mongo/db/s/shardsvr_move_primary_command.cpp"
+  },
+  "_shardsvrMoveRange": {
+   "name": "_shardsvrMoveRange",
+   "aliases": [
+    "moveChunk"
+   ],
+   "source": "src/mongo/s/request_types/move_range_request.idl"
+  },
+  "_shardsvrParticipantBlock": {
+   "name": "_shardsvrParticipantBlock",
+   "source": "src/mongo/db/s/participant_block.idl"
+  },
+  "_shardsvrRefineCollectionShardKey": {
+   "name": "_shardsvrRefineCollectionShardKey",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrRenameCollection": {
+   "name": "_shardsvrRenameCollection",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrRenameCollectionParticipant": {
+   "name": "_shardsvrRenameCollectionParticipant",
+   "source": "src/mongo/db/s/sharded_rename_collection.idl"
+  },
+  "_shardsvrRenameCollectionParticipantUnblock": {
+   "name": "_shardsvrRenameCollectionParticipantUnblock",
+   "source": "src/mongo/db/s/sharded_rename_collection.idl"
+  },
+  "_shardsvrReshardCollection": {
+   "name": "_shardsvrReshardCollection",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrReshardingOperationTime": {
+   "name": "_shardsvrReshardingOperationTime",
+   "source": "src/mongo/s/request_types/resharding_operation_time.idl"
+  },
+  "_shardsvrSetAllowMigrations": {
+   "name": "_shardsvrSetAllowMigrations",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrSetClusterParameter": {
+   "name": "_shardsvrSetClusterParameter",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_shardsvrSetUserWriteBlockMode": {
+   "name": "_shardsvrSetUserWriteBlockMode",
+   "source": "src/mongo/s/request_types/sharded_ddl_commands.idl"
+  },
+  "_transferMods": {
+   "name": "_transferMods",
+   "source": "src/mongo/db/s/migration_chunk_cloner_source_legacy_commands.cpp"
+  },
+  "abortReshardCollection": {
+   "name": "abortReshardCollection",
+   "source": "src/mongo/s/request_types/abort_reshard_collection.idl"
+  },
+  "abortShardSplit": {
+   "name": "abortShardSplit",
+   "source": "src/mongo/db/serverless/shard_split_commands.idl"
+  },
+  "abortTransaction": {
+   "name": "abortTransaction",
+   "source": "src/mongo/db/commands/txn_cmds.idl"
+  },
+  "addShard": {
+   "name": "addShard",
+   "aliases": [
+    "addshard"
+   ],
+   "source": "src/mongo/s/commands/cluster_add_shard_cmd.cpp"
+  },
+  "addShardToZone": {
+   "name": "addShardToZone",
+   "aliases": [
+    "addshardtozone"
+   ],
+   "source": "src/mongo/s/commands/cluster_add_shard_to_zone_cmd.cpp"
+  },
+  "aggregate": {
+   "name": "aggregate",
+   "source": "src/mongo/db/commands/pipeline_command.cpp"
+  },
+  "appendOplogNote": {
+   "name": "appendOplogNote",
+   "source": "src/mongo/db/commands/oplog_note.cpp"
+  },
+  "applyOps": {
+   "name": "applyOps",
+   "source": "src/mongo/db/commands/apply_ops_cmd.cpp"
+  },
+  "auditGetOptions": {
+   "name": "auditGetOptions",
+   "source": "src/mongo/db/audit/audit_commands.cpp"
+  },
+  "authenticate": {
+   "name": "authenticate",
+   "source": "src/mongo/db/commands/authentication_commands.idl"
+  },
+  "autoSplitVector": {
+   "name": "autoSplitVector",
+   "source": "src/mongo/s/request_types/auto_split_vector.idl"
+  },
+  "availableQueryOptions": {
+   "name": "availableQueryOptions",
+   "aliases": [
+    "availablequeryoptions"
+   ],
+   "source": "src/mongo/db/commands/dbcommands_d.cpp"
+  },
+  "balancerCollectionStatus": {
+   "name": "balancerCollectionStatus",
+   "source": "src/mongo/s/request_types/balancer_collection_status.idl"
+  },
+  "balancerStart": {
+   "name": "balancerStart",
+   "source": "src/mongo/s/commands/cluster_control_balancer_cmd.cpp"
+  },
+  "balancerStatus": {
+   "name": "balancerStatus",
+   "source": "src/mongo/s/commands/cluster_control_balancer_cmd.cpp"
+  },
+  "balancerStop": {
+   "name": "balancerStop",
+   "source": "src/mongo/s/commands/cluster_control_balancer_cmd.cpp"
+  },
+  "buildInfo": {
+   "name": "buildInfo",
+   "aliases": [
+    "buildinfo"
+   ],
+   "source": "src/mongo/db/commands/dbcommands.cpp"
+  },
+  "captrunc": {
+   "name": "captrunc",
+   "source": "src/mongo/db/commands/test_commands.cpp"
+  },
+  "checkShardingIndex": {
+   "name": "checkShardingIndex",
+   "source": "src/mongo/db/s/check_sharding_index_command.cpp"
+  },
+  "cleanupOrphaned": {
+   "name": "cleanupOrphaned",
+   "source": "src/mongo/db/s/cleanup_orphaned_cmd.cpp"
+  },
+  "cleanupReshardCollection": {
+   "name": "cleanupReshardCollection",
+   "source": "src/mongo/s/request_types/cleanup_reshard_collection.idl"
+  },
+  "clearJumboFlag": {
+   "name": "clearJumboFlag",
+   "source": "src/mongo/s/commands/cluster_commands.idl"
+  },
+  "clearLog": {
+   "name": "clearLog",
+   "source": "src/mongo/db/commands/generic_servers.idl"
+  },
+  "cloneCatalogData": {
+   "name": "cloneCatalogData",
+   "source": "src/mongo/s/request_types/clone_catalog_data.idl"
+  },
+  "cloneCollectionAsCapped": {
+   "name": "cloneCollectionAsCapped",
+   "source": "src/mongo/db/commands/collection_to_capped.cpp"
+  },
+  "collMod": {
+   "name": "collMod",
+   "source": "src/mongo/db/coll_mod.idl"
+  },
+  "collStats": {
+   "name": "collStats",
+   "aliases": [
+    "collstats"
+   ],
+   "source": "src/mongo/db/commands/dbcommands.cpp"
+  },
+  "commitReshardCollection": {
+   "name": "commitReshardCollection",
+   "source": "src/mongo/s/request_types/commit_reshard_collection.idl"
+  },
+  "commitShardSplit": {
+   "name": "commitShardSplit",
+   "source": "src/mongo/db/serverless/shard_split_commands.idl"
+  },
+  "commitTransaction": {
+   "name": "commitTransaction",
+   "source": "src/mongo/db/commands/txn_cmds.idl"
+  },
+  "compact": {
+   "name": "compact",
+   "source": "src/mongo/db/commands/compact.cpp"
+  },
+  "compactStructuredEncryptionData": {
+   "name": "compactStructuredEncryptionData",
+   "source": "src/mongo/db/commands/fle2_compact.idl"
+  },
+  "configureCollectionBalancing": {
+   "name": "configureCollectionBalancing",
+   "source": "src/mongo/s/request_types/configure_collection_balancing.idl"
+  },
+  "configureFailPoint": {
+   "name": "configureFailPoint",
+   "source": "src/mongo/db/commands/fail_point_cmd.cpp"
+  },
+  "connPoolStats": {
+   "name": "connPoolStats",
+   "source": "src/mongo/db/commands/conn_pool_stats.cpp"
+  },
+  "connPoolSync": {
+   "name": "connPoolSync",
+   "aliases": [
+    "connpoolsync"
+   ],
+   "source": "src/mongo/db/commands/conn_pool_sync.cpp"
+  },
+  "connectionStatus": {
+   "name": "connectionStatus",
+   "source": "src/mongo/db/commands/connection_status.idl"
+  },
+  "convertToCapped": {
+   "name": "convertToCapped",
+   "source": "src/mongo/db/commands/collection_to_capped.cpp"
+  },
+  "coordinateCommitTransaction": {
+   "name": "coordinateCommitTransaction",
+   "source": "src/mongo/db/commands/txn_two_phase_commit_cmds.idl"
+  },
+  "count": {
+   "name": "count",
+   "source": "src/mongo/db/commands/count_cmd.cpp"
+  },
+  "cpuload": {
+   "name": "cpuload",
+   "source": "src/mongo/db/commands/cpuload.cpp"
+  },
+  "create": {
+   "name": "create",
+   "source": "src/mongo/db/commands/create.idl"
+  },
+  "createBackup": {
+   "name": "createBackup",
+   "source": "src/mongo/db/backup/backup_commands.cpp"
+  },
+  "createIndexes": {
+   "name": "createIndexes",
+   "source": "src/mongo/db/commands/create_indexes.cpp"
+  },
+  "createRole": {
+   "name": "createRole",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "createUser": {
+   "name": "createUser",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "cst": {
+   "name": "cst",
+   "source": "src/mongo/db/commands/cst_command.cpp"
+  },
+  "currentOp": {
+   "name": "currentOp",
+   "source": "src/mongo/db/commands/current_op_common.h"
+  },
+  "dataSize": {
+   "name": "dataSize",
+   "aliases": [
+    "datasize"
+   ],
+   "source": "src/mongo/db/commands/dbcommands.cpp"
+  },
+  "dbCheck": {
+   "name": "dbCheck",
+   "source": "src/mongo/db/commands/dbcheck.cpp"
+  },
+  "dbHash": {
+   "name": "dbHash",
+   "aliases": [
+    "dbhash"
+   ],
+   "source": "src/mongo/db/commands/dbhash.cpp"
+  },
+  "dbStats": {
+   "name": "dbStats",
+   "aliases": [
+    "dbstats"
+   ],
+   "source": "src/mongo/db/commands/dbcommands.cpp"
+  },
+  "delete": {
+   "name": "delete",
+   "source": "src/mongo/db/ops/write_ops.idl"
+  },
+  "distinct": {
+   "name": "distinct",
+   "source": "src/mongo/db/commands/distinct.cpp"
+  },
+  "donorAbortMigration": {
+   "name": "donorAbortMigration",
+   "source": "src/mongo/db/commands/tenant_migration_donor_cmds.idl"
+  },
+  "donorForgetMigration": {
+   "name": "donorForgetMigration",
+   "source": "src/mongo/db/commands/tenant_migration_donor_cmds.idl"
+  },
+  "donorStartMigration": {
+   "name": "donorStartMigration",
+   "source": "src/mongo/db/commands/tenant_migration_donor_cmds.idl"
+  },
+  "drop": {
+   "name": "drop",
+   "source": "src/mongo/db/drop.idl"
+  },
+  "dropAllRolesFromDatabase": {
+   "name": "dropAllRolesFromDatabase",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "dropAllUsersFromDatabase": {
+   "name": "dropAllUsersFromDatabase",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "dropConnections": {
+   "name": "dropConnections",
+   "source": "src/mongo/db/commands/drop_connections.idl"
+  },
+  "dropDatabase": {
+   "name": "dropDatabase",
+   "source": "src/mongo/db/drop_database.idl"
+  },
+  "dropIndexes": {
+   "name": "dropIndexes",
+   "aliases": [
+    "deleteIndexes"
+   ],
+   "source": "src/mongo/db/drop_indexes.idl"
+  },
+  "dropRole": {
+   "name": "dropRole",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "dropUser": {
+   "name": "dropUser",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "echo": {
+   "name": "echo",
+   "source": "src/mongo/db/commands/generic.cpp"
+  },
+  "emptycapped": {
+   "name": "emptycapped",
+   "source": "src/mongo/db/commands/test_commands.cpp"
+  },
+  "enableSharding": {
+   "name": "enableSharding",
+   "aliases": [
+    "enablesharding"
+   ],
+   "source": "src/mongo/s/commands/cluster_commands.idl"
+  },
+  "endSessions": {
+   "name": "endSessions",
+   "source": "src/mongo/db/commands/sessions_commands.idl"
+  },
+  "explain": {
+   "name": "explain",
+   "source": "src/mongo/db/commands/explain_cmd.cpp"
+  },
+  "features": {
+   "name": "features",
+   "source": "src/mongo/db/commands/generic_servers.idl"
+  },
+  "filemd5": {
+   "name": "filemd5",
+   "source": "src/mongo/db/commands/dbcommands_d.cpp"
+  },
+  "find": {
+   "name": "find",
+   "source": "src/mongo/db/commands/find_cmd.cpp"
+  },
+  "findAndModify": {
+   "name": "findAndModify",
+   "aliases": [
+    "findandmodify"
+   ],
+   "source": "src/mongo/db/ops/write_ops.idl"
+  },
+  "flushRouterConfig": {
+   "name": "flushRouterConfig",
+   "aliases": [
+    "flushrouterconfig"
+   ],
+   "source": "src/mongo/s/commands/flush_router_config_cmd.cpp"
+  },
+  "forgetShardSplit": {
+   "name": "forgetShardSplit",
+   "source": "src/mongo/db/serverless/shard_split_commands.idl"
+  },
+  "fsync": {
+   "name": "fsync",
+   "source": "src/mongo/db/commands/fsync.cpp"
+  },
+  "fsyncUnlock": {
+   "name": "fsyncUnlock",
+   "source": "src/mongo/db/commands/fsync.cpp"
+  },
+  "getClusterParameter": {
+   "name": "getClusterParameter",
+   "source": "src/mongo/db/commands/cluster_server_parameter_cmds.idl"
+  },
+  "getCmdLineOpts": {
+   "name": "getCmdLineOpts",
+   "source": "src/mongo/db/commands/generic_servers.idl"
+  },
+  "getDatabaseVersion": {
+   "name": "getDatabaseVersion",
+   "source": "src/mongo/s/request_types/get_database_version.idl"
+  },
+  "getDefaultRWConcern": {
+   "name": "getDefaultRWConcern",
+   "source": "src/mongo/db/commands/rwc_defaults_commands.idl"
+  },
+  "getDiagnosticData": {
+   "name": "getDiagnosticData",
+   "source": "src/mongo/db/ftdc/ftdc_commands.cpp"
+  },
+  "getLastError": {
+   "name": "getLastError",
+   "aliases": [
+    "getlasterror"
+   ],
+   "source": "src/mongo/db/commands/get_last_error.cpp"
+  },
+  "getLog": {
+   "name": "getLog",
+   "source": "src/mongo/db/commands/generic_servers.cpp"
+  },
+  "getMore": {
+   "name": "getMore",
+   "source": "src/mongo/db/commands/getmore_cmd.cpp"
+  },
+  "getParameter": {
+   "name": "getParameter",
+   "source": "src/mongo/db/commands/parameters.cpp"
+  },
+  "getShardMap": {
+   "name": "getShardMap",
+   "source": "src/mongo/s/commands/get_shard_map_cmd.cpp"
+  },
+  "getShardVersion": {
+   "name": "getShardVersion",
+   "aliases": [
+    "getshardversion"
+   ],
+   "source": "src/mongo/db/s/get_shard_version_command.cpp"
+  },
+  "getnonce": {
+   "name": "getnonce",
+   "source": "src/mongo/db/commands/authentication_commands.cpp"
+  },
+  "godinsert": {
+   "name": "godinsert",
+   "source": "src/mongo/db/commands/test_commands.cpp"
+  },
+  "grantPrivilegesToRole": {
+   "name": "grantPrivilegesToRole",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "grantRolesToRole": {
+   "name": "grantRolesToRole",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "grantRolesToUser": {
+   "name": "grantRolesToUser",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "hello": {
+   "name": "hello",
+   "source": "src/mongo/db/repl/hello.idl"
+  },
+  "hostInfo": {
+   "name": "hostInfo",
+   "source": "src/mongo/db/commands/generic_servers.idl"
+  },
+  "httpClientRequest": {
+   "name": "httpClientRequest",
+   "source": "src/mongo/db/commands/http_client.idl"
+  },
+  "insert": {
+   "name": "insert",
+   "source": "src/mongo/db/ops/write_ops.idl"
+  },
+  "internalRenameIfOptionsAndIndexesMatch": {
+   "name": "internalRenameIfOptionsAndIndexesMatch",
+   "source": "src/mongo/db/commands/internal_rename_if_options_and_indexes_match.idl"
+  },
+  "invalidateUserCache": {
+   "name": "invalidateUserCache",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "isMaster": {
+   "name": "isMaster",
+   "aliases": [
+    "ismaster"
+   ],
+   "source": "src/mongo/db/repl/replication_info.cpp"
+  },
+  "isdbgrid": {
+   "name": "isdbgrid",
+   "source": "src/mongo/s/commands/cluster_is_db_grid_cmd.cpp"
+  },
+  "killAllSessions": {
+   "name": "killAllSessions",
+   "source": "src/mongo/db/commands/kill_all_sessions_command.cpp"
+  },
+  "killAllSessionsByPattern": {
+   "name": "killAllSessionsByPattern",
+   "source": "src/mongo/db/commands/kill_all_sessions_by_pattern_command.cpp"
+  },
+  "killCursors": {
+   "name": "killCursors",
+   "source": "src/mongo/db/query/kill_cursors.idl"
+  },
+  "killOp": {
+   "name": "killOp",
+   "source": "src/mongo/db/commands/kill_op_cmd_base.h"
+  },
+  "killSessions": {
+   "name": "killSessions",
+   "source": "src/mongo/db/commands/kill_sessions_command.cpp"
+  },
+  "listCollections": {
+   "name": "listCollections",
+   "source": "src/mongo/db/list_collections.idl"
+  },
+  "listCommands": {
+   "name": "listCommands",
+   "source": "src/mongo/db/commands/generic.cpp"
+  },
+  "listDatabases": {
+   "name": "listDatabases",
+   "source": "src/mongo/db/commands/list_databases.idl"
+  },
+  "listIndexes": {
+   "name": "listIndexes",
+   "source": "src/mongo/db/list_indexes.idl"
+  },
+  "listShards": {
+   "name": "listShards",
+   "aliases": [
+    "listshards"
+   ],
+   "source": "src/mongo/s/commands/cluster_list_shards_cmd.cpp"
+  },
+  "lockInfo": {
+   "name": "lockInfo",
+   "source": "src/mongo/db/commands/lock_info.cpp"
+  },
+  "logApplicationMessage": {
+   "name": "logApplicationMessage",
+   "source": "src/mongo/db/audit/audit_commands.cpp"
+  },
+  "logMessage": {
+   "name": "logMessage",
+   "source": "src/mongo/db/commands/generic.idl"
+  },
+  "logRotate": {
+   "name": "logRotate",
+   "source": "src/mongo/db/commands/generic_servers.idl"
+  },
+  "logout": {
+   "name": "logout",
+   "source": "src/mongo/db/commands/authentication_commands.idl"
+  },
+  "makeSnapshot": {
+   "name": "makeSnapshot",
+   "source": "src/mongo/db/commands/snapshot_management.cpp"
+  },
+  "mapReduce": {
+   "name": "mapReduce",
+   "aliases": [
+    "mapreduce"
+   ],
+   "source": "src/mongo/db/commands/map_reduce.idl"
+  },
+  "mergeChunks": {
+   "name": "mergeChunks",
+   "aliases": [
+    "_shardsvrMergeChunks"
+   ],
+   "source": "src/mongo/db/s/balancer/balancer_commands_scheduler_impl.cpp"
+  },
+  "moveChunk": {
+   "name": "moveChunk",
+   "aliases": [
+    "movechunk"
+   ],
+   "source": "src/mongo/s/commands/cluster_move_chunk_cmd.cpp"
+  },
+  "movePrimary": {
+   "name": "movePrimary",
+   "aliases": [
+    "moveprimary"
+   ],
+   "source": "src/mongo/s/commands/cluster_move_primary_cmd.cpp"
+  },
+  "moveRange": {
+   "name": "moveRange",
+   "source": "src/mongo/s/request_types/move_range_request.idl"
+  },
+  "multicast": {
+   "name": "multicast",
+   "source": "src/mongo/s/commands/cluster_multicast_cmd.cpp"
+  },
+  "netstat": {
+   "name": "netstat",
+   "source": "src/mongo/s/commands/cluster_netstat_cmd.cpp"
+  },
+  "pinHistoryReplicated": {
+   "name": "pinHistoryReplicated",
+   "source": "src/mongo/db/commands/test_commands.cpp"
+  },
+  "ping": {
+   "name": "ping",
+   "source": "src/mongo/db/commands/generic.idl"
+  },
+  "planCacheClear": {
+   "name": "planCacheClear",
+   "source": "src/mongo/db/commands/plan_cache_clear_command.cpp"
+  },
+  "planCacheClearFilters": {
+   "name": "planCacheClearFilters",
+   "source": "src/mongo/db/commands/index_filter_commands.cpp"
+  },
+  "planCacheListFilters": {
+   "name": "planCacheListFilters",
+   "source": "src/mongo/db/commands/index_filter_commands.cpp"
+  },
+  "planCacheSetFilter": {
+   "name": "planCacheSetFilter",
+   "source": "src/mongo/db/commands/index_filter_commands.cpp"
+  },
+  "prepareTransaction": {
+   "name": "prepareTransaction",
+   "source": "src/mongo/db/commands/txn_two_phase_commit_cmds.idl"
+  },
+  "profile": {
+   "name": "profile",
+   "source": "src/mongo/db/commands/profile.idl"
+  },
+  "reIndex": {
+   "name": "reIndex",
+   "source": "src/mongo/db/commands/drop_indexes.cpp"
+  },
+  "reapLogicalSessionCacheNow": {
+   "name": "reapLogicalSessionCacheNow",
+   "source": "src/mongo/db/commands/reap_logical_session_cache_now.cpp"
+  },
+  "recipientForgetMigration": {
+   "name": "recipientForgetMigration",
+   "source": "src/mongo/db/commands/tenant_migration_recipient_cmds.idl"
+  },
+  "recipientSyncData": {
+   "name": "recipientSyncData",
+   "source": "src/mongo/db/commands/tenant_migration_recipient_cmds.idl"
+  },
+  "recipientVoteImportedFiles": {
+   "name": "recipientVoteImportedFiles",
+   "source": "src/mongo/db/commands/tenant_migration_recipient_cmds.idl"
+  },
+  "refineCollectionShardKey": {
+   "name": "refineCollectionShardKey",
+   "source": "src/mongo/s/commands/refine_collection_shard_key.idl"
+  },
+  "refreshLogicalSessionCacheNow": {
+   "name": "refreshLogicalSessionCacheNow",
+   "source": "src/mongo/db/commands/refresh_logical_session_cache_now.cpp"
+  },
+  "refreshSessions": {
+   "name": "refreshSessions",
+   "source": "src/mongo/db/commands/sessions_commands.idl"
+  },
+  "removeShard": {
+   "name": "removeShard",
+   "aliases": [
+    "removeshard"
+   ],
+   "source": "src/mongo/s/commands/cluster_remove_shard_cmd.cpp"
+  },
+  "removeShardFromZone": {
+   "name": "removeShardFromZone",
+   "aliases": [
+    "removeshardfromzone"
+   ],
+   "source": "src/mongo/s/commands/cluster_remove_shard_from_zone_cmd.cpp"
+  },
+  "renameCollection": {
+   "name": "renameCollection",
+   "source": "src/mongo/db/commands/rename_collection.idl"
+  },
+  "repairShardedCollectionChunksHistory": {
+   "name": "repairShardedCollectionChunksHistory",
+   "source": "src/mongo/s/commands/cluster_repair_sharded_collection_chunks_history_cmd.cpp"
+  },
+  "replSetAbortPrimaryCatchUp": {
+   "name": "replSetAbortPrimaryCatchUp",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "replSetFreeze": {
+   "name": "replSetFreeze",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "replSetGetConfig": {
+   "name": "replSetGetConfig",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "replSetGetRBID": {
+   "name": "replSetGetRBID",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "replSetGetStatus": {
+   "name": "replSetGetStatus",
+   "source": "src/mongo/db/repl/repl_set_get_status_cmd.cpp"
+  },
+  "replSetHeartbeat": {
+   "name": "replSetHeartbeat",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "replSetInitiate": {
+   "name": "replSetInitiate",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "replSetMaintenance": {
+   "name": "replSetMaintenance",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "replSetReconfig": {
+   "name": "replSetReconfig",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "replSetRequestVotes": {
+   "name": "replSetRequestVotes",
+   "source": "src/mongo/db/repl/repl_set_request_votes.cpp"
+  },
+  "replSetResizeOplog": {
+   "name": "replSetResizeOplog",
+   "source": "src/mongo/db/commands/resize_oplog.cpp"
+  },
+  "replSetStepDown": {
+   "name": "replSetStepDown",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "replSetStepUp": {
+   "name": "replSetStepUp",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "replSetSyncFrom": {
+   "name": "replSetSyncFrom",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "replSetTest": {
+   "name": "replSetTest",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "replSetUpdatePosition": {
+   "name": "replSetUpdatePosition",
+   "source": "src/mongo/db/repl/repl_set_commands.cpp"
+  },
+  "reshardCollection": {
+   "name": "reshardCollection",
+   "source": "src/mongo/s/request_types/reshard_collection.idl"
+  },
+  "revokePrivilegesFromRole": {
+   "name": "revokePrivilegesFromRole",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "revokeRolesFromRole": {
+   "name": "revokeRolesFromRole",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "revokeRolesFromUser": {
+   "name": "revokeRolesFromUser",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "rolesInfo": {
+   "name": "rolesInfo",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "rotateCertificates": {
+   "name": "rotateCertificates",
+   "source": "src/mongo/db/commands/rotate_certificates.idl"
+  },
+  "saslContinue": {
+   "name": "saslContinue",
+   "source": "src/mongo/db/auth/sasl_commands.idl"
+  },
+  "saslStart": {
+   "name": "saslStart",
+   "source": "src/mongo/db/auth/sasl_commands.idl"
+  },
+  "serverStatus": {
+   "name": "serverStatus",
+   "source": "src/mongo/db/commands/server_status_command.cpp"
+  },
+  "setAllowMigrations": {
+   "name": "setAllowMigrations",
+   "source": "src/mongo/s/request_types/set_allow_migrations.idl"
+  },
+  "setClusterParameter": {
+   "name": "setClusterParameter",
+   "source": "src/mongo/db/commands/cluster_server_parameter_cmds.idl"
+  },
+  "setCommittedSnapshot": {
+   "name": "setCommittedSnapshot",
+   "source": "src/mongo/db/commands/snapshot_management.cpp"
+  },
+  "setDefaultRWConcern": {
+   "name": "setDefaultRWConcern",
+   "source": "src/mongo/db/commands/rwc_defaults_commands.idl"
+  },
+  "setFeatureCompatibilityVersion": {
+   "name": "setFeatureCompatibilityVersion",
+   "source": "src/mongo/db/commands/set_feature_compatibility_version.idl"
+  },
+  "setIndexCommitQuorum": {
+   "name": "setIndexCommitQuorum",
+   "source": "src/mongo/db/commands/set_index_commit_quorum.idl"
+  },
+  "setParameter": {
+   "name": "setParameter",
+   "source": "src/mongo/db/commands/parameters.cpp"
+  },
+  "setProfilingFilterGlobally": {
+   "name": "setProfilingFilterGlobally",
+   "source": "src/mongo/db/commands/profile.idl"
+  },
+  "setShardVersion": {
+   "name": "setShardVersion",
+   "source": "src/mongo/db/s/set_shard_version_command.cpp"
+  },
+  "setUserWriteBlockMode": {
+   "name": "setUserWriteBlockMode",
+   "source": "src/mongo/db/commands/set_user_write_block_mode.idl"
+  },
+  "shardCollection": {
+   "name": "shardCollection",
+   "aliases": [
+    "shardcollection"
+   ],
+   "source": "src/mongo/s/commands/cluster_shard_collection_cmd.cpp"
+  },
+  "shardingState": {
+   "name": "shardingState",
+   "source": "src/mongo/db/s/sharding_state_command.cpp"
+  },
+  "shutdown": {
+   "name": "shutdown",
+   "source": "src/mongo/db/commands/shutdown.idl"
+  },
+  "sleep": {
+   "name": "sleep",
+   "source": "src/mongo/db/commands/sleep_command.cpp"
+  },
+  "split": {
+   "name": "split",
+   "source": "src/mongo/s/commands/cluster_split_cmd.cpp"
+  },
+  "splitChunk": {
+   "name": "splitChunk",
+   "aliases": [
+    "_shardsvrSplitChunk"
+   ],
+   "source": "src/mongo/db/s/balancer/balancer_commands_scheduler_impl.cpp"
+  },
+  "splitVector": {
+   "name": "splitVector",
+   "source": "src/mongo/db/s/split_vector_command.cpp"
+  },
+  "stageDebug": {
+   "name": "stageDebug",
+   "source": "src/mongo/db/exec/stagedebug_cmd.cpp"
+  },
+  "startRecordingTraffic": {
+   "name": "startRecordingTraffic",
+   "source": "src/mongo/db/traffic_recorder.idl"
+  },
+  "startSession": {
+   "name": "startSession",
+   "source": "src/mongo/db/commands/start_session_command.cpp"
+  },
+  "stopRecordingTraffic": {
+   "name": "stopRecordingTraffic",
+   "source": "src/mongo/db/traffic_recorder.idl"
+  },
+  "testDeprecation": {
+   "name": "testDeprecation",
+   "source": "src/mongo/db/commands/test_deprecation_command.cpp"
+  },
+  "testDeprecationInVersion2": {
+   "name": "testDeprecationInVersion2",
+   "source": "src/mongo/db/commands/test_api_version_2_commands.cpp"
+  },
+  "testRemoval": {
+   "name": "testRemoval",
+   "source": "src/mongo/db/commands/test_api_version_2_commands.cpp"
+  },
+  "testVersion2": {
+   "name": "testVersion2",
+   "source": "src/mongo/db/commands/test_api_version_2_commands.cpp"
+  },
+  "testVersions1And2": {
+   "name": "testVersions1And2",
+   "source": "src/mongo/db/commands/test_api_version_2_commands.cpp"
+  },
+  "top": {
+   "name": "top",
+   "source": "src/mongo/db/commands/top_command.cpp"
+  },
+  "update": {
+   "name": "update",
+   "source": "src/mongo/db/ops/write_ops.idl"
+  },
+  "updateRole": {
+   "name": "updateRole",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "updateUser": {
+   "name": "updateUser",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "updateZoneKeyRange": {
+   "name": "updateZoneKeyRange",
+   "aliases": [
+    "updatezonekeyRange"
+   ],
+   "source": "src/mongo/s/commands/cluster_update_zone_key_range_cmd.cpp"
+  },
+  "usersInfo": {
+   "name": "usersInfo",
+   "source": "src/mongo/db/commands/user_management_commands.idl"
+  },
+  "validate": {
+   "name": "validate",
+   "source": "src/mongo/db/commands/validate.cpp"
+  },
+  "validateDBMetadata": {
+   "name": "validateDBMetadata",
+   "source": "src/mongo/db/commands/validate_db_metadata.idl"
+  },
+  "voteCommitIndexBuild": {
+   "name": "voteCommitIndexBuild",
+   "source": "src/mongo/db/commands/vote_commit_index_build.idl"
+  },
+  "waitForFailPoint": {
+   "name": "waitForFailPoint",
+   "source": "src/mongo/s/request_types/wait_for_fail_point.idl"
+  },
+  "waitForOngoingChunkSplits": {
+   "name": "waitForOngoingChunkSplits",
+   "source": "src/mongo/db/s/wait_for_ongoing_chunk_splits_command.cpp"
+  },
+  "whatsmysni": {
+   "name": "whatsmysni",
+   "source": "src/mongo/db/commands/whats_my_sni_command.cpp"
+  },
+  "whatsmyuri": {
+   "name": "whatsmyuri",
+   "source": "src/mongo/db/commands/whats_my_uri_cmd.cpp"
+  }
+ },
+ "actionTypes": [
+  "addShard",
+  "advanceClusterTime",
+  "allCollectionStats",
+  "anyAction",
+  "appendOplogNote",
+  "applicationMessage",
+  "applyOps",
+  "auditConfigure",
+  "auditLogRotate",
+  "authCheck",
+  "authSchemaUpgrade",
+  "authenticate",
+  "bypassDocumentValidation",
+  "bypassWriteBlockingMode",
+  "changeCustomData",
+  "changeOwnCustomData",
+  "changeOwnPassword",
+  "changePassword",
+  "changeStream",
+  "checkFreeMonitoringStatus",
+  "cleanupOrphaned",
+  "clearJumboFlag",
+  "closeAllDatabases",
+  "collMod",
+  "collStats",
+  "compact",
+  "compactStructuredEncryptionData",
+  "connPoolStats",
+  "connPoolSync",
+  "convertToCapped",
+  "cpuProfiler",
+  "createCollection",
+  "createDatabase",
+  "createIndex",
+  "createRole",
+  "createSearchIndexes",
+  "createUser",
+  "dbCheck",
+  "dbHash",
+  "dbStats",
+  "dropAllRolesFromDatabase",
+  "dropAllUsersFromDatabase",
+  "dropCollection",
+  "dropConnections",
+  "dropDatabase",
+  "dropIndex",
+  "dropRole",
+  "dropSearchIndex",
+  "dropUser",
+  "emptycapped",
+  "enableProfiler",
+  "enableSharding",
+  "exportCollection",
+  "find",
+  "flushRouterConfig",
+  "forceUUID",
+  "fsync",
+  "fsyncUnlock",
+  "getClusterParameter",
+  "getCmdLineOpts",
+  "getDatabaseVersion",
+  "getDefaultRWConcern",
+  "getLog",
+  "getParameter",
+  "getShardMap",
+  "getShardVersion",
+  "grantPrivilegesToRole",
+  "grantRole",
+  "grantRolesToRole",
+  "grantRolesToUser",
+  "hostInfo",
+  "impersonate",
+  "importCollection",
+  "indexStats",
+  "inprog",
+  "insert",
+  "internal",
+  "invalidateUserCache",
+  "killAnyCursor",
+  "killAnySession",
+  "killCursors",
+  "killop",
+  "listCachedAndActiveUsers",
+  "listCollections",
+  "listCursors",
+  "listDatabases",
+  "listIndexes",
+  "listSearchIndexes",
+  "listSessions",
+  "listShards",
+  "logApplicationMessage",
+  "logRotate",
+  "moveChunk",
+  "netstat",
+  "oidReset",
+  "operationMetrics",
+  "planCacheIndexFilter",
+  "planCacheRead",
+  "planCacheWrite",
+  "queryStatsRead",
+  "queryStatsReadTransformed",
+  "reIndex",
+  "refineCollectionShardKey",
+  "remove",
+  "removeShard",
+  "renameCollection",
+  "renameCollectionSameDB",
+  "repairDatabase",
+  "replSetConfigure",
+  "replSetGetConfig",
+  "replSetGetStatus",
+  "replSetHeartbeat",
+  "replSetReconfig",
+  "replSetResizeOplog",
+  "replSetStateChange",
+  "reshardCollection",
+  "resync",
+  "revokePrivilegesFromRole",
+  "revokeRole",
+  "revokeRolesFromRole",
+  "revokeRolesFromUser",
+  "rotateCertificates",
+  "runAsLessPrivilegedUser",
+  "runTenantMigration",
+  "serverStatus",
+  "setAuthenticationRestriction",
+  "setClusterParameter",
+  "setDefaultRWConcern",
+  "setFeatureCompatibilityVersion",
+  "setFreeMonitoring",
+  "setParameter",
+  "setUserWriteBlockMode",
+  "shardCollection",
+  "shardedDataDistribution",
+  "shardingState",
+  "shutdown",
+  "splitChunk",
+  "splitVector",
+  "startBackup",
+  "storageDetails",
+  "top",
+  "touch",
+  "trafficRecord",
+  "unlock",
+  "update",
+  "updateRole",
+  "updateSearchIndex",
+  "updateUser",
+  "useTenant",
+  "useUUID",
+  "validate",
+  "viewRole",
+  "viewUser"
+ ],
+ "aggStages": [
+  "$_addReshardingResumeId",
+  "$_internalAllCollectionStats",
+  "$_internalApplyOplogUpdate",
+  "$_internalBoundedSort",
+  "$_internalChangeStreamAddPostImage",
+  "$_internalChangeStreamAddPreImage",
+  "$_internalChangeStreamCheckInvalidate",
+  "$_internalChangeStreamCheckResumability",
+  "$_internalChangeStreamCheckTopologyChange",
+  "$_internalChangeStreamHandleTopologyChange",
+  "$_internalChangeStreamOplogMatch",
+  "$_internalChangeStreamTransform",
+  "$_internalChangeStreamUnwindTransaction",
+  "$_internalComputeGeoNearDistance",
+  "$_internalConvertBucketIndexStats",
+  "$_internalDensify",
+  "$_internalFindAndModifyImageLookup",
+  "$_internalInhibitOptimization",
+  "$_internalReshardingIterateTransaction",
+  "$_internalReshardingOwnershipMatch",
+  "$_internalSetWindowFields",
+  "$_internalShardServerInfo",
+  "$_internalShredDocuments",
+  "$_internalSplitPipeline",
+  "$_internalStreamingGroup",
+  "$_internalUnpackBucket",
+  "$_unpackBucket",
+  "$addFields",
+  "$backupCursor",
+  "$backupCursorExtend",
+  "$bucket",
+  "$bucketAuto",
+  "$changeStream",
+  "$changeStreamSplitLargeEvent",
+  "$collStats",
+  "$count",
+  "$currentOp",
+  "$densify",
+  "$documents",
+  "$facet",
+  "$fill",
+  "$geoNear",
+  "$graphLookup",
+  "$group",
+  "$indexStats",
+  "$limit",
+  "$listCatalog",
+  "$listLocalSessions",
+  "$listSessions",
+  "$lookup",
+  "$match",
+  "$merge",
+  "$mergeCursors",
+  "$operationMetrics",
+  "$out",
+  "$planCacheStats",
+  "$project",
+  "$queryStats",
+  "$queue",
+  "$redact",
+  "$replaceRoot",
+  "$replaceWith",
+  "$sample",
+  "$set",
+  "$setVariableFromSubPipeline",
+  "$setWindowFields",
+  "$shardedDataDistribution",
+  "$skip",
+  "$sort",
+  "$sortByCount",
+  "$unionWith",
+  "$unset",
+  "$unwind"
+ ],
+ "aggExpressions": [
+  "$_internalFindAllValuesAtPath",
+  "$_internalFleEq",
+  "$_internalJsEmit",
+  "$_internalJsReduce",
+  "$_internalKeyStringValue",
+  "$abs",
+  "$accumulator",
+  "$acos",
+  "$acosh",
+  "$add",
+  "$addToSet",
+  "$allElementsTrue",
+  "$and",
+  "$anyElementTrue",
+  "$arrayElemAt",
+  "$arrayToObject",
+  "$asin",
+  "$asinh",
+  "$atan",
+  "$atan2",
+  "$atanh",
+  "$avg",
+  "$binarySize",
+  "$bottom",
+  "$bottomN",
+  "$bsonSize",
+  "$ceil",
+  "$cmp",
+  "$concat",
+  "$concatArrays",
+  "$cond",
+  "$const",
+  "$convert",
+  "$cos",
+  "$cosh",
+  "$count",
+  "$covariancePop",
+  "$covarianceSamp",
+  "$dateAdd",
+  "$dateDiff",
+  "$dateFromParts",
+  "$dateFromString",
+  "$dateSubtract",
+  "$dateToParts",
+  "$dateToString",
+  "$dateTrunc",
+  "$dayOfMonth",
+  "$dayOfWeek",
+  "$dayOfYear",
+  "$degreesToRadians",
+  "$denseRank",
+  "$derivative",
+  "$divide",
+  "$documentNumber",
+  "$eq",
+  "$exp",
+  "$expMovingAvg",
+  "$filter",
+  "$first",
+  "$firstN",
+  "$floor",
+  "$function",
+  "$getField",
+  "$gt",
+  "$gte",
+  "$hour",
+  "$ifNull",
+  "$in",
+  "$indexOfArray",
+  "$indexOfBytes",
+  "$indexOfCP",
+  "$integral",
+  "$isArray",
+  "$isNumber",
+  "$isoDayOfWeek",
+  "$isoWeek",
+  "$isoWeekYear",
+  "$last",
+  "$lastN",
+  "$let",
+  "$linearFill",
+  "$literal",
+  "$ln",
+  "$locf",
+  "$log",
+  "$log10",
+  "$lt",
+  "$lte",
+  "$ltrim",
+  "$map",
+  "$max",
+  "$maxN",
+  "$mergeObjects",
+  "$meta",
+  "$millisecond",
+  "$min",
+  "$minN",
+  "$minute",
+  "$mod",
+  "$month",
+  "$multiply",
+  "$ne",
+  "$not",
+  "$objectToArray",
+  "$or",
+  "$pow",
+  "$push",
+  "$radiansToDegrees",
+  "$rand",
+  "$range",
+  "$rank",
+  "$reduce",
+  "$regexFind",
+  "$regexFindAll",
+  "$regexMatch",
+  "$replaceAll",
+  "$replaceOne",
+  "$reverseArray",
+  "$round",
+  "$rtrim",
+  "$second",
+  "$setDifference",
+  "$setEquals",
+  "$setField",
+  "$setIntersection",
+  "$setIsSubset",
+  "$setUnion",
+  "$shift",
+  "$sin",
+  "$sinh",
+  "$size",
+  "$slice",
+  "$sortArray",
+  "$split",
+  "$sqrt",
+  "$stdDevPop",
+  "$stdDevSamp",
+  "$strLenBytes",
+  "$strLenCP",
+  "$strcasecmp",
+  "$substr",
+  "$substrBytes",
+  "$substrCP",
+  "$subtract",
+  "$sum",
+  "$switch",
+  "$tan",
+  "$tanh",
+  "$toBool",
+  "$toDate",
+  "$toDecimal",
+  "$toDouble",
+  "$toHashedIndexKey",
+  "$toInt",
+  "$toLong",
+  "$toLower",
+  "$toObjectId",
+  "$toString",
+  "$toUpper",
+  "$top",
+  "$topN",
+  "$trim",
+  "$trunc",
+  "$tsIncrement",
+  "$tsSecond",
+  "$type",
+  "$unsetField",
+  "$week",
+  "$year",
+  "$zip"
+ ]
+}
